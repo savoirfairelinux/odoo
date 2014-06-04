@@ -40,6 +40,19 @@ from openerp.tools.func import lazy_property
 
 _logger = logging.getLogger(__name__)
 
+# Raven->Sentry setup
+# Need raven and raven_sanitize_openerp installed
+# If any steps here fail, client is set to None and will not run any raven code
+# later in execution
+try:
+    from . import oe_sentry
+except ImportError as e:
+    _logger.warn("Unable to import Raven Sentry Client: " + e.message)
+    oe_sentry = None
+except BaseException as e:
+    _logger.warn("Unknown Raven Sentry Client Error: " + e.message)
+    oe_sentry = None
+
 #----------------------------------------------------------
 # RequestHandler
 #----------------------------------------------------------
@@ -109,10 +122,15 @@ def dispatch_rpc(service_name, method, params):
     except openerp.exceptions.DeferredException, e:
         _logger.exception(openerp.tools.exception_to_unicode(e))
         openerp.tools.debugger.post_mortem(openerp.tools.config, e.traceback)
+        if oe_sentry:
+            oe_sentry.sentry_intercept_exception(params)
         raise
     except Exception, e:
         _logger.exception(openerp.tools.exception_to_unicode(e))
         openerp.tools.debugger.post_mortem(openerp.tools.config, sys.exc_info())
+        if oe_sentry and type(e) not in (openerp.osv.osv.except_osv,
+                                         openerp.osv.orm.except_orm):
+            oe_sentry.sentry_intercept_exception(params)
         raise
 
 def local_redirect(path, query=None, keep_hash=False, forward_debug=True, code=303):
@@ -462,7 +480,7 @@ class JsonRequest(WebRequest):
            be used as response."""
         try:
             return super(JsonRequest, self)._handle_exception(exception)
-        except Exception:
+        except Exception as e:
             _logger.exception("Exception during JSON request handling.")
             error = {
                     'code': 200,
@@ -472,6 +490,12 @@ class JsonRequest(WebRequest):
             if isinstance(exception, AuthenticationError):
                 error['code'] = 100
                 error['message'] = "OpenERP Session Invalid"
+            if (oe_sentry and oe_sentry.sentry_intercept_exception(self.params)
+                and type(e) not in (openerp.osv.osv.except_osv,
+                                    openerp.osv.orm.except_orm)):
+                error['data']['debug'] = ("An internal OpenERP error occurred...\n"
+                                          "A report was sent to the IT department.")
+
             return self._json_response(error=error)
 
     def dispatch(self):
