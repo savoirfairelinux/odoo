@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/OCA/OCB.png?branch=7.0)](https://travis-ci.org/OCA/OCB)
+[![Coverage Status](https://coveralls.io/repos/OCA/OCB/badge.png?branch=7.0)](https://coveralls.io/r/OCA/OCB?branch=master)
+[![Build Status](https://travis-ci.org/OCA/OCB.svg?branch=master)](https://travis-ci.org/OCA/OCB)
+[![Coverage Status](https://img.shields.io/coveralls/OCA/OCB.svg)](https://coveralls.io/r/OCA/OCB?branch=master)
+
 Odoo
 ----
 
