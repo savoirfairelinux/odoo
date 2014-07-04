@@ -40,6 +40,32 @@
    ram_lines = [line for line in order.move_lines if line.product_id.default_code == 'RAM-SR3']
    assert len(ram_lines) == 2, 'RAM-SR3 line not split'
 
+-
+ I split the 10 PCSC349 into 2 production lots to produce
+-
+ !python {model: stock.move.split}: |
+   order = self.pool.get('mrp.production').browse(cr, uid, ref('test_mo_pcsc349_2'), context=context)
+   assert len(list(order.move_created_ids)) == 1, 'Expected one PCSC line to produce originally'
+   ctxt = context.copy()
+   create_id = order.move_created_ids[0].id
+   ctxt['active_id'] = create_id
+   ctxt['active_ids'] = [create_id]
+   ctxt['active_model'] = 'stock.move'
+   values = self.default_get(cr, uid,
+                             ['product_id', 'product_uom', 'qty', 'use_exist', 'location_id'],
+                             ctxt)
+   wizard_id = self.create(cr, uid, values, context=ctxt)
+   prodlot_obj = self.pool.get('stock.production.lot')
+   split_line_obj = self.pool.get('stock.move.split.lines')
+   split_line_obj.create(cr, uid, {'wizard_id': wizard_id,
+                                   'name': 'PCSC_SN_1',
+                                   'quantity': 5,}, context=ctxt)
+   split_line_obj.create(cr, uid, {'wizard_id': wizard_id,
+                                   'name': 'PCSC_SN_2',
+                                   'quantity': 5,}, context=ctxt)
+   self.split_lot(cr, uid, [wizard_id], context=ctxt)
+   order.refresh()
+   assert len(list(order.move_created_ids)) == 2, 'Expected two PCSC lines to produce'
 
 -
   I click on the "Produce" button of the Manufacturing Order and in the wizard select "Consume and Produce" mode.
@@ -55,7 +81,8 @@
                             'mode': 'consume_produce'}, ctxt)
    self.do_produce(cr, uid, [wizard_id], ctxt)
 -
-  I expect 10 RAM-SR3 to be consumed, taking 5 ram_sn3 and 5 ram_sn4
+  I expect 10 RAM-SR3 to be consumed, taking 5 ram_sn3 and 5 ram_sn4.
+  I also expect exactly 5 PCS349 to be produced
 -
  !python {model: mrp.production}: |
    order = self.browse(cr, uid, ref('test_mo_pcsc349_2'), context=context)
@@ -66,3 +93,6 @@
    ram_sn_4_qty = ram_sn_4 and ram_sn_4[0].product_qty or None
    assert ram_sn_3_qty == 5, 'should have consumed 5 ram_sn_3, not %s' % ram_sn_3_qty
    assert ram_sn_4_qty == 5, 'should have consumed 5 ram_sn+4. not %s' % ram_sn_4_qty
+
+   total_created_pcs = sum(line.product_qty for line in order.move_created_ids2)
+   assert total_created_pcs == 5, 'should have produced 5 PCS, not %s' % total_created_pcs
