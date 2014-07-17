@@ -8,7 +8,9 @@ import logging
 import os
 import psutil
 import random
-import resource
+import imp
+file, pathname, description = imp.find_module('resource')
+resource = imp.load_module('resource', file, pathname, description)
 import select
 import signal
 import socket
