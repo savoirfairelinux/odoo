@@ -22,7 +22,7 @@ class hr_timesheet_report(osv.osv):
 
     def _select(self):
         select_str = """
-             SELECT min(hat.id) as id,
+             SELECT min(aal.id) as id,
                     aal.date as date,
                     sum(aal.amount) as cost,
                     sum(aal.unit_amount) as quantity,
