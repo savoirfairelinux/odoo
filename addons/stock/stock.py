@@ -637,6 +637,21 @@ class stock_picking(osv.osv):
         new_id = super(stock_picking, self).create(cr, user, vals, context)
         return new_id
 
+    STATE_SELECTION = [
+        ('draft', 'Draft'),
+        ('cancel', 'Cancelled'),
+        ('auto', 'Waiting Another Operation'),
+        ('confirmed', 'Waiting Availability'),
+        ('assigned', 'Ready to Transfer'),
+        ('done', 'Transferred'),
+    ]
+    STATE_HELP = """* Draft: not confirmed yet and will not be scheduled until confirmed\n
+            * Waiting Another Operation: waiting for another move to proceed before it becomes automatically available (e.g. in Make-To-Order flows)\n
+            * Waiting Availability: still waiting for the availability of products\n
+            * Ready to Transfer: products reserved, simply waiting for confirmation.\n
+            * Transferred: has been processed, can't be modified or cancelled anymore\n
+            * Cancelled: has been cancelled, can't be confirmed anymore"""
+
     _columns = {
         'name': fields.char('Reference', size=64, select=True, states={'done':[('readonly', True)], 'cancel':[('readonly',True)]}),
         'origin': fields.char('Source Document', size=64, states={'done':[('readonly', True)], 'cancel':[('readonly',True)]}, help="Reference of the document", select=True),
@@ -649,21 +664,7 @@ class stock_picking(osv.osv):
                 "if you subcontract the manufacturing operations.", select=True),
         'location_dest_id': fields.many2one('stock.location', 'Dest. Location', states={'done':[('readonly', True)], 'cancel':[('readonly',True)]}, help="Location where the system will stock the finished products.", select=True),
         'move_type': fields.selection([('direct', 'Partial'), ('one', 'All at once')], 'Delivery Method', required=True, states={'done':[('readonly', True)], 'cancel':[('readonly',True)]}, help="It specifies goods to be deliver partially or all at once"),
-        'state': fields.selection([
-            ('draft', 'Draft'),
-            ('cancel', 'Cancelled'),
-            ('auto', 'Waiting Another Operation'),
-            ('confirmed', 'Waiting Availability'),
-            ('assigned', 'Ready to Transfer'),
-            ('done', 'Transferred'),
-            ], 'Status', readonly=True, select=True, track_visibility='onchange', help="""
-            * Draft: not confirmed yet and will not be scheduled until confirmed\n
-            * Waiting Another Operation: waiting for another move to proceed before it becomes automatically available (e.g. in Make-To-Order flows)\n
-            * Waiting Availability: still waiting for the availability of products\n
-            * Ready to Transfer: products reserved, simply waiting for confirmation.\n
-            * Transferred: has been processed, can't be modified or cancelled anymore\n
-            * Cancelled: has been cancelled, can't be confirmed anymore"""
-        ),
+        'state': fields.selection(STATE_SELECTION, 'Status', readonly=True, select=True, track_visibility='onchange', help=STATE_HELP),
         'min_date': fields.function(get_min_max_date, fnct_inv=_set_minimum_date, multi="min_max_date",
                  store=True, type='datetime', string='Scheduled Time', select=1, help="Scheduled time for the shipment to be processed"),
         'date': fields.datetime('Creation Date', help="Creation date, usually the time of the order.", select=True, states={'done':[('readonly', True)], 'cancel':[('readonly',True)]}),
@@ -1304,7 +1305,7 @@ class stock_picking(osv.osv):
                 product_qty = move_product_qty[move.id]
                 if not new_picking and not empty_picking:
                     new_picking_name = pick.name
-                    self.write(cr, uid, [pick.id], 
+                    self.write(cr, uid, [pick.id],
                                {'name': sequence_obj.get(cr, uid,
                                             'stock.picking.%s'%(pick.type)),
                                })
@@ -1379,7 +1380,7 @@ class stock_picking(osv.osv):
             res[pick.id] = {'delivered_picking': delivered_pack.id or False}
 
         return res
-    
+
     # views associated to each picking type
     _VIEW_LIST = {
         'out': 'view_picking_out_form',
@@ -1392,8 +1393,8 @@ class stock_picking(osv.osv):
         @param type: the picking type as a string
         @return: view i, or False if no view found
         """
-        res = self.pool.get('ir.model.data').get_object_reference(cr, uid, 
-            'stock', self._VIEW_LIST.get(type, 'view_picking_form'))            
+        res = self.pool.get('ir.model.data').get_object_reference(cr, uid,
+            'stock', self._VIEW_LIST.get(type, 'view_picking_form'))
         return res and res[1] or False
 
 
@@ -1874,7 +1875,7 @@ class stock_move(osv.osv):
 
         product_obj = self.pool.get('product.product')
         uos_coeff = product_obj.read(cr, uid, product_id, ['uos_coeff'])
-        
+
         # Warn if the quantity was decreased 
         if ids:
             for move in self.read(cr, uid, ids, ['product_qty']):
@@ -3065,22 +3066,24 @@ class stock_picking_in(osv.osv):
         defaults.update(in_defaults)
         return defaults
 
-    _columns = {
-        'backorder_id': fields.many2one('stock.picking.in', 'Back Order of', states={'done':[('readonly', True)], 'cancel':[('readonly',True)]}, help="If this shipment was split, then this field links to the shipment which contains the already processed part.", select=True),
-        'state': fields.selection(
-            [('draft', 'Draft'),
-            ('auto', 'Waiting Another Operation'),
-            ('confirmed', 'Waiting Availability'),
-            ('assigned', 'Ready to Receive'),
-            ('done', 'Received'),
-            ('cancel', 'Cancelled'),],
-            'Status', readonly=True, select=True,
-            help="""* Draft: not confirmed yet and will not be scheduled until confirmed\n
+    STATE_SELECTION = [
+        ('draft', 'Draft'),
+        ('auto', 'Waiting Another Operation'),
+        ('confirmed', 'Waiting Availability'),
+        ('assigned', 'Ready to Receive'),
+        ('done', 'Received'),
+        ('cancel', 'Cancelled'),
+    ]
+    STATE_HELP = """* Draft: not confirmed yet and will not be scheduled until confirmed\n
                  * Waiting Another Operation: waiting for another move to proceed before it becomes automatically available (e.g. in Make-To-Order flows)\n
                  * Waiting Availability: still waiting for the availability of products\n
                  * Ready to Receive: products reserved, simply waiting for confirmation.\n
                  * Received: has been processed, can't be modified or cancelled anymore\n
-                 * Cancelled: has been cancelled, can't be confirmed anymore"""),
+                 * Cancelled: has been cancelled, can't be confirmed anymore"""
+
+    _columns = {
+        'backorder_id': fields.many2one('stock.picking.in', 'Back Order of', states={'done':[('readonly', True)], 'cancel':[('readonly',True)]}, help="If this shipment was split, then this field links to the shipment which contains the already processed part.", select=True),
+        'state': fields.selection(STATE_SELECTION, 'Status', readonly=True, select=True, help=STATE_HELP),
     }
     _defaults = {
         'type': 'in',
@@ -3138,22 +3141,24 @@ class stock_picking_out(osv.osv):
         defaults.update(out_defaults)
         return defaults
 
-    _columns = {
-        'backorder_id': fields.many2one('stock.picking.out', 'Back Order of', states={'done':[('readonly', True)], 'cancel':[('readonly',True)]}, help="If this shipment was split, then this field links to the shipment which contains the already processed part.", select=True),
-        'state': fields.selection(
-            [('draft', 'Draft'),
-            ('auto', 'Waiting Another Operation'),
-            ('confirmed', 'Waiting Availability'),
-            ('assigned', 'Ready to Deliver'),
-            ('done', 'Delivered'),
-            ('cancel', 'Cancelled'),],
-            'Status', readonly=True, select=True,
-            help="""* Draft: not confirmed yet and will not be scheduled until confirmed\n
+    STATE_SELECTION = [
+        ('draft', 'Draft'),
+        ('auto', 'Waiting Another Operation'),
+        ('confirmed', 'Waiting Availability'),
+        ('assigned', 'Ready to Deliver'),
+        ('done', 'Delivered'),
+        ('cancel', 'Cancelled'),
+    ]
+    STATE_HELP = """* Draft: not confirmed yet and will not be scheduled until confirmed\n
                  * Waiting Another Operation: waiting for another move to proceed before it becomes automatically available (e.g. in Make-To-Order flows)\n
                  * Waiting Availability: still waiting for the availability of products\n
                  * Ready to Deliver: products reserved, simply waiting for confirmation.\n
                  * Delivered: has been processed, can't be modified or cancelled anymore\n
-                 * Cancelled: has been cancelled, can't be confirmed anymore"""),
+                 * Cancelled: has been cancelled, can't be confirmed anymore"""
+
+    _columns = {
+        'backorder_id': fields.many2one('stock.picking.out', 'Back Order of', states={'done':[('readonly', True)], 'cancel':[('readonly',True)]}, help="If this shipment was split, then this field links to the shipment which contains the already processed part.", select=True),
+        'state': fields.selection(STATE_SELECTION, 'Status', readonly=True, select=True, help=STATE_HELP),
     }
     _defaults = {
         'type': 'out',
