@@ -644,7 +644,7 @@ msgstr "Contactez-nous"
 #. module: website
 #: view:website:website.contactus
 msgid "Contact us about anything related to our company or services."
-msgstr "Contactez-nous à proposn de notre entreprise ou de nos services ."
+msgstr "Contactez-nous à propos de notre entreprise ou de nos services."
 
 #. module: website
 #: view:website:website.snippets
