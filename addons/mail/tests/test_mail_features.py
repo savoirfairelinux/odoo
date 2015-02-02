@@ -336,7 +336,7 @@ class test_mail(TestMailBase):
 
         # Test: notifications emails: to a and b, c is email only, r is author
         # test_emailto = ['Administrator <a@test>', 'Bert Tartopoils <b@test>']
-        test_emailto = [u'"Followers of \\"Pigs\\" !\xf9 $%-" <a@test>', u'"Followers of \\"Pigs\\" !\xf9 $%-" <b@b>']
+        test_emailto = [u'"Followers of \\"Pigs\\" !\xf9 $%-" <a@test>', u'"Followers of \\"Pigs\\" !\xf9 $%-" <b@test>']
         self.assertEqual(len(sent_emails), 2,
                         'message_post: notification emails wrong number of send emails')
         self.assertEqual(set([m['email_to'][0] for m in sent_emails]), set(test_emailto),
