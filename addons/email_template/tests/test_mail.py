@@ -191,9 +191,9 @@ class test_message_compose(TestMailBase):
         email_template.write(cr, uid, [email_template_id], {
             'model_id': user_model_id,
             'body_html': '${object.login}',
-            'email_to': '${object.email}, c@c',
+            'email_to': '${object.email}, c@test',
             'email_recipients': '%i,%i' % (p_b_id, p_c_id),
-            'email_cc': 'd@d',
+            'email_cc': 'd@test',
             })
         # patner by email + partner by id (no double)
         send_to = [p_a_id, p_b_id, p_c_id, p_d_id]
