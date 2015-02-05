@@ -37,7 +37,7 @@ class Forum(osv.Model):
     _columns = {
         'name': fields.char('Name', required=True, translate=True),
         'faq': fields.html('Guidelines'),
-        'description': fields.html('Description'),
+        'description': fields.html('Description', translate=True),
         # karma generation
         'karma_gen_question_new': fields.integer('Asking a question'),
         'karma_gen_question_upvote': fields.integer('Question upvoted'),
@@ -118,6 +118,31 @@ class Forum(osv.Model):
             context = {}
         create_context = dict(context, mail_create_nolog=True)
         return super(Forum, self).create(cr, uid, values, context=create_context)
+
+    def _tag_to_write_vals(self, cr, uid, ids, tags='', context=None):
+        User = self.pool['res.users']
+        Tag = self.pool['forum.tag']
+        result = {}
+        for forum in self.browse(cr, uid, ids, context=context):
+            post_tags = []
+            existing_keep = []
+            for tag in filter(None, tags.split(',')):
+                if tag.startswith('_'):  # it's a new tag
+                    # check that not already created meanwhile or maybe excluded by the limit on the search
+                    tag_ids = Tag.search(cr, uid, [('name', '=', tag[1:])], context=context)
+                    if tag_ids:
+                        existing_keep.append(int(tag_ids[0]))
+                    else:
+                        # check if user have Karma needed to create need tag
+                        user = User.browse(cr, uid, uid, context=context)
+                        if user.exists() and user.karma >= forum.karma_retag:
+                            post_tags.append((0, 0, {'name': tag[1:], 'forum_id': forum.id}))
+                else:
+                    existing_keep.append(int(tag))
+            post_tags.insert(0, [6, 0, existing_keep])
+            result[forum.id] = post_tags
+
+        return result
 
 
 class Post(osv.Model):
@@ -321,6 +346,15 @@ class Post(osv.Model):
         'child_ids': list(),
     }
 
+    def name_get(self, cr, uid, ids, context=None):
+        result = []
+        for post in self.browse(cr, uid, ids, context=context):
+            if post.parent_id and not post.name:
+                result.append((post.id, '%s (%s)' % (post.parent_id.name, post.id)))
+            else:
+                result.append((post.id, '%s' % (post.name)))
+        return result
+
     def create(self, cr, uid, vals, context=None):
         if context is None:
             context = {}
@@ -474,7 +508,7 @@ class Post(osv.Model):
         }
         message_id = self.pool['forum.post'].message_post(
             cr, uid, question.id,
-            context=dict(context, mail_create_nosubcribe=True),
+            context=dict(context, mail_create_nosubscribe=True),
             **values)
 
         # unlink the original answer, using SUPERUSER_ID to avoid karma issues

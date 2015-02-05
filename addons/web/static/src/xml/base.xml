@@ -92,7 +92,7 @@
                 </p>
                 <p class="oe_grey" style="margin: 10px">
                     By default, the master password is 'admin'. This password
-                    is required to created, delete dump or restore databases.
+                    is required to create, delete, dump or restore databases.
                 </p>
                 <table class="db_option_table" style="margin: 10px">
                     <tr>
@@ -223,6 +223,15 @@
                                 </t>
                             </select>
                             <input t-if="!widget.db_list" name="backup_db" class="required" type="text" autofocus="autofocus"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="backup_format">Backup format:</label></td>
+                        <td class="oe_form_field oe_form_field_selection">
+                            <select name="backup_format">
+                                <option value="zip">zip (includes filestore)</option>
+                                <option value="dump">pg_dump custom format (without filestore)</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>

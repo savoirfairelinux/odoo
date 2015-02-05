@@ -538,6 +538,7 @@ instance.web.ListView = instance.web.View.extend( /** @lends instance.web.ListVi
     },
     reload_record: function (record) {
         var self = this;
+        var fields = this.fields_view.fields;
         return this.dataset.read_ids(
             [record.get('id')],
             _.pluck(_(this.columns).filter(function (r) {
@@ -550,8 +551,10 @@ instance.web.ListView = instance.web.View.extend( /** @lends instance.web.ListVi
                 self.records.remove(record);
                 return;
             }
-            _(_.keys(values)).each(function(key){
-                record.set(key, values[key], {silent: true});
+            _.each(values, function (value, key) {
+                if (fields[key] && fields[key].type === 'many2many')
+                    record.set(key + '__display', false, {silent: true});
+                record.set(key, value, {silent: true});            
             });
             record.trigger('change', record);
         });
@@ -1536,9 +1539,11 @@ instance.web.ListView.Groups = instance.web.Class.extend( /** @lends instance.we
         });
     },
     setup_resequence_rows: function (list, dataset) {
-        // drag and drop enabled if list is not sorted and there is a
-        // visible column with @widget=handle or "sequence" column in the view.
-        if ((dataset.sort && dataset.sort())
+        // drag and drop enabled if list is not sorted (unless it is sorted by
+        // sequence (ASC)), and there is a visible column with @widget=handle
+        // or "sequence" column in the view.
+        if ((dataset.sort && dataset.sort() && dataset.sort() !== 'sequence'
+            && dataset.sort() !== 'sequence ASC')
             || !_(this.columns).any(function (column) {
                     return column.widget === 'handle'
                         || column.name === 'sequence'; })) {
@@ -1610,7 +1615,9 @@ instance.web.ListView.Groups = instance.web.Class.extend( /** @lends instance.we
                 .filter(function (column) { return column.tag === 'field';})
                 .pluck('name').value(),
             function (groups) {
-                self.view.$pager.hide();
+                // page count is irrelevant on grouped page, replace by limit
+                self.view.$pager.find('.oe_pager_group').hide();
+                self.view.$pager.find('.oe_list_pager_state').text(self.view._limit ? self.view._limit : '∞');
                 $el[0].appendChild(
                     self.render_groups(groups));
                 if (post_render) { post_render(); }
@@ -2297,8 +2304,12 @@ instance.web.list.Binary = instance.web.list.Column.extend({
     _format: function (row_data, options) {
         var text = _t("Download");
         var value = row_data[this.id].value;
+        if (!value) {
+            return options.value_if_empty || '';
+        }
+
         var download_url;
-        if (value && value.substr(0, 10).indexOf(' ') == -1) {
+        if (value.substr(0, 10).indexOf(' ') == -1) {
             download_url = "data:application/octet-stream;base64," + value;
         } else {
             download_url = instance.session.url('/web/binary/saveas', {model: options.model, field: this.id, id: options.id});
