@@ -271,9 +271,16 @@ instance.web.parse_value = function (value, descriptor, value_if_empty) {
                     value, (date_pattern + ' ' + time_pattern));
             if (datetime !== null)
                 return instance.web.datetime_to_str(datetime);
-            datetime = Date.parseExact(value.toString().replace(/\d+/g, function(m){
+            datetime = Date.parseExact(value, (date_pattern));
+            if (datetime !== null)
+                return instance.web.datetime_to_str(datetime);
+            var leading_zero_value = value.toString().replace(/\d+/g, function(m){
                 return m.length === 1 ? "0" + m : m ;
-            }), (date_pattern + ' ' + time_pattern));
+            });
+            datetime = Date.parseExact(leading_zero_value, (date_pattern + ' ' + time_pattern));
+            if (datetime !== null)
+                return instance.web.datetime_to_str(datetime);
+            datetime = Date.parseExact(leading_zero_value, (date_pattern));
             if (datetime !== null)
                 return instance.web.datetime_to_str(datetime);
             datetime = Date.parse(value);
@@ -359,6 +366,11 @@ instance.web.round_precision = function(value, precision){
  */
 instance.web.round_decimals = function(value, decimals){
     return instance.web.round_precision(value, Math.pow(10,-decimals));
+};
+
+instance.web.float_is_zero = function(value, decimals){
+    epsilon = Math.pow(10, -decimals);
+    return Math.abs(instance.web.round_precision(value, epsilon)) < epsilon;
 };
 
 })();

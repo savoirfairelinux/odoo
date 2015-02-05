@@ -414,6 +414,10 @@ class QWeb(orm.AbstractModel):
                     '%s_odd' % varname: False,
                 })
             ru.append(self.render_element(element, template_attributes, generated_attributes, copy_qwebcontext))
+
+        for k in qwebcontext.keys():
+            qwebcontext[k] = copy_qwebcontext[k]
+
         return "".join(ru)
 
     def render_tag_if(self, element, template_attributes, generated_attributes, qwebcontext):
@@ -818,7 +822,7 @@ class MonetaryConverter(osv.AbstractModel):
         # The log10 of the rounding should be the number of digits involved if
         # negative, if positive clamp to 0 digits and call it a day.
         # nb: int() ~ floor(), we want nearest rounding instead
-        precision = int(round(math.log10(display_currency.rounding)))
+        precision = int(math.floor(math.log10(display_currency.rounding)))
         fmt = "%.{0}f".format(-precision if precision < 0 else 0)
 
         from_amount = record[field_name]

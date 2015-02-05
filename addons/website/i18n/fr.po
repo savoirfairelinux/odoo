@@ -44,14 +44,16 @@ msgstr "(Youtube, Vimeo, Dailymotion)"
 
 #. module: website
 #: view:website:website.info
-msgid ",\n"
+msgid ""
+",\n"
 "                            updated:"
 msgstr ",\n"
 "                            mis à jour:"
 
 #. module: website
 #: view:website:website.layout
-msgid ",\n"
+msgid ""
+",\n"
 "                the #1"
 msgstr ",\n"
 "                le #1"
@@ -109,7 +111,8 @@ msgstr "Plus de 50 000 entreprises utilisent Odoo pour développer leurs activit
 
 #. module: website
 #: model:ir.actions.act_window,help:website.action_module_website
-msgid "<p><b>No website module found!</b></p>\n"
+msgid ""
+"<p><b>No website module found!</b></p>\n"
 "              <p>You should try others search criteria.</p>\n"
 "            "
 msgstr "<p><b>Le module site internet n'à pas été trouvé!</b></p>\n"
@@ -143,7 +146,11 @@ msgstr "Un ciel bleu et calme"
 
 #. module: website
 #: help:ir.actions.server,website_published:0
-msgid "A code server action can be executed from the website, using a dedicatedcontroller. The address is <base>/website/action/<website_path>.Set this field as True to allow users to run this action. If itset to is False the action cannot be run through the website."
+msgid ""
+"A code server action can be executed from the website, using a "
+"dedicatedcontroller. The address is <base>/website/action/<website_path>.Set "
+"this field as True to allow users to run this action. If itset to is False "
+"the action cannot be run through the website."
 msgstr "Une action de serveur de code peut être exécutée à partir du site internet, en utilisant un contrôleur dédié . L'adresse est <base>/website/action/<website_path>.Changez ce champ en Vrai pour permettre aux utilisateur d'utiliser cette action. Si itset to est Faux l'action ne pourra être utilisée via le site internet."
 
 #. module: website
@@ -158,10 +165,20 @@ msgstr "Un bon sous-titre"
 
 #. module: website
 #: view:website:website.snippets
-msgid "A great way to catch your reader's attention is to tell a story.\n"
-"                            Everything you consider writing can be told as a story."
+msgid ""
+"A great way to catch your reader's attention is to tell a story.\n"
+"                            Everything you consider writing can be told as a "
+"story."
 msgstr "Une excellente façon d'attirer l'attention est de raconter une histoire. \n"
 "                            Tout ce que vous comptez écrire peut l'être sous forme d'histoire."
+
+#. module: website
+#: view:website:website.snippets
+msgid ""
+"A great way to catch your reader's attention is to tell a story. Everything "
+"you consider writing can be told as a story."
+msgstr ""
+
 #. module: website
 #: view:website:website.snippets
 msgid "A small explanation of this great"
@@ -175,9 +192,12 @@ msgstr "À propos"
 
 #. module: website
 #: view:website:website.snippets
-msgid "Adapt these three columns to fit you design need.\n"
-"                            To duplicate, delete or move columns, select the\n"
-"                            column and use the top icons to perform your action."
+msgid ""
+"Adapt these three columns to fit you design need.\n"
+"                            To duplicate, delete or move columns, select "
+"the\n"
+"                            column and use the top icons to perform your "
+"action."
 msgstr "Adaptez ces trois colonnes en fonction de vos besoins de conception.\n"
 "                            Pour dupliquer, supprimer ou déplacer des colonnes, sélectionnez la \n"
 "                            colonne et utilisez les icônes ci-haut afin d'effectuer votre action."
@@ -250,7 +270,8 @@ msgstr "Ajoutez une page dans le menu"
 
 #. module: website
 #: view:website:website.snippets
-msgid "All these icons are licensed under creative commons so that you can use them."
+msgid ""
+"All these icons are licensed under creative commons so that you can use them."
 msgstr "Toutes ces icônes sont sous licence creative commons afin que vous puissiez les utiliser ."
 
 #. module: website
@@ -419,6 +440,11 @@ msgstr "Homme d'affaires"
 
 #. module: website
 #: view:website:website.snippets
+msgid "But"
+msgstr ""
+
+#. module: website
+#: view:website:website.snippets
 msgid "Button"
 msgstr "Bouton"
 
@@ -449,34 +475,34 @@ msgstr ""
 #: code:addons/website/static/src/xml/website.editor.xml:318
 #, python-format
 msgid "Change"
-msgstr "Changer"
+msgstr "Modifier"
 
 #. module: website
 #: view:website:website.snippets
 msgid "Change Background"
-msgstr "Changer l'arrière-plan"
+msgstr "Modifier l'arrière-plan"
 
 #. module: website
 #: view:website:website.snippets
 msgid "Change Icons"
-msgstr "Changer les icônes"
+msgstr "Modifier les icônes"
 
 #. module: website
 #. openerp-web
 #: code:addons/website/static/src/xml/website.editor.xml:325
 #, python-format
 msgid "Change Media"
-msgstr "Changer le média"
+msgstr "Modifier le média"
 
 #. module: website
 #: view:website:website.layout
 msgid "Change Theme"
-msgstr "Changer le thème"
+msgstr "Modifier le thème"
 
 #. module: website
 #: view:website:website.contactus
 msgid "Change address"
-msgstr "Changer l'adresse"
+msgstr "Modifier l'adresse"
 
 #. module: website
 #: view:website:website.snippet_options
@@ -491,14 +517,21 @@ msgid "Check Mobile Preview"
 msgstr "Vérifier l'aperçu mobile"
 
 #. module: website
+#: view:website:website.snippets
+msgid "Check now and discover more today!"
+msgstr ""
+
+#. module: website
 #: field:website.menu,child_id:0
 msgid "Child Menus"
 msgstr "Menus enfant"
 
 #. module: website
 #: view:website:website.snippets
-msgid "Choose a vibrant image and write an inspiring paragraph\n"
-"                            about it. It does not have to be long, but it should\n"
+msgid ""
+"Choose a vibrant image and write an inspiring paragraph\n"
+"                            about it. It does not have to be long, but it "
+"should\n"
 "                            reinforce your image."
 msgstr "Choisissez une image inspirante et décrivez la adéquatement. \n"
 "                            La description n'a pas à être longue, mais elle devrait \ n"
@@ -513,6 +546,11 @@ msgstr "Choisissez une image"
 #: view:website:website.snippet_options
 msgid "Circle"
 msgstr "Cercle"
+
+#. module: website
+#: view:website:website.snippets
+msgid "Click Here"
+msgstr "Cliquez ici"
 
 #. module: website
 #. openerp-web
@@ -609,11 +647,16 @@ msgstr "Suivez-nous"
 
 #. module: website
 #: view:website:website.snippets
-msgid "Consider telling\n"
-"                            a great story that provides personality. Writing a story\n"
-"                            with personality for potential clients will asist with\n"
-"                            making a relationship connection. This shows up in small\n"
-"                            quirks like word choices or phrases. Write from your point\n"
+msgid ""
+"Consider telling\n"
+"                            a great story that provides personality. Writing "
+"a story\n"
+"                            with personality for potential clients will "
+"asist with\n"
+"                            making a relationship connection. This shows up "
+"in small\n"
+"                            quirks like word choices or phrases. Write from "
+"your point\n"
 "                            of view, not from someone else's experience."
 msgstr "Racontez\n"
 "                            une histoire qui vous permettra d'établir des connexions\n"
@@ -691,7 +734,7 @@ msgstr "Créer page"
 
 #. module: website
 #. openerp-web
-#: code:addons/website/static/src/js/website.editor.js:987
+#: code:addons/website/static/src/js/website.editor.js:981
 #, python-format
 msgid "Create page '%s'"
 msgstr "Créer page '%s'"
@@ -732,7 +775,9 @@ msgstr "Personnaliser"
 #. openerp-web
 #: code:addons/website/static/src/js/website.tour.banner.js:60
 #, python-format
-msgid "Customize any block through this menu. Try to change the background of the banner."
+msgid ""
+"Customize any block through this menu. Try to change the background of the "
+"banner."
 msgstr "Personnalisez n'importe quel bloc via ce menu. Essayez de changer l'arrière-plan de la bannière."
 
 #. module: website
@@ -808,8 +853,10 @@ msgstr "Supprimer blocs"
 
 #. module: website
 #: view:website:website.snippets
-msgid "Delete the above image or replace it with a picture\n"
-"                            that illustrates your message. Click on the picture to\n"
+msgid ""
+"Delete the above image or replace it with a picture\n"
+"                            that illustrates your message. Click on the "
+"picture to\n"
 "                            change it's"
 msgstr "Supprimer l'image ci-dessus ou remplacez-la par une autre image\n"
 "                            qui illustre votre message. Cliquez sur l'image pour\n"
@@ -817,8 +864,10 @@ msgstr "Supprimer l'image ci-dessus ou remplacez-la par une autre image\n"
 
 #. module: website
 #: view:website:website.snippets
-msgid "Deploy new stores with just an internet connection: no\n"
-"                    installation, no specific hardware required. It works with any\n"
+msgid ""
+"Deploy new stores with just an internet connection: no\n"
+"                    installation, no specific hardware required. It works "
+"with any\n"
 "                    iPad, Tablet PC, laptop or industrial POS machine."
 msgstr "Déployez de nouveaux magasins avec une simple connexion internet : pas\n"
 "                    d'installation, aucun matériel spécifique nécessaire. Il \n"
@@ -856,6 +905,11 @@ msgstr "Annuler"
 #, python-format
 msgid "Discard edition"
 msgstr "Annuler l'édition"
+
+#. module: website
+#: view:website:website.snippets
+msgid "Discover more about Odoo"
+msgstr "Découvrez Odoo"
 
 #. module: website
 #: view:website:website.template_partner_comment
@@ -973,7 +1027,9 @@ msgstr "Editer en backend"
 
 #. module: website
 #: view:website:website.page_404
-msgid "Edit the content below this line to adapt the default \"page not found\" page."
+msgid ""
+"Edit the content below this line to adapt the default \"page not found\" "
+"page."
 msgstr "Modifiez le contenu sous cette ligne afin d'adapter le texte \"page introuvable\". "
 
 #. module: website
@@ -1014,7 +1070,8 @@ msgstr "Message d'erreur : "
 #. openerp-web
 #: code:addons/website/static/src/js/website.tour.banner.js:21
 #, python-format
-msgid "Every page of your website can be modified through the <i>Edit</i> button."
+msgid ""
+"Every page of your website can be modified through the <i>Edit</i> button."
 msgstr "Chaque page de votre site web peut être modifié au travers du bouton <i>Editer</i> ."
 
 #. module: website
@@ -1024,7 +1081,8 @@ msgstr "Expert"
 
 #. module: website
 #: view:website:website.snippets
-msgid "Explain the benefits you offer. Don't write about products or\n"
+msgid ""
+"Explain the benefits you offer. Don't write about products or\n"
 "            services here, write about solutions."
 msgstr "Expliquer les avantages que vous offrez. N'écrivez pas au sujet de produits\n"
 "            ou services ici, écrivez plutôt au sujet de solutions."
@@ -1040,6 +1098,11 @@ msgstr "Code externe"
 #, python-format
 msgid "Extra Small"
 msgstr "Très petit"
+
+#. module: website
+#: view:website:website.snippet_options
+msgid "Extra-Large"
+msgstr ""
 
 #. module: website
 #: view:website:website.snippets
@@ -1109,6 +1172,11 @@ msgstr ""
 
 #. module: website
 #: view:website:website.snippet_options
+msgid "Float"
+msgstr ""
+
+#. module: website
+#: view:website:website.snippet_options
 msgid "Flowers Field"
 msgstr ""
 
@@ -1126,7 +1194,8 @@ msgstr "Livraison gratuite, satisfait ou remboursé."
 
 #. module: website
 #: view:website:website.snippets
-msgid "From the main container, you can change the background to highlight features."
+msgid ""
+"From the main container, you can change the background to highlight features."
 msgstr "À partir du conteneur principal, vous pouvez changer l'arrière plan afin de mettre en évidence des caractéristiques ."
 
 #. module: website
@@ -1140,7 +1209,8 @@ msgstr "Trouver les propriétés de bannière"
 #. openerp-web
 #: code:addons/website/static/src/xml/website.seo.xml:15
 #, python-format
-msgid "Get this page efficiently referenced in Google to attract more visitors."
+msgid ""
+"Get this page efficiently referenced in Google to attract more visitors."
 msgstr "Faites que cette page soit efficacement référencée dans Google afin d'attirer plus de visiteurs"
 
 #. module: website
@@ -1180,7 +1250,8 @@ msgstr "Des produits et des gens excellents "
 
 #. module: website
 #: view:website:website.snippets
-msgid "Great stories are for everyone even when only written for\n"
+msgid ""
+"Great stories are for everyone even when only written for\n"
 "                            just one person."
 msgstr "Les grandes histoires s'appliquent à tout le monde, même celles\n
                              qui sont écrites pour une seule personne."
@@ -1231,6 +1302,11 @@ msgstr "Aide"
 #, python-format
 msgid "Here are the visuals used to help you translate efficiently:"
 msgstr "Voici les visuels utilisés pour vous aider à traduire efficacement : "
+
+#. module: website
+#: view:website:website.snippet_options
+msgid "Hide link"
+msgstr ""
 
 #. module: website
 #: view:website:website.500
@@ -1285,7 +1361,9 @@ msgstr "Code de l'action si définie dans un fichier XML"
 
 #. module: website
 #: view:website:website.500
-msgid "If this error is caused by a change of yours in the templates, you have the possibility to reset one or more templates to their"
+msgid ""
+"If this error is caused by a change of yours in the templates, you have the "
+"possibility to reset one or more templates to their"
 msgstr "Si cette erreur est causée par un de vos changement dans les modèles, vous avez la possibilité de réinitialiser un ou plusieurs modèles à leur gabarit"
 
 #. module: website
@@ -1297,9 +1375,12 @@ msgstr "Si vous annulez l'action courante,"
 
 #. module: website
 #: view:website:website.snippets
-msgid "If you try to write with a wide general\n"
-"                            audience in mind, your story will ring false and be bland.\n"
-"                            No one will be interested. Write for one person. If it’s genuine for the one, it’s genuine for the rest."
+msgid ""
+"If you try to write with a wide general\n"
+"                            audience in mind, your story will ring false and "
+"be bland.\n"
+"                            No one will be interested. Write for one person. "
+"If it’s genuine for the one, it’s genuine for the rest."
 msgstr "Si vous essayez d'écrire pour un grand public\n"
 "                            votre histoire aura un impact limité\n"
 "                            Peu de gens seront intéressés. Écrivez pour une personne.\n"
@@ -1314,8 +1395,18 @@ msgstr "Image"
 
 #. module: website
 #: view:website:website.snippets
+msgid "Image Floating"
+msgstr ""
+
+#. module: website
+#: view:website:website.snippets
 msgid "Image Gallery"
 msgstr "Bibliothèque d'image"
+
+#. module: website
+#: view:website:website.snippets
+msgid "Image-Floating"
+msgstr ""
 
 #. module: website
 #: view:website:website.snippets
@@ -1326,9 +1417,12 @@ msgstr "Image-Texte"
 #. openerp-web
 #: code:addons/website/static/src/xml/website.translator.xml:30
 #, python-format
-msgid "In this mode, you can only translate texts.  To\n"
-"                            change the structure of the page, you must edit the\n"
-"                            master page. Each modification on the master page\n"
+msgid ""
+"In this mode, you can only translate texts.  To\n"
+"                            change the structure of the page, you must edit "
+"the\n"
+"                            master page. Each modification on the master "
+"page\n"
 "                            is automatically applied to all translated\n"
 "                            versions."
 msgstr "Dans ce mode, vous ne pouvez traduire que des textes. Afin de changer \n"
@@ -1391,7 +1485,8 @@ msgstr "Erreur interne"
 #. openerp-web
 #: code:addons/website/static/src/xml/website.xml:35
 #, python-format
-msgid "It might be possible to edit the relevant items\n"
+msgid ""
+"It might be possible to edit the relevant items\n"
 "                                or fix the issue in"
 msgstr "Il pourrait être possible de modifier les éléments pertinents\n"
 "                                ou résoudre le problème dans"
@@ -1435,6 +1530,7 @@ msgstr "Langues"
 #. module: website
 #. openerp-web
 #: code:addons/website/static/src/xml/website.editor.xml:126
+#: view:website:website.snippet_options
 #, python-format
 msgid "Large"
 msgstr "Large"
@@ -1456,6 +1552,11 @@ msgstr "Dernièrement modifié par"
 #: field:website.seo.metadata,write_date:0
 msgid "Last Updated on"
 msgstr "Dernièrement modifié le"
+
+#. module: website
+#: view:website:website.snippet_options
+msgid "Left"
+msgstr ""
 
 #. module: website
 #. openerp-web
@@ -1524,6 +1625,11 @@ msgid "Mango"
 msgstr "Mangue"
 
 #. module: website
+#: view:website:website.snippet_options
+msgid "Margin"
+msgstr "Marge"
+
+#. module: website
 #. openerp-web
 #: code:addons/website/static/src/xml/website.snippets.xml:60
 #, python-format
@@ -1535,6 +1641,11 @@ msgstr "Redimensionnement de marge"
 #: view:website:website.404
 msgid "Maybe you were looking for one of these popular pages ?"
 msgstr "Peut-être recherchiez vous l'une de ces pages populaires ?"
+
+#. module: website
+#: view:website:website.snippet_options
+msgid "Medium"
+msgstr "Moyen"
 
 #. module: website
 #: view:website.config.settings:website.view_website_config_settings
@@ -1619,7 +1730,7 @@ msgstr "Nouvelle fenêtre"
 
 #. module: website
 #. openerp-web
-#: code:addons/website/static/src/js/website.editor.js:972
+#: code:addons/website/static/src/js/website.editor.js:966
 #, python-format
 msgid "New or existing page"
 msgstr "Nouvelle page ou page existante"
@@ -1663,6 +1774,7 @@ msgstr "Remarque : Pour masquer cette page, décochez-la dans le menu de Personn
 
 #. module: website
 #: view:website:website.layout
+#: view:website:website.snippets
 msgid "Odoo"
 msgstr "Odoo"
 
@@ -1673,28 +1785,35 @@ msgstr "Version d'Odoo"
 
 #. module: website
 #: view:website:website.snippets
-msgid "Odoo provides essential platform for our project management.\n"
-"                                                    Things are better organized and more visible with it."
+msgid ""
+"Odoo provides essential platform for our project management.\n"
+"                                                    Things are better "
+"organized and more visible with it."
 msgstr "Odoo fournit une plate-forme vitale pour notre gestion de projet.\n"
 "                                                    Les choses sont mieux organisées et plus visibles avec cette solution."
 
 #. module: website
 #: view:website:website.snippets
-msgid "Odoo provides essential platform for our project management.\n"
-"                                            Things are better organized and more visible with it."
+msgid ""
+"Odoo provides essential platform for our project management.\n"
+"                                            Things are better organized and "
+"more visible with it."
 msgstr "Odoo fournit une plate-forme vitale pour notre gestion de projet.\n"
 "                                            Les choses sont mieux organisées et plus visibles avec cette solution."
 
 #. module: website
 #: view:website:website.snippets
-msgid "Odoo provides essential platform for our project management.\n"
-"                                Things are better organized and more visible with it."
+msgid ""
+"Odoo provides essential platform for our project management.\n"
+"                                Things are better organized and more visible "
+"with it."
 msgstr "Odoo fournit une plate-forme vitale pour notre gestion de projet.\n"
 "                                Les choses sont mieux organisées et plus visibles avec cette solution."
 
 #. module: website
 #: view:website:website.snippets
-msgid "Odoo's POS is a web application that can run on any device that\n"
+msgid ""
+"Odoo's POS is a web application that can run on any device that\n"
 "                    can display websites with little to no setup required."
 msgstr "Le POS d'Odoo est une application Web qui peut fonctionner sur tout appareil\n"
 "                    qui est compatible avec l'afficher d'un site internet."
@@ -1775,14 +1894,18 @@ msgstr "Nos produits et services"
 
 #. module: website
 #: view:website:website.aboutus
-msgid "Our products are designed for small to medium size companies willing to optimize\n"
+msgid ""
+"Our products are designed for small to medium size companies willing to "
+"optimize\n"
 "                                      their performance."
 msgstr "Nos produits sont conçus pour les entreprises de taille petit à moyenne qui souhaitent optimiser \n"
 "                                      leur performance."
 
 #. module: website
 #: view:website:website.layout
-msgid "Our products are designed for small to medium size companies willing to optimize\n"
+msgid ""
+"Our products are designed for small to medium size companies willing to "
+"optimize\n"
 "                            their performance."
 msgstr "Nos produits sont conçus pour les entreprises de taille petit à moyenne qui souhaitent optimiser \n"
 "                            leur performance."
@@ -1808,7 +1931,8 @@ msgstr "Panel"
 
 #. module: website
 #: view:website:website.snippets
-msgid "Panels are a great tool to compare offers or to emphasize on\n"
+msgid ""
+"Panels are a great tool to compare offers or to emphasize on\n"
 "                key features. To compare products, use the inside columns."
 msgstr "Les Panels sont un excellent outil permettant de comparer des offres ou\n"
 "                de mettre l'accent sur des fonctionnalités clés. Pour comparer des produits, utilisez les colonnes intérieures."
@@ -2054,6 +2178,11 @@ msgid "Resized file content"
 msgstr "Contenus de fichiers redimensionnés"
 
 #. module: website
+#: view:website:website.snippet_options
+msgid "Right"
+msgstr ""
+
+#. module: website
 #. openerp-web
 #: code:addons/website/static/src/xml/website.editor.xml:328
 #, python-format
@@ -2257,6 +2386,7 @@ msgstr "Lent"
 #. module: website
 #. openerp-web
 #: code:addons/website/static/src/xml/website.editor.xml:120
+#: view:website:website.snippet_options
 #, python-format
 msgid "Small"
 msgstr "Petit"
@@ -2289,7 +2419,8 @@ msgstr "Débuter le tutoriel"
 
 #. module: website
 #: view:website:website.snippets
-msgid "Start with the customer – find out what they want\n"
+msgid ""
+"Start with the customer – find out what they want\n"
 "                            and give it to them."
 msgstr "Commencez avec le client – decouvrez leur requis\n"
 "                            et remplissez leur besoin."
@@ -2357,7 +2488,8 @@ msgstr "Nom Technique : "
 
 #. module: website
 #: view:website:website.snippets
-msgid "Tell features the visitor would like to know, not what you'd like to say."
+msgid ""
+"Tell features the visitor would like to know, not what you'd like to say."
 msgstr "Parlez caractéristiques que le visiteur voudrais avoir, et non pas ce que vous voulez dire ."
 
 #. module: website
@@ -2408,8 +2540,10 @@ msgstr "Le menu 'Contenu' vous permet d'ajouter des pages ou ajouter le menu du 
 
 #. module: website
 #: view:website:website.snippets
-msgid "The Point of Sale works perfectly on any kind of touch enabled\n"
-"                    device, whether it's multi-touch tablets like an iPad or\n"
+msgid ""
+"The Point of Sale works perfectly on any kind of touch enabled\n"
+"                    device, whether it's multi-touch tablets like an iPad "
+"or\n"
 "                    keyboardless resistive touchscreen terminals."
 msgstr "Le point de vente fonctionne parfaitement sur ​​tous types d'éléments tactiles\n"
 "                    que ce soient des tablettes multi-tactiles comme iPad ou\n"
@@ -2434,7 +2568,8 @@ msgstr "L'URL complète pour accéder à l'action de serveur sur le site Web"
 #. openerp-web
 #: code:addons/website/static/src/xml/website.editor.xml:268
 #, python-format
-msgid "The image could not be deleted because it is used in the\n"
+msgid ""
+"The image could not be deleted because it is used in the\n"
 "               following pages or views:"
 msgstr "L'image n'a pas pu être supprimée car elle est utilisée dans les \n"
 "               pages ou vues suivantes :"
@@ -2446,8 +2581,10 @@ msgstr "La page que vous recherchez n'a pu être autorisée."
 
 #. module: website
 #: view:website:website.404
-msgid "The page you were looking for could not be found; it is possible you have\n"
-"                        typed the address incorrectly, but it has most probably been removed due\n"
+msgid ""
+"The page you were looking for could not be found; it is possible you have\n"
+"                        typed the address incorrectly, but it has most "
+"probably been removed due\n"
 "                        to the recent website reorganisation."
 msgstr "La page que vous recherchez n'a pu être trouvée ; il est possible que vous ayez\n"
 "                        rentré l'address d'une façon erronée, ou la page à été retirée suite\n" 
@@ -2482,14 +2619,18 @@ msgstr "Troisième caractéristique"
 
 #. module: website
 #: view:website:website.page_404
-msgid "This page does not exists, but you can create it as you are administrator of this site."
+msgid ""
+"This page does not exists, but you can create it as you are administrator of "
+"this site."
 msgstr "Cette page n'existe pas, mais vous pouvez la créer étant donné que vous êtes l'administrateur de ce site ."
 
 #. module: website
 #. openerp-web
 #: code:addons/website/static/src/js/website.tour.banner.js:13
 #, python-format
-msgid "This tutorial will guide you to build your home page. We will start by adding a banner."
+msgid ""
+"This tutorial will guide you to build your home page. We will start by "
+"adding a banner."
 msgstr "Ce tutoriel vous guidera pour construire votre page d'accueil. Nous allons commencer par l'ajout d'une bannière."
 
 #. module: website
@@ -2507,9 +2648,12 @@ msgstr "Titre"
 
 #. module: website
 #: view:website:website.snippets
-msgid "To add a fourth column, reduce the size of these\n"
-"                            three columns using the right icon of each block.\n"
-"                            Then, duplicate one of the column to create a new\n"
+msgid ""
+"To add a fourth column, reduce the size of these\n"
+"                            three columns using the right icon of each "
+"block.\n"
+"                            Then, duplicate one of the column to create a "
+"new\n"
 "                            one as a copy."
 msgstr "Pour ajouter une quatrième colonne, réduisez la taille de ces \\n"
 "                            trois colonnes en utilisant l'icône à droite de chaque bloc\n"
@@ -2684,8 +2828,10 @@ msgstr "Avertissement"
 
 #. module: website
 #: view:website:website.aboutus
-msgid "We are a team of passionate people whose goal is to improve everyone's\n"
-"                                      life through disruptive products. We build great products to solve your\n"
+msgid ""
+"We are a team of passionate people whose goal is to improve everyone's\n"
+"                                      life through disruptive products. We "
+"build great products to solve your\n"
 "                                      business problems."
 msgstr "Nous sommes une équipe de passionnés dont le but est d'améliorer\n"
 "                                      la vie de tous au travers de nouveaux produits. Nous construisons\n"
@@ -2693,8 +2839,10 @@ msgstr "Nous sommes une équipe de passionnés dont le but est d'améliorer\n"
 
 #. module: website
 #: view:website:website.layout
-msgid "We are a team of passionate people whose goal is to improve everyone's\n"
-"                            life through disruptive products. We build great products to solve your\n"
+msgid ""
+"We are a team of passionate people whose goal is to improve everyone's\n"
+"                            life through disruptive products. We build great "
+"products to solve your\n"
 "                            business problems."
 msgstr "Nous sommes une équipe de passionnés dont le but est d'améliorer\n"
 "                                      la vie de tous au travers de nouveaux produits. Nous construisons\n"
@@ -2733,6 +2881,11 @@ msgstr "Page d'accueil du site internet "
 #: model:ir.model,name:website.model_website_menu
 msgid "Website Menu"
 msgstr "Menu du site internet"
+
+#. module: website
+#: field:website.config.settings,website_name:0
+msgid "Website Name"
+msgstr "Nom du site internet"
 
 #. module: website
 #: model:ir.actions.server,name:website.action_partner_post
@@ -2845,10 +2998,24 @@ msgstr "Quel est le matériel compatible avec le POS Odoo?"
 
 #. module: website
 #: view:website:website.snippets
-msgid "While an internet connection is required to start the Point of\n"
-"                    Sale, it will stay operational even after a complete disconnection."
+msgid ""
+"While an internet connection is required to start the Point of\n"
+"                    Sale, it will stay operational even after a complete "
+"disconnection."
 msgstr "Bien que d'une connexion internet soit nécessaire pour démarrer le point de\n"
 "                    ventes, il restera opérationnel même après une déconnexion complète."
+
+#. module: website
+#: view:website:website.snippets
+msgid ""
+"With Odoo's fully integrated software, you can easily manage your\n"
+"                            meetings, schedule business calls, create "
+"recurring meetings,\n"
+"                            synchronize your agenda and easily keep in touch "
+"with your colleagues,\n"
+"                            partners and other people involved in projects "
+"or business discussions."
+msgstr ""
 
 #. module: website
 #: view:website:website.snippet_options
@@ -2857,36 +3024,45 @@ msgstr "Bois"
 
 #. module: website
 #: view:website:website.snippets
-msgid "Write a quote here from one of your customers. Quotes are a\n"
-"                                                    great way to build confidence in your products or services."
+msgid ""
+"Write a quote here from one of your customers. Quotes are a\n"
+"                                                    great way to build "
+"confidence in your products or services."
 msgstr "Faites un devis d'ici à l'un de vos clients. Les recommandations sont\n"
 "                                                    une excellente façon de mettre en valeur vos produits ou services."
 
 #. module: website
 #: view:website:website.snippets
-msgid "Write a quote here from one of your customers. Quotes are a\n"
-"                                            great way to build confidence in your products or services."
+msgid ""
+"Write a quote here from one of your customers. Quotes are a\n"
+"                                            great way to build confidence in "
+"your products or services."
 msgstr "Faites un devis d'ici à l'un de vos clients. Les recommandations sont\n"
 "                                            une excellente façon de mettre en valeur vos produits ou services."
 
 #. module: website
 #: view:website:website.snippets
-msgid "Write a quote here from one of your customers. Quotes are a\n"
-"                                great way to build confidence in your products or services."
+msgid ""
+"Write a quote here from one of your customers. Quotes are a\n"
+"                                great way to build confidence in your "
+"products or services."
 msgstr "Faites un devis d'ici à l'un de vos clients. Les recommandations sont\n"
 "                                une excellente façon de mettre en valeur vos produits ou services."
 
 #. module: website
 #: view:website:website.snippets
-msgid "Write a quote here from one of your customers. Quotes are a\n"
+msgid ""
+"Write a quote here from one of your customers. Quotes are a\n"
 "                great way to build confidence in your products or services."
 msgstr "Faites un devis d'ici à l'un de vos clients. Les recommandations\n"
 "                sont une excellente façon de mettre en valeur vos produits ou services."
 
 #. module: website
 #: view:website:website.snippets
-msgid "Write one or two paragraphs describing your product or\n"
-"                            services. To be successful your content needs to be\n"
+msgid ""
+"Write one or two paragraphs describing your product or\n"
+"                            services. To be successful your content needs to "
+"be\n"
 "                            useful to your readers."
 msgstr "Rédigez un ou deux paragraphes décrivant votre produit ou\n"
 "                            service. Pour avoir un impact votre contenu doit être\n"
@@ -2894,8 +3070,10 @@ msgstr "Rédigez un ou deux paragraphes décrivant votre produit ou\n"
 
 #. module: website
 #: view:website:website.snippets
-msgid "Write one or two paragraphs describing your product,\n"
-"                            services or a specific feature. To be successful\n"
+msgid ""
+"Write one or two paragraphs describing your product,\n"
+"                            services or a specific feature. To be "
+"successful\n"
 "                            your content needs to be useful to your readers."
 msgstr "Rédigez un ou deux paragraphes décrivant votre produit ou\n"
 "                            service. Pour avoir un impact votre \n"
@@ -2994,6 +3172,11 @@ msgstr "client pour cette fonction."
 #, python-format
 msgid "describing your page content"
 msgstr "décrivant le contenu de la page"
+
+#. module: website
+#: view:website:website.snippets
+msgid "don't worry"
+msgstr ""
 
 #. module: website
 #: view:website:website.500
@@ -3100,6 +3283,8 @@ msgstr "pas ce que vous voudriez montrer "
 #: code:addons/website/static/src/xml/website.editor.xml:308
 #: code:addons/website/static/src/xml/website.seo.xml:69
 #: code:addons/website/static/src/xml/website.translator.xml:44
+#: view:website:website.view_website_form
+#: view:website.config.settings:website.view_website_config_settings
 #, python-format
 msgid "or"
 msgstr "ou"

@@ -1442,18 +1442,34 @@ class mail_thread(osv.AbstractModel):
                     if follower.email == email_address:
                         partner_id = follower.id
             # second try: check in partners that are also users
+            # Escape special SQL characters in email_address to avoid invalid matches
+            email_address = (email_address.replace('\\', '\\\\').replace('%', '\\%').replace('_', '\\_'))
+            email_brackets = "<%s>" % email_address
             if not partner_id:
-                ids = partner_obj.search(cr, SUPERUSER_ID, [
-                                                ('email', 'ilike', email_address),
-                                                ('user_ids', '!=', False)
-                                            ], limit=1, context=context)
+                # exact, case-insensitive match
+                ids = partner_obj.search(cr, SUPERUSER_ID,
+                                         [('email', '=ilike', email_address),
+                                          ('user_ids', '!=', False)],
+                                         limit=1, context=context)
+                if not ids:
+                    # if no match with addr-spec, attempt substring match within name-addr pair
+                    ids = partner_obj.search(cr, SUPERUSER_ID,
+                                             [('email', 'ilike', email_brackets),
+                                              ('user_ids', '!=', False)],
+                                             limit=1, context=context)
                 if ids:
                     partner_id = ids[0]
             # third try: check in partners
             if not partner_id:
-                ids = partner_obj.search(cr, SUPERUSER_ID, [
-                                                ('email', 'ilike', email_address)
-                                            ], limit=1, context=context)
+                # exact, case-insensitive match
+                ids = partner_obj.search(cr, SUPERUSER_ID,
+                                         [('email', '=ilike', email_address)],
+                                         limit=1, context=context)
+                if not ids:
+                    # if no match with addr-spec, attempt substring match within name-addr pair
+                    ids = partner_obj.search(cr, SUPERUSER_ID,
+                                             [('email', 'ilike', email_brackets)],
+                                             limit=1, context=context)
                 if ids:
                     partner_id = ids[0]
             partner_ids.append(partner_id)
@@ -1473,13 +1489,15 @@ class mail_thread(osv.AbstractModel):
             partner_id = partner_ids[idx]
             partner_info = {'full_name': email_address, 'partner_id': partner_id}
             result.append(partner_info)
-
             # link mail with this from mail to the new partner id
             if link_mail and partner_info['partner_id']:
+                # Escape special SQL characters in email_address to avoid invalid matches
+                email_address = (email_address.replace('\\', '\\\\').replace('%', '\\%').replace('_', '\\_'))
+                email_brackets = "<%s>" % email_address
                 message_ids = mail_message_obj.search(cr, SUPERUSER_ID, [
                                     '|',
-                                    ('email_from', '=', email_address),
-                                    ('email_from', 'ilike', '<%s>' % email_address),
+                                    ('email_from', '=ilike', email_address),
+                                    ('email_from', 'ilike', email_brackets),
                                     ('author_id', '=', False)
                                 ], context=context)
                 if message_ids:
@@ -1785,6 +1803,26 @@ class mail_thread(osv.AbstractModel):
                 user_field_lst.append(name)
         return user_field_lst
 
+    def _message_auto_subscribe_notify(self, cr, uid, ids, partner_ids, context=None):
+        """ Send notifications to the partners automatically subscribed to the thread
+            Override this method if a custom behavior is needed about partners
+            that should be notified or messages that should be sent
+        """
+        # find first email message, set it as unread for auto_subscribe fields for them to have a notification
+        if partner_ids:
+            for record_id in ids:
+                message_obj = self.pool.get('mail.message')
+                msg_ids = message_obj.search(cr, SUPERUSER_ID, [
+                    ('model', '=', self._name),
+                    ('res_id', '=', record_id),
+                    ('type', '=', 'email')], limit=1, context=context)
+                if not msg_ids:
+                    msg_ids = message_obj.search(cr, SUPERUSER_ID, [
+                        ('model', '=', self._name),
+                        ('res_id', '=', record_id)], limit=1, context=context)
+                if msg_ids:
+                    self.pool.get('mail.notification')._notify(cr, uid, msg_ids[0], partners_to_notify=partner_ids, context=context)
+
     def message_auto_subscribe(self, cr, uid, ids, updated_fields, context=None, values=None):
         """ Handle auto subscription. Two methods for auto subscription exist:
 
@@ -1863,20 +1901,7 @@ class mail_thread(osv.AbstractModel):
             subtypes = list(subtypes) if subtypes is not None else None
             self.message_subscribe(cr, uid, ids, [pid], subtypes, context=context)
 
-        # find first email message, set it as unread for auto_subscribe fields for them to have a notification
-        if user_pids:
-            for record_id in ids:
-                message_obj = self.pool.get('mail.message')
-                msg_ids = message_obj.search(cr, SUPERUSER_ID, [
-                    ('model', '=', self._name),
-                    ('res_id', '=', record_id),
-                    ('type', '=', 'email')], limit=1, context=context)
-                if not msg_ids:
-                    msg_ids = message_obj.search(cr, SUPERUSER_ID, [
-                        ('model', '=', self._name),
-                        ('res_id', '=', record_id)], limit=1, context=context)
-                if msg_ids:
-                    self.pool.get('mail.notification')._notify(cr, uid, msg_ids[0], partners_to_notify=user_pids, context=context)
+        self._message_auto_subscribe_notify(cr, uid, ids, user_pids, context=context)
 
         return True
 
