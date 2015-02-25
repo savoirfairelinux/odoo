@@ -5,7 +5,7 @@ DB = openerp.tests.common.DB
 
 class test_xmlrpc(openerp.tests.common.HttpCase):
     at_install = False
-    post_install = True
+    post_install = False
 
     def test_01_xmlrpc_login(self):
         """ Try to login on the common service. """
