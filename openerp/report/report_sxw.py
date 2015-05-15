@@ -435,8 +435,13 @@ class report_sxw(report_rml, preprocess.report):
                 report_file.close()
         if report_xml.header:
             report_xml.header = self.header
-        if report_xml.use_secondary_logo:
-            context.update(use_secondary_logo=True)
+        try:
+            if report_xml.use_secondary_logo:
+                context.update(use_secondary_logo=True)
+        except AttributeError:
+            _logger.warning(
+                'Module res_company_secondary logo is not correctly installed')
+
         report_type = report_xml.report_type
         if report_type in ['sxw','odt']:
             fnct = self.create_source_odt
