@@ -344,7 +344,7 @@ class crm_lead(base_stage, format_address, osv.osv):
             partner = self.pool.get('res.partner').browse(cr, uid, partner_id, context=context)
             partner_name = (partner.parent_id and partner.parent_id.name) or (partner.is_company and partner.name) or False
             values = {
-                'partner_name' : partner.name,
+                'partner_name' : partner_name,
                 'contact_name': (not partner.is_company and partner.name) or False,
                 'street' : partner.street,
                 'street2' : partner.street2,
