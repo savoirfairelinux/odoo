@@ -1,22 +1,22 @@
-# German translation for openobject-addons
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the openobject-addons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * hr_contract
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: openobject-addons\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Project-Id-Version: Odoo 7.0\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2013-04-21 19:14+0000\n"
-"Last-Translator: Thorsten Vocks (OpenBig.org) <thorsten.vocks@big-"
-"consulting.net>\n"
-"Language-Team: German <de@li.org>\n"
+"PO-Revision-Date: 2015-07-17 09:01+0000\n"
+"Last-Translator: Martin Trigaux\n"
+"Language-Team: German (http://www.transifex.com/odoo/odoo-7/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-21 06:10+0000\n"
-"X-Generator: Launchpad (build 16831)\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: hr_contract
 #: field:hr.contract,wage:0
@@ -54,11 +54,10 @@ msgid "Department"
 msgstr "Abteilung"
 
 #. module: hr_contract
-#: view:hr.contract:0
-#: field:hr.contract,employee_id:0
+#: view:hr.contract:0 field:hr.contract,employee_id:0
 #: model:ir.model,name:hr_contract.model_hr_employee
 msgid "Employee"
-msgstr "Angestellter"
+msgstr "Mitarbeiter"
 
 #. module: hr_contract
 #: view:hr.contract:0
@@ -66,9 +65,7 @@ msgid "Search Contract"
 msgstr "Suche in Vertrag"
 
 #. module: hr_contract
-#: view:hr.contract:0
-#: view:hr.employee:0
-#: field:hr.employee,contract_ids:0
+#: view:hr.contract:0 view:hr.employee:0 field:hr.employee,contract_ids:0
 #: model:ir.actions.act_window,name:hr_contract.act_hr_employee_2_hr_contract
 #: model:ir.actions.act_window,name:hr_contract.action_hr_contract
 #: model:ir.ui.menu,name:hr_contract.hr_menu_contract
@@ -109,61 +106,54 @@ msgstr "Vertragstypen"
 #. module: hr_contract
 #: view:hr.employee:0
 msgid "Medical Exam"
-msgstr "Medizin Examen"
+msgstr "Medizin. Untersuchung"
 
 #. module: hr_contract
 #: field:hr.contract,date_end:0
 msgid "End Date"
-msgstr "bis Datum"
+msgstr "Enddatum"
 
 #. module: hr_contract
 #: help:hr.contract,wage:0
 msgid "Basic Salary of the employee"
-msgstr "Basislohn des Mitarbeiters"
+msgstr "Grundlohn des Mitarbeiters"
 
 #. module: hr_contract
-#: view:hr.contract:0
-#: field:hr.contract,name:0
+#: view:hr.contract:0 field:hr.contract,name:0
 msgid "Contract Reference"
-msgstr "Vertrags Referenz"
+msgstr "Vertragsreferenz"
 
 #. module: hr_contract
 #: help:hr.employee,vehicle_distance:0
 msgid "In kilometers"
-msgstr "in Kilometer"
+msgstr "In Kilometern"
 
 #. module: hr_contract
-#: view:hr.contract:0
-#: field:hr.contract,notes:0
+#: view:hr.contract:0 field:hr.contract,notes:0
 msgid "Notes"
 msgstr "Bemerkungen"
 
 #. module: hr_contract
 #: field:hr.contract,permit_no:0
 msgid "Work Permit No"
-msgstr "Arbeitserlaubnis Nummer"
+msgstr "Arbeitserlaubnisnummer"
 
 #. module: hr_contract
-#: view:hr.contract:0
-#: view:hr.employee:0
-#: field:hr.employee,contract_id:0
+#: view:hr.contract:0 view:hr.employee:0 field:hr.employee,contract_id:0
 #: model:ir.model,name:hr_contract.model_hr_contract
 #: model:ir.ui.menu,name:hr_contract.next_id_56
 msgid "Contract"
 msgstr "Arbeitsvertrag"
 
 #. module: hr_contract
-#: view:hr.contract:0
-#: field:hr.contract,type_id:0
-#: view:hr.contract.type:0
+#: view:hr.contract:0 field:hr.contract,type_id:0 view:hr.contract.type:0
 #: field:hr.contract.type,name:0
 #: model:ir.model,name:hr_contract.model_hr_contract_type
 msgid "Contract Type"
 msgstr "Arbeitsvertragstyp"
 
 #. module: hr_contract
-#: view:hr.contract:0
-#: field:hr.contract,working_hours:0
+#: view:hr.contract:0 field:hr.contract,working_hours:0
 msgid "Working Schedule"
 msgstr "Arbeitszeiten"
 
@@ -180,9 +170,7 @@ msgstr "Arbeitsstelle"
 #. module: hr_contract
 #: constraint:hr.contract:0
 msgid "Error! Contract start-date must be less than contract end-date."
-msgstr ""
-"Fehler ! Das Start Datum des Vertrags muss vor dem Ende Datum des Vertrags "
-"liegen."
+msgstr "Fehler ! Das Startdatum des Vertrags muss vor dem Enddatum des Vertrags liegen."
 
 #. module: hr_contract
 #: field:hr.employee,manager:0
@@ -192,7 +180,7 @@ msgstr "Abteilungsleiter?"
 #. module: hr_contract
 #: field:hr.contract,date_start:0
 msgid "Start Date"
-msgstr "von Datum"
+msgstr "Startdatum"
 
 #. module: hr_contract
 #: field:hr.contract,visa_no:0
@@ -222,7 +210,7 @@ msgstr "Dauer"
 #. module: hr_contract
 #: field:hr.contract,visa_expire:0
 msgid "Visa Expire Date"
-msgstr "Visa Gültig Bis"
+msgstr "Visa gültig bis"
 
 #. module: hr_contract
 #: field:hr.employee,medic_exam:0
@@ -232,7 +220,7 @@ msgstr "Medizinische Untersuchung"
 #. module: hr_contract
 #: field:hr.contract,trial_date_end:0
 msgid "Trial End Date"
-msgstr "Probezeit Ende"
+msgstr "Probezeitende"
 
 #. module: hr_contract
 #: view:hr.contract.type:0

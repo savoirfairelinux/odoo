@@ -18,6 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>
 #
 ##############################################################################
+from email.utils import formataddr
+
 from openerp.osv import osv, fields
 from openerp import tools, SUPERUSER_ID
 
@@ -155,9 +157,9 @@ class mail_notification(osv.Model):
 
         # email_from: partner-user alias or partner email or mail.message email_from
         if msg.author_id and msg.author_id.user_ids and msg.author_id.user_ids[0].alias_domain and msg.author_id.user_ids[0].alias_name:
-            email_from = '%s <%s@%s>' % (msg.author_id.name, msg.author_id.user_ids[0].alias_name, msg.author_id.user_ids[0].alias_domain)
+            email_from = formataddr((msg.author_id.name, '%s@%s' % (msg.author_id.user_ids[0].alias_name, msg.author_id.user_ids[0].alias_domain)))
         elif msg.author_id:
-            email_from = '%s <%s>' % (msg.author_id.name, msg.author_id.email)
+            email_from = formataddr((msg.author_id.name, msg.author_id.email))
         else:
             email_from = msg.email_from
 
@@ -172,6 +174,9 @@ class mail_notification(osv.Model):
             'email_from': email_from,
             'references': references,
         }
+        if 'mail_server_id' in context:
+            # temporary workaround for mail from send mail wizard
+            mail_values['mail_server_id'] = context['mail_server_id']
         email_notif_id = mail_mail.create(cr, uid, mail_values, context=context)
         try:
             return mail_mail.send(cr, uid, [email_notif_id], recipient_ids=notify_partner_ids, context=context)

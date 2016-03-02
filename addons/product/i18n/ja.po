@@ -1,21 +1,22 @@
-# Japanese translation for openobject-addons
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the openobject-addons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * product
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: openobject-addons\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2014-02-08 16:25+0000\n"
-"Last-Translator: hiro TAKADA <tkhiro0712@gmail.com>\n"
-"Language-Team: Japanese <ja@li.org>\n"
+"Project-Id-Version: Odoo 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-14 00:10+0000\n"
+"PO-Revision-Date: 2015-10-30 09:20+0000\n"
+"Last-Translator: Martin Trigaux\n"
+"Language-Team: Japanese (http://www.transifex.com/odoo/odoo-7/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-02-09 06:51+0000\n"
-"X-Generator: Launchpad (build 16916)\n"
+"Content-Transfer-Encoding: \n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: product
 #: field:product.packaging,rows:0
@@ -25,7 +26,7 @@ msgstr "層の数"
 #. module: product
 #: view:res.partner:0
 msgid "the parent company"
-msgstr ""
+msgstr "親会社"
 
 #. module: product
 #: help:product.pricelist.item,base:0
@@ -39,6 +40,7 @@ msgstr "これは主仕入先から仕入れる最小数量です。"
 
 #. module: product
 #: model:product.template,name:product.product_product_34_product_template
+#: model:product.template,name:product.product_template_34
 msgid "Webcam"
 msgstr ""
 
@@ -76,6 +78,7 @@ msgstr "固定"
 
 #. module: product
 #: model:product.template,name:product.product_product_10_product_template
+#: model:product.template,name:product.product_template_10
 msgid "Mouse, Optical"
 msgstr ""
 
@@ -92,11 +95,13 @@ msgstr "ルール名"
 #. module: product
 #: help:product.template,list_price:0
 msgid ""
-"Base price to compute the customer price. Sometimes called the catalog price."
+"Base price to compute the customer price. Sometimes called the catalog "
+"price."
 msgstr "顧客価格を計算するための基準価格。カタログ価格と呼ぶこともあります。"
 
 #. module: product
 #: model:product.template,name:product.product_product_3_product_template
+#: model:product.template,name:product.product_template_3
 msgid "PC Assemble SC234"
 msgstr ""
 
@@ -108,11 +113,10 @@ msgid ""
 msgstr ""
 
 #. module: product
-#: code:addons/product/pricelist.py:179
-#: code:addons/product/product.py:208
+#: code:addons/product/pricelist.py:198 code:addons/product/product.py:208
 #, python-format
 msgid "Warning!"
-msgstr ""
+msgstr "警告"
 
 #. module: product
 #: field:product.product,image_small:0
@@ -149,6 +153,7 @@ msgstr "価格リスト"
 
 #. module: product
 #: model:product.template,name:product.product_product_4_product_template
+#: model:product.template,name:product.product_template_4
 msgid "PC Assemble SC349"
 msgstr ""
 
@@ -156,11 +161,9 @@ msgstr ""
 #: help:product.product,seller_delay:0
 msgid ""
 "This is the average delay in days between the purchase order confirmation "
-"and the reception of goods for this product and for the default supplier. It "
-"is used by the scheduler to order requests based on reordering delays."
-msgstr ""
-"これはこの製品とデフォルト仕入先のための発注オーダーの確認から製品を受け取るまでの平均遅延日数です。これは再オーダーの遅延を元にしたオーダー要求のためにス"
-"ケジューラによって使用されます。"
+"and the reception of goods for this product and for the default supplier. It"
+" is used by the scheduler to order requests based on reordering delays."
+msgstr "これはこの製品とデフォルト仕入先のための発注オーダーの確認から製品を受け取るまでの平均遅延日数です。これは再オーダーの遅延を元にしたオーダー要求のためにスケジューラによって使用されます。"
 
 #. module: product
 #: model:product.pricelist.version,name:product.ver0
@@ -179,8 +182,7 @@ msgid "Sale Pricelist"
 msgstr "販売価格リスト"
 
 #. module: product
-#: view:product.template:0
-#: field:product.template,type:0
+#: view:product.template:0 field:product.template,type:0
 msgid "Product Type"
 msgstr "製品タイプ"
 
@@ -204,6 +206,7 @@ msgstr "親分類"
 
 #. module: product
 #: model:product.template,description:product.product_product_33_product_template
+#: model:product.template,description:product.product_template_33
 msgid "Headset for laptop PC with USB connector."
 msgstr ""
 
@@ -228,23 +231,15 @@ msgstr ""
 #: help:product.product,outgoing_qty:0
 msgid ""
 "Quantity of products that are planned to leave.\n"
-"In a context with a single Stock Location, this includes goods leaving this "
-"Location, or any of its children.\n"
-"In a context with a single Warehouse, this includes goods leaving the Stock "
-"Location of this Warehouse, or any of its children.\n"
-"In a context with a single Shop, this includes goods leaving the Stock "
-"Location of the Warehouse of this Shop, or any of its children.\n"
-"Otherwise, this includes goods leaving any Stock Location with 'internal' "
-"type."
-msgstr ""
-"出庫を予定している製品の数量。\n"
-"ひとつの在庫場所では、この場所または子から出庫する商品を含みます。\n"
-"ひとつの倉庫では、この倉庫の在庫場所または子から出庫する商品を含みます。\n"
-"ひとつの店舗では、この店舗にある倉庫の在庫場所または子から出庫する商品を含みます。\n"
-"そうでなければ、内部タイプとして任意の在庫場所から出庫する商品を含みます。"
+"In a context with a single Stock Location, this includes goods leaving this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods leaving the Stock Location of this Warehouse, or any of its children.\n"
+"In a context with a single Shop, this includes goods leaving the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods leaving any Stock Location with 'internal' type."
+msgstr "出庫を予定している製品の数量。\nひとつの在庫場所では、この場所または子から出庫する商品を含みます。\nひとつの倉庫では、この倉庫の在庫場所または子から出庫する商品を含みます。\nひとつの店舗では、この店舗にある倉庫の在庫場所または子から出庫する商品を含みます。\nそうでなければ、内部タイプとして任意の在庫場所から出庫する商品を含みます。"
 
 #. module: product
 #: model:product.template,description_sale:product.product_product_42_product_template
+#: model:product.template,description_sale:product.product_template_42
 msgid ""
 "Office Editing Software with word processing, spreadsheets, presentations, "
 "graphics, and databases..."
@@ -259,9 +254,7 @@ msgstr "主仕入先"
 #: model:ir.actions.act_window,name:product.product_ul_form_action
 #: model:ir.model,name:product.model_product_packaging
 #: model:ir.ui.menu,name:product.menu_product_ul_form_action
-#: view:product.packaging:0
-#: view:product.product:0
-#: view:product.ul:0
+#: view:product.packaging:0 view:product.product:0 view:product.ul:0
 msgid "Packaging"
 msgstr "梱包"
 
@@ -272,14 +265,14 @@ msgid ""
 msgstr "チェックを外すと、製品を削除せずに非表示にできます。"
 
 #. module: product
-#: view:product.product:0
-#: field:product.template,categ_id:0
+#: view:product.product:0 field:product.template,categ_id:0
 #: field:product.uom,category_id:0
 msgid "Category"
 msgstr "分類"
 
 #. module: product
 #: model:product.template,name:product.product_product_25_product_template
+#: model:product.template,name:product.product_template_25
 msgid "Laptop E5023"
 msgstr ""
 
@@ -295,6 +288,7 @@ msgstr "層別パッケージの数"
 
 #. module: product
 #: model:product.template,name:product.product_product_30_product_template
+#: model:product.template,name:product.product_template_30
 msgid "Pen drive, SP-4"
 msgstr ""
 
@@ -305,12 +299,12 @@ msgstr "梱包入数"
 
 #. module: product
 #: model:product.template,name:product.product_product_29_product_template
+#: model:product.template,name:product.product_template_29
 msgid "Pen drive, SP-2"
 msgstr ""
 
 #. module: product
-#: view:product.product:0
-#: view:product.template:0
+#: view:product.product:0 view:product.template:0
 #: field:product.template,state:0
 msgid "Status"
 msgstr "ステータス"
@@ -342,10 +336,8 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to add a new packaging type.\n"
 "              </p><p>\n"
-"                The packaging type define the dimensions as well as the "
-"number\n"
-"                of products per package. This will ensure salesperson sell "
-"the\n"
+"                The packaging type define the dimensions as well as the number\n"
+"                of products per package. This will ensure salesperson sell the\n"
 "                right number of products according to the package selected.\n"
 "              </p>\n"
 "            "
@@ -358,6 +350,7 @@ msgstr "製品管理者"
 
 #. module: product
 #: model:product.template,name:product.product_product_7_product_template
+#: model:product.template,name:product.product_template_7
 msgid "17” LCD Monitor"
 msgstr ""
 
@@ -372,8 +365,7 @@ msgid "Products Price Search"
 msgstr "製品価格検索"
 
 #. module: product
-#: view:product.template:0
-#: field:product.template,description_sale:0
+#: view:product.template:0 field:product.template,description_sale:0
 msgid "Sale Description"
 msgstr "販売説明"
 
@@ -385,7 +377,7 @@ msgstr "パッケージの長さ"
 #. module: product
 #: field:product.product,message_summary:0
 msgid "Summary"
-msgstr ""
+msgstr "要約"
 
 #. module: product
 #: help:product.template,weight_net:0
@@ -393,8 +385,7 @@ msgid "The net weight in Kg."
 msgstr "正味重量kg"
 
 #. module: product
-#: field:pricelist.partnerinfo,min_quantity:0
-#: field:product.supplierinfo,qty:0
+#: field:pricelist.partnerinfo,min_quantity:0 field:product.supplierinfo,qty:0
 msgid "Quantity"
 msgstr "数量"
 
@@ -419,20 +410,11 @@ msgstr "重量"
 #: help:product.product,virtual_available:0
 msgid ""
 "Forecast quantity (computed as Quantity On Hand - Outgoing + Incoming)\n"
-"In a context with a single Stock Location, this includes goods stored in "
-"this location, or any of its children.\n"
-"In a context with a single Warehouse, this includes goods stored in the "
-"Stock Location of this Warehouse, or any of its children.\n"
-"In a context with a single Shop, this includes goods stored in the Stock "
-"Location of the Warehouse of this Shop, or any of its children.\n"
-"Otherwise, this includes goods stored in any Stock Location with 'internal' "
-"type."
-msgstr ""
-"予測数量(手元数量 - 出庫予定 + 入庫予定として計算)\n"
-"ひとつの在庫場所では、この場所または子に格納されている商品を含みます。\n"
-"ひとつの倉庫では、この倉庫の在庫場所または子に格納されている商品を含みます。\n"
-"ひとつの店舗では、この店舗にある倉庫の在庫場所または子に格納されている商品を含みます。\n"
-"そうでなければ、内部タイプとして任意の在庫場所に格納されている商品を含みます。"
+"In a context with a single Stock Location, this includes goods stored in this location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.\n"
+"In a context with a single Shop, this includes goods stored in the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods stored in any Stock Location with 'internal' type."
+msgstr "予測数量(手元数量 - 出庫予定 + 入庫予定として計算)\nひとつの在庫場所では、この場所または子に格納されている商品を含みます。\nひとつの倉庫では、この倉庫の在庫場所または子に格納されている商品を含みます。\nひとつの店舗では、この店舗にある倉庫の在庫場所または子に格納されている商品を含みます。\nそうでなければ、内部タイプとして任意の在庫場所に格納されている商品を含みます。"
 
 #. module: product
 #: field:product.packaging,height:0
@@ -452,12 +434,9 @@ msgstr "製品の属性を管理"
 #. module: product
 #: help:product.uom,factor:0
 msgid ""
-"How much bigger or smaller this unit is compared to the reference Unit of "
-"Measure for this category:\n"
+"How much bigger or smaller this unit is compared to the reference Unit of Measure for this category:\n"
 "1 * (reference unit) = ratio * (this unit)"
-msgstr ""
-"この単位がどのくらい大きいか小さいかは、このカテゴリの基準単位と比較されます。\n"
-"1 * (基準単位) = 比率 * (この単位)"
+msgstr "この単位がどのくらい大きいか小さいかは、このカテゴリの基準単位と比較されます。\n1 * (基準単位) = 比率 * (この単位)"
 
 #. module: product
 #: model:ir.model,name:product.model_pricelist_partnerinfo
@@ -491,6 +470,7 @@ msgstr "販売・購買"
 
 #. module: product
 #: model:product.template,name:product.product_product_44_product_template
+#: model:product.template,name:product.product_template_44
 msgid "GrapWorks Software"
 msgstr ""
 
@@ -501,6 +481,7 @@ msgstr "作業時間"
 
 #. module: product
 #: model:product.template,name:product.product_product_42_product_template
+#: model:product.template,name:product.product_template_42
 msgid "Office Suite"
 msgstr ""
 
@@ -511,32 +492,24 @@ msgstr "測定タイプ"
 
 #. module: product
 #: model:product.template,name:product.product_product_32_product_template
+#: model:product.template,name:product.product_template_32
 msgid "Headset standard"
 msgstr ""
 
 #. module: product
 #: model:product.uom,name:product.product_uom_day
 msgid "Day(s)"
-msgstr ""
+msgstr "日"
 
 #. module: product
 #: help:product.product,incoming_qty:0
 msgid ""
 "Quantity of products that are planned to arrive.\n"
-"In a context with a single Stock Location, this includes goods arriving to "
-"this Location, or any of its children.\n"
-"In a context with a single Warehouse, this includes goods arriving to the "
-"Stock Location of this Warehouse, or any of its children.\n"
-"In a context with a single Shop, this includes goods arriving to the Stock "
-"Location of the Warehouse of this Shop, or any of its children.\n"
-"Otherwise, this includes goods arriving to any Stock Location with "
-"'internal' type."
-msgstr ""
-"入庫を予定している製品の数量。\n"
-"ひとつの在庫場所では、この場所または子に入庫する商品を含みます。\n"
-"ひとつの倉庫では、この倉庫の在庫場所または子に入庫する商品を含みます。\n"
-"ひとつの店舗では、この店舗にある倉庫の在庫場所または子に入庫する商品を含みます。\n"
-"そうでなければ、内部タイプとして任意の在庫場所に入庫する商品を含みます。"
+"In a context with a single Stock Location, this includes goods arriving to this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods arriving to the Stock Location of this Warehouse, or any of its children.\n"
+"In a context with a single Shop, this includes goods arriving to the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods arriving to any Stock Location with 'internal' type."
+msgstr "入庫を予定している製品の数量。\nひとつの在庫場所では、この場所または子に入庫する商品を含みます。\nひとつの倉庫では、この倉庫の在庫場所または子に入庫する商品を含みます。\nひとつの店舗では、この店舗にある倉庫の在庫場所または子に入庫する商品を含みます。\nそうでなければ、内部タイプとして任意の在庫場所に入庫する商品を含みます。"
 
 #. module: product
 #: constraint:product.template:0
@@ -579,11 +552,13 @@ msgstr "購買価格リスト"
 
 #. module: product
 #: model:product.template,name:product.product_product_5_product_template
+#: model:product.template,name:product.product_template_5
 msgid "PC Assemble + Custom (PC on Demand)"
 msgstr ""
 
 #. module: product
 #: model:product.template,description:product.product_product_27_product_template
+#: model:product.template,description:product.product_template_27
 msgid "Custom Laptop based on customer's requirement."
 msgstr ""
 
@@ -600,6 +575,7 @@ msgstr "単位カテゴリが不整合です。"
 
 #. module: product
 #: model:product.template,name:product.product_product_36_product_template
+#: model:product.template,name:product.product_template_36
 msgid "Blank DVD-RW"
 msgstr ""
 
@@ -633,7 +609,7 @@ msgstr ""
 #. module: product
 #: view:product.price_list:0
 msgid "or"
-msgstr ""
+msgstr "または"
 
 #. module: product
 #: constraint:product.packaging:0
@@ -647,11 +623,13 @@ msgstr "最小数量"
 
 #. module: product
 #: model:product.template,name:product.product_product_12_product_template
+#: model:product.template,name:product.product_template_12
 msgid "Mouse, Wireless"
 msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_22_product_template
+#: model:product.template,name:product.product_template_22
 msgid "Processor Core i5 2.70 Ghz"
 msgstr ""
 
@@ -681,31 +659,29 @@ msgid ""
 "When a version is duplicated it is set to non active, so that the dates do "
 "not overlaps with original version. You should change the dates and "
 "reactivate the pricelist"
-msgstr ""
-"バージョンが重複している時は、それは非アクティブにセットされています。日付はオリジナルのバージョンと重複できません。日付を変更して価格リストを再アクティブ"
-"化する必要があります。"
+msgstr "バージョンが重複している時は、それは非アクティブにセットされています。日付はオリジナルのバージョンと重複できません。日付を変更して価格リストを再アクティブ化する必要があります。"
 
 #. module: product
 #: model:product.template,name:product.product_product_18_product_template
+#: model:product.template,name:product.product_template_18
 msgid "HDD SH-2"
 msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_17_product_template
+#: model:product.template,name:product.product_template_17
 msgid "HDD SH-1"
 msgstr ""
 
 #. module: product
-#: field:product.supplierinfo,name:0
-#: field:product.template,seller_ids:0
+#: field:product.supplierinfo,name:0 field:product.template,seller_ids:0
 msgid "Supplier"
 msgstr "仕入先"
 
 #. module: product
 #: help:product.template,cost_method:0
 msgid ""
-"Standard Price: The cost price is manually updated at the end of a specific "
-"period (usually every year). \n"
+"Standard Price: The cost price is manually updated at the end of a specific period (usually every year). \n"
 "Average Price: The cost price is recomputed at each incoming shipment."
 msgstr ""
 
@@ -732,8 +708,7 @@ msgstr "EAN13バーコード"
 #. module: product
 #: model:ir.actions.act_window,name:product.action_product_price_list
 #: model:ir.model,name:product.model_product_price_list
-#: view:product.price_list:0
-#: report:product.pricelist:0
+#: view:product.price_list:0 report:product.pricelist:0
 #: field:product.pricelist.version,pricelist_id:0
 msgid "Price List"
 msgstr "価格リスト"
@@ -750,6 +725,7 @@ msgstr "購買"
 
 #. module: product
 #: model:product.template,name:product.product_product_33_product_template
+#: model:product.template,name:product.product_template_33
 msgid "Headset USB"
 msgstr ""
 
@@ -780,6 +756,7 @@ msgstr "製品の仕入先"
 
 #. module: product
 #: model:product.template,name:product.product_product_28_product_template
+#: model:product.template,name:product.product_template_28
 msgid "External Hard disk"
 msgstr ""
 
@@ -814,9 +791,7 @@ msgid "Print"
 msgstr "印刷"
 
 #. module: product
-#: view:product.product:0
-#: field:product.ul,type:0
-#: field:product.uom,uom_type:0
+#: view:product.product:0 field:product.ul,type:0 field:product.uom,uom_type:0
 msgid "Type"
 msgstr "タイプ"
 
@@ -841,15 +816,14 @@ msgstr "キー"
 #. module: product
 #: model:ir.actions.report.xml,name:product.report_product_pricelist
 #: model:ir.model,name:product.model_product_pricelist
-#: field:product.product,pricelist_id:0
-#: view:product.supplierinfo:0
+#: field:product.product,pricelist_id:0 view:product.supplierinfo:0
 msgid "Pricelist"
 msgstr "価格リスト"
 
 #. module: product
 #: model:product.uom,name:product.product_uom_hour
 msgid "Hour(s)"
-msgstr ""
+msgstr "時"
 
 #. module: product
 #: selection:product.template,state:0
@@ -875,6 +849,7 @@ msgstr "価格の丸め"
 
 #. module: product
 #: model:product.template,name:product.product_product_1_product_template
+#: model:product.template,name:product.product_template_1
 msgid "On Site Monitoring"
 msgstr ""
 
@@ -891,14 +866,14 @@ msgstr "仕入先情報"
 
 #. module: product
 #: model:ir.model,name:product.model_res_currency
-#: field:product.price.type,currency_id:0
-#: report:product.pricelist:0
+#: field:product.price.type,currency_id:0 report:product.pricelist:0
 #: field:product.pricelist,currency_id:0
 msgid "Currency"
 msgstr "通貨"
 
 #. module: product
 #: model:product.template,name:product.product_product_46_product_template
+#: model:product.template,name:product.product_template_46
 msgid "Datacard"
 msgstr ""
 
@@ -923,6 +898,7 @@ msgstr "調達と場所"
 
 #. module: product
 #: model:product.template,name:product.product_product_20_product_template
+#: model:product.template,name:product.product_template_20
 msgid "Motherboard I9P57"
 msgstr ""
 
@@ -959,16 +935,12 @@ msgstr "製品仕入先についての情報"
 #. module: product
 #: help:product.uom,factor_inv:0
 msgid ""
-"How many times this Unit of Measure is bigger than the reference Unit of "
-"Measure in this category:\n"
+"How many times this Unit of Measure is bigger than the reference Unit of Measure in this category:\n"
 "1 * (this unit) = ratio * (reference unit)"
-msgstr ""
-"このカテゴリの基準単位に比べて、この単位は何倍大きいか：\n"
-"1 * (この単位) = 比率 * (基準単位)"
+msgstr "このカテゴリの基準単位に比べて、この単位は何倍大きいか：\n1 * (この単位) = 比率 * (基準単位)"
 
 #. module: product
-#: view:product.template:0
-#: field:product.template,description_purchase:0
+#: view:product.template:0 field:product.template,description_purchase:0
 msgid "Purchase Description"
 msgstr "仕入説明"
 
@@ -999,6 +971,7 @@ msgstr "倉庫での仕入オーダーの確認から製品の受入の間の日
 
 #. module: product
 #: model:product.template,description_sale:product.product_product_3_product_template
+#: model:product.template,description_sale:product.product_template_3
 msgid ""
 "17\" LCD Monitor\n"
 "Processor AMD 8-Core\n"
@@ -1018,6 +991,7 @@ msgstr "コード"
 
 #. module: product
 #: model:product.template,name:product.product_product_27_product_template
+#: model:product.template,name:product.product_template_27
 msgid "Laptop Customized"
 msgstr ""
 
@@ -1028,6 +1002,7 @@ msgstr "出荷単位"
 
 #. module: product
 #: model:product.template,name:product.product_product_35_product_template
+#: model:product.template,name:product.product_template_35
 msgid "Blank CD"
 msgstr ""
 
@@ -1042,8 +1017,7 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to define a new product.\n"
 "              </p><p>\n"
-"                You must define a product for everything you sell, whether "
-"it's\n"
+"                You must define a product for everything you sell, whether it's\n"
 "                a physical product, a consumable or a service you offer to\n"
 "                customers.\n"
 "              </p><p>\n"
@@ -1057,24 +1031,24 @@ msgstr ""
 #. module: product
 #: view:product.price_list:0
 msgid "Cancel"
-msgstr ""
+msgstr "キャンセル"
 
 #. module: product
 #: model:product.template,description:product.product_product_37_product_template
+#: model:product.template,description:product.product_template_37
 msgid "All in one hi-speed printer with fax and scanner."
 msgstr ""
 
 #. module: product
 #: help:product.supplierinfo,min_qty:0
 msgid ""
-"The minimal quantity to purchase to this supplier, expressed in the supplier "
-"Product Unit of Measure if not empty, in the default unit of measure of the "
-"product otherwise."
+"The minimal quantity to purchase to this supplier, expressed in the supplier"
+" Product Unit of Measure if not empty, in the default unit of measure of the"
+" product otherwise."
 msgstr "この仕入先から購入する最小数量です。空でない場合は仕入先の製品単位、そうでなければ製品のデフォルト単位を表します。"
 
 #. module: product
-#: view:product.product:0
-#: view:product.template:0
+#: view:product.product:0 view:product.template:0
 msgid "Information"
 msgstr "情報"
 
@@ -1106,7 +1080,7 @@ msgstr "右親"
 #. module: product
 #: field:product.product,price:0
 msgid "Price"
-msgstr ""
+msgstr "価格"
 
 #. module: product
 #: field:product.pricelist.item,price_surcharge:0
@@ -1114,13 +1088,14 @@ msgid "Price Surcharge"
 msgstr "追加料金の価格"
 
 #. module: product
-#: code:addons/product/pricelist.py:380
+#: code:addons/product/pricelist.py:401
 #, python-format
 msgid "Supplier Prices on the product form"
 msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_8_product_template
+#: model:product.template,name:product.product_template_8
 msgid "USB Keyboard, QWERTY"
 msgstr ""
 
@@ -1135,12 +1110,9 @@ msgid "Logistical Units"
 msgstr "物流ユニット"
 
 #. module: product
-#: field:product.category,complete_name:0
-#: field:product.category,name:0
-#: field:product.pricelist.type,name:0
-#: field:product.pricelist.version,name:0
-#: field:product.template,name:0
-#: field:product.ul,name:0
+#: field:product.category,complete_name:0 field:product.category,name:0
+#: field:product.pricelist.type,name:0 field:product.pricelist.version,name:0
+#: field:product.template,name:0 field:product.ul,name:0
 #: field:product.uom.categ,name:0
 msgid "Name"
 msgstr "名称"
@@ -1153,7 +1125,7 @@ msgstr "コンピュータ"
 #. module: product
 #: help:product.product,message_ids:0
 msgid "Messages and communication history"
-msgstr ""
+msgstr "メッセージと通信履歴"
 
 #. module: product
 #: model:product.uom,name:product.product_uom_kgm
@@ -1173,12 +1145,11 @@ msgstr ""
 #. module: product
 #: field:product.template,standard_price:0
 msgid "Cost"
-msgstr ""
+msgstr "経費"
 
 #. module: product
 #: help:product.category,sequence:0
-msgid ""
-"Gives the sequence order when displaying a list of product categories."
+msgid "Gives the sequence order when displaying a list of product categories."
 msgstr "製品分類のリストを表示する時に並び順を与えます。"
 
 #. module: product
@@ -1187,8 +1158,7 @@ msgid "Dozen(s)"
 msgstr ""
 
 #. module: product
-#: field:product.uom,factor:0
-#: field:product.uom,factor_inv:0
+#: field:product.uom,factor:0 field:product.uom,factor_inv:0
 msgid "Ratio"
 msgstr "比率"
 
@@ -1203,10 +1173,8 @@ msgid "Associated field in the product form."
 msgstr "製品フォームの中の関係項目"
 
 #. module: product
-#: view:product.product:0
-#: view:product.template:0
-#: field:product.template,uom_id:0
-#: field:product.uom,name:0
+#: view:product.product:0 view:product.template:0
+#: field:product.template,uom_id:0 field:product.uom,name:0
 msgid "Unit of Measure"
 msgstr "単位"
 
@@ -1223,7 +1191,7 @@ msgstr "販売単位"
 #. module: product
 #: field:product.product,message_unread:0
 msgid "Unread Messages"
-msgstr ""
+msgstr "未読メッセージ"
 
 #. module: product
 #: model:ir.actions.act_window,name:product.product_uom_categ_form_action
@@ -1251,10 +1219,8 @@ msgstr "製品識別に使用する国際物品番号。"
 #: model:ir.actions.act_window,help:product.product_category_action
 msgid ""
 "<p>\n"
-"                Here is a list of all your products classified by category. "
-"You\n"
-"                can click a category to get the list of all products linked "
-"to\n"
+"                Here is a list of all your products classified by category. You\n"
+"                can click a category to get the list of all products linked to\n"
 "                this category or to a child of this category.\n"
 "              </p>\n"
 "            "
@@ -1266,8 +1232,8 @@ msgstr ""
 msgid ""
 "New Unit of Measure '%s' must belong to same Unit of Measure category '%s' "
 "as of old Unit of Measure '%s'. If you need to change the unit of measure, "
-"you may deactivate this product from the 'Procurements' tab and create a new "
-"one."
+"you may deactivate this product from the 'Procurements' tab and create a new"
+" one."
 msgstr ""
 
 #. module: product
@@ -1276,13 +1242,13 @@ msgstr ""
 #: model:ir.actions.act_window,name:product.product_normal_action_sell
 #: model:ir.actions.act_window,name:product.product_normal_action_tree
 #: model:ir.ui.menu,name:product.menu_products
-#: model:ir.ui.menu,name:product.prod_config_main
-#: view:product.product:0
+#: model:ir.ui.menu,name:product.prod_config_main view:product.product:0
 msgid "Products"
 msgstr "製品"
 
 #. module: product
 #: model:product.template,description:product.product_product_32_product_template
+#: model:product.template,description:product.product_template_32
 msgid ""
 "Hands free headset for laptop PC with in-line microphone and headphone plug."
 msgstr ""
@@ -1300,7 +1266,7 @@ msgstr ""
 #. module: product
 #: field:product.product,name_template:0
 msgid "Template Name"
-msgstr ""
+msgstr "テンプレート名"
 
 #. module: product
 #: field:product.template,weight_net:0
@@ -1308,8 +1274,7 @@ msgid "Net Weight"
 msgstr "正味重量"
 
 #. module: product
-#: view:product.packaging:0
-#: view:product.product:0
+#: view:product.packaging:0 view:product.product:0
 msgid "Pallet Dimension"
 msgstr "パレットの寸法"
 
@@ -1343,26 +1308,27 @@ msgid "Supplier Info"
 msgstr ""
 
 #. module: product
-#: code:addons/product/product.py:732
+#: code:addons/product/product.py:733
 #, python-format
 msgid "%s (copy)"
-msgstr ""
+msgstr "%s（コピー）"
 
 #. module: product
 #: model:product.template,name:product.product_product_2_product_template
+#: model:product.template,name:product.product_template_2
 msgid "On Site Assistance"
 msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_39_product_template
+#: model:product.template,name:product.product_template_39
 msgid "Toner Cartridge"
 msgstr ""
 
 #. module: product
 #: model:ir.actions.act_window,name:product.product_uom_form_action
 #: model:ir.ui.menu,name:product.menu_product_uom_form_action
-#: model:ir.ui.menu,name:product.next_id_16
-#: view:product.uom:0
+#: model:ir.ui.menu,name:product.next_id_16 view:product.uom:0
 msgid "Units of Measure"
 msgstr "単位"
 
@@ -1387,6 +1353,7 @@ msgstr "この仕入先の製品コードは見積要求を印刷する時に使
 
 #. module: product
 #: model:product.template,name:product.product_product_43_product_template
+#: model:product.template,name:product.product_template_43
 msgid "Zed+ Antivirus"
 msgstr ""
 
@@ -1398,14 +1365,13 @@ msgstr "価格リストバージョン"
 #. module: product
 #: help:product.pricelist.item,sequence:0
 msgid ""
-"Gives the order in which the pricelist items will be checked. The evaluation "
-"gives highest priority to lowest sequence and stops as soon as a matching "
+"Gives the order in which the pricelist items will be checked. The evaluation"
+" gives highest priority to lowest sequence and stops as soon as a matching "
 "item is found."
 msgstr "価格リスト項目がチェックされる順序を与えます。その評価は低い順序に最も高い優先度を与えます。そして、一致する項目が見つかると停止します。"
 
 #. module: product
-#: view:product.product:0
-#: selection:product.template,type:0
+#: view:product.product:0 selection:product.template,type:0
 msgid "Consumable"
 msgstr "消耗品"
 
@@ -1421,6 +1387,7 @@ msgstr "総重量kg"
 
 #. module: product
 #: model:product.template,name:product.product_product_37_product_template
+#: model:product.template,name:product.product_template_37
 msgid "Printer, All-in-one"
 msgstr ""
 
@@ -1431,12 +1398,12 @@ msgstr "調達"
 
 #. module: product
 #: model:product.template,name:product.product_product_23_product_template
+#: model:product.template,name:product.product_template_23
 msgid "Processor AMD 8-Core"
 msgstr ""
 
 #. module: product
-#: view:product.product:0
-#: view:product.template:0
+#: view:product.product:0 view:product.template:0
 msgid "Weights"
 msgstr "重量等"
 
@@ -1448,8 +1415,8 @@ msgstr "見積表示用説明"
 #. module: product
 #: help:pricelist.partnerinfo,price:0
 msgid ""
-"This price will be considered as a price for the supplier Unit of Measure if "
-"any or the default Unit of Measure of the product otherwise"
+"This price will be considered as a price for the supplier Unit of Measure if"
+" any or the default Unit of Measure of the product otherwise"
 msgstr ""
 
 #. module: product
@@ -1480,6 +1447,7 @@ msgstr "開始日"
 
 #. module: product
 #: model:product.template,name:product.product_product_38_product_template
+#: model:product.template,name:product.product_template_38
 msgid "Ink Cartridge"
 msgstr ""
 
@@ -1501,8 +1469,7 @@ msgid ""
 "              </p><p>\n"
 "                There can be more than one version of a pricelist, each of\n"
 "                these must be valid during a certain period of time. Some\n"
-"                examples of versions: Main Prices, 2010, 2011, Summer "
-"Sales,\n"
+"                examples of versions: Main Prices, 2010, 2011, Summer Sales,\n"
 "                etc.\n"
 "              </p>\n"
 "            "
@@ -1522,6 +1489,7 @@ msgstr "製品価格"
 
 #. module: product
 #: model:product.template,description:product.product_product_26_product_template
+#: model:product.template,description:product.product_template_26
 msgid ""
 "17\" Monitor\n"
 "6GB RAM\n"
@@ -1541,12 +1509,15 @@ msgstr "消耗品"
 
 #. module: product
 #: model:product.template,name:product.product_product_21_product_template
+#: model:product.template,name:product.product_template_21
 msgid "Motherboard A20Z7"
 msgstr ""
 
 #. module: product
 #: model:product.template,description:product.product_product_1_product_template
+#: model:product.template,description:product.product_template_1
 #: model:product.template,description_sale:product.product_product_1_product_template
+#: model:product.template,description_sale:product.product_template_1
 msgid "This type of service include basic monitoring of products."
 msgstr ""
 
@@ -1557,14 +1528,13 @@ msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_19_product_template
+#: model:product.template,name:product.product_template_19
 msgid "HDD on Demand"
 msgstr ""
 
 #. module: product
-#: field:product.price.type,active:0
-#: field:product.pricelist,active:0
-#: field:product.pricelist.version,active:0
-#: field:product.product,active:0
+#: field:product.price.type,active:0 field:product.pricelist,active:0
+#: field:product.pricelist.version,active:0 field:product.product,active:0
 #: field:product.uom,active:0
 msgid "Active"
 msgstr "有効"
@@ -1591,6 +1561,7 @@ msgstr "単位の変換比率は0にできません。"
 
 #. module: product
 #: model:product.template,name:product.product_product_24_product_template
+#: model:product.template,name:product.product_template_24
 msgid "Graphics Card"
 msgstr ""
 
@@ -1611,6 +1582,7 @@ msgstr "梱包材重量"
 
 #. module: product
 #: model:product.template,name:product.product_product_41_product_template
+#: model:product.template,name:product.product_template_41
 msgid "Windows Home Server 2011"
 msgstr ""
 
@@ -1621,6 +1593,7 @@ msgstr "製品項目"
 
 #. module: product
 #: model:product.template,description:product.product_product_5_product_template
+#: model:product.template,description:product.product_template_5
 msgid "Custom computer assembled on order based on customer's requirement."
 msgstr ""
 
@@ -1648,8 +1621,7 @@ msgid ""
 "              </p><p>\n"
 "                Units of measure belonging to the same category can be\n"
 "                converted between each others. For example, in the category\n"
-"                <i>'Time'</i>, you will have the following units of "
-"measure:\n"
+"                <i>'Time'</i>, you will have the following units of measure:\n"
 "                Hours, Days.\n"
 "              </p>\n"
 "            "
@@ -1658,8 +1630,8 @@ msgstr ""
 #. module: product
 #: help:pricelist.partnerinfo,min_quantity:0
 msgid ""
-"The minimal quantity to trigger this rule, expressed in the supplier Unit of "
-"Measure if any or in the default Unit of Measure of the product otherrwise."
+"The minimal quantity to trigger this rule, expressed in the supplier Unit of"
+" Measure if any or in the default Unit of Measure of the product otherrwise."
 msgstr ""
 
 #. module: product
@@ -1698,8 +1670,7 @@ msgstr "層別パッケージ"
 #: model:process.node,name:product.process_node_product0
 #: model:process.process,name:product.process_process_productprocess0
 #: field:product.packaging,product_id:0
-#: field:product.pricelist.item,product_id:0
-#: view:product.product:0
+#: field:product.pricelist.item,product_id:0 view:product.product:0
 #: field:product.supplierinfo,product_id:0
 #: model:res.request.link,name:product.req_link_product
 msgid "Product"
@@ -1738,11 +1709,13 @@ msgstr "分類別製品"
 
 #. module: product
 #: model:product.template,name:product.product_product_16_product_template
+#: model:product.template,name:product.product_template_16
 msgid "Computer Case"
 msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_9_product_template
+#: model:product.template,name:product.product_template_9
 msgid "USB Keyboard, AZERTY"
 msgstr ""
 
@@ -1785,6 +1758,7 @@ msgstr "箱 30x40x60"
 
 #. module: product
 #: model:product.template,name:product.product_product_47_product_template
+#: model:product.template,name:product.product_template_47
 msgid "Switch, 24 ports"
 msgstr ""
 
@@ -1806,6 +1780,7 @@ msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_48_product_template
+#: model:product.template,name:product.product_template_48
 msgid "USB Adapter"
 msgstr ""
 
@@ -1835,15 +1810,14 @@ msgstr "製品価格リスト"
 #. module: product
 #: field:product.pricelist,company_id:0
 #: field:product.pricelist.item,company_id:0
-#: field:product.pricelist.version,company_id:0
-#: view:product.product:0
-#: field:product.supplierinfo,company_id:0
-#: field:product.template,company_id:0
+#: field:product.pricelist.version,company_id:0 view:product.product:0
+#: field:product.supplierinfo,company_id:0 field:product.template,company_id:0
 msgid "Company"
 msgstr "会社"
 
 #. module: product
 #: model:product.template,name:product.product_product_26_product_template
+#: model:product.template,name:product.product_template_26
 msgid "Laptop S3450"
 msgstr ""
 
@@ -1864,24 +1838,25 @@ msgstr "その他製品"
 
 #. module: product
 #: model:product.template,description:product.product_product_9_product_template
+#: model:product.template,description:product.product_template_9
 msgid "This product is configured with example of push/pull flows"
 msgstr "この製品はプッシュ / プルフローの例とともに設定されます。"
 
 #. module: product
 #: field:product.product,message_ids:0
 msgid "Messages"
-msgstr ""
+msgstr "メッセージ"
 
 #. module: product
 #: model:product.uom,name:product.product_uom_unit
 msgid "Unit(s)"
-msgstr ""
+msgstr "個"
 
 #. module: product
 #: code:addons/product/product.py:176
 #, python-format
 msgid "Error!"
-msgstr ""
+msgstr "エラー！"
 
 #. module: product
 #: field:product.packaging,length:0
@@ -1899,8 +1874,7 @@ msgid "Components"
 msgstr "部材"
 
 #. module: product
-#: field:product.product,code:0
-#: field:product.product,default_code:0
+#: field:product.product,code:0 field:product.product,default_code:0
 msgid "Internal Reference"
 msgstr "内部参照"
 
@@ -1931,8 +1905,7 @@ msgid "Specify if the product can be selected in a sales order line."
 msgstr "受注明細で製品を選択できるかどうか指定します。"
 
 #. module: product
-#: view:product.product:0
-#: field:product.template,sale_ok:0
+#: view:product.product:0 field:product.template,sale_ok:0
 msgid "Can be Sold"
 msgstr "販売可能"
 
@@ -1958,11 +1931,13 @@ msgstr "原材料"
 
 #. module: product
 #: model:product.template,name:product.product_product_13_product_template
+#: model:product.template,name:product.product_template_13
 msgid "RAM SR5"
 msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_14_product_template
+#: model:product.template,name:product.product_template_14
 msgid "RAM SR2"
 msgstr ""
 
@@ -1972,38 +1947,26 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to define a new product.\n"
 "              </p><p>\n"
-"                You must define a product for everything you purchase, "
-"whether\n"
-"                it's a physical product, a consumable or services you buy "
-"to\n"
+"                You must define a product for everything you purchase, whether\n"
+"                it's a physical product, a consumable or services you buy to\n"
 "                subcontractants.\n"
 "              </p><p>\n"
-"                The product form contains detailed information to improve "
-"the\n"
-"                purchase process: prices, procurement logistics, accounting "
-"data,\n"
+"                The product form contains detailed information to improve the\n"
+"                purchase process: prices, procurement logistics, accounting data,\n"
 "                available suppliers, etc.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                クリックして新しい製品を定義してください。\n"
-"              </p><p>\n"
-"                消耗品やサービスなど、それが物理的な製品かどうかに関わらず購入するすべてを定義します。\n"
-"              </p><p>\n"
-"                製品フォームには価格、調達方法、会計データ、仕入先など購入プロセスを改善するための詳細な情報が含まれます。\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                クリックして新しい製品を定義してください。\n              </p><p>\n                消耗品やサービスなど、それが物理的な製品かどうかに関わらず購入するすべてを定義します。\n              </p><p>\n                製品フォームには価格、調達方法、会計データ、仕入先など購入プロセスを改善するための詳細な情報が含まれます。\n              </p>\n            "
 
 #. module: product
 #: model:product.template,description_sale:product.product_product_44_product_template
+#: model:product.template,description_sale:product.product_template_44
 msgid "Full featured image editing software."
 msgstr ""
 
 #. module: product
 #: model:ir.model,name:product.model_product_pricelist_version
-#: view:product.pricelist:0
-#: view:product.pricelist.version:0
+#: view:product.pricelist:0 view:product.pricelist.version:0
 msgid "Pricelist Version"
 msgstr "価格リストバージョン"
 
@@ -2014,13 +1977,14 @@ msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_31_product_template
+#: model:product.template,name:product.product_template_31
 msgid "Multimedia Speakers"
 msgstr ""
 
 #. module: product
 #: field:product.product,message_follower_ids:0
 msgid "Followers"
-msgstr ""
+msgstr "フォロワー"
 
 #. module: product
 #: view:product.product:0
@@ -2028,8 +1992,7 @@ msgid "Sale Conditions"
 msgstr "販売条件"
 
 #. module: product
-#: view:product.packaging:0
-#: view:product.product:0
+#: view:product.packaging:0 view:product.product:0
 msgid "Palletization"
 msgstr "パレット輸送法"
 
@@ -2068,7 +2031,7 @@ msgstr "仕入先リードタイム"
 #. module: product
 #: model:ir.model,name:product.model_decimal_precision
 msgid "decimal.precision"
-msgstr ""
+msgstr "十進数．精度"
 
 #. module: product
 #: selection:product.ul,type:0
@@ -2086,29 +2049,18 @@ msgstr ""
 #: help:product.product,qty_available:0
 msgid ""
 "Current quantity of products.\n"
-"In a context with a single Stock Location, this includes goods stored at "
-"this Location, or any of its children.\n"
-"In a context with a single Warehouse, this includes goods stored in the "
-"Stock Location of this Warehouse, or any of its children.\n"
-"In a context with a single Shop, this includes goods stored in the Stock "
-"Location of the Warehouse of this Shop, or any of its children.\n"
-"Otherwise, this includes goods stored in any Stock Location with 'internal' "
-"type."
-msgstr ""
-"製品の現在数量。\n"
-"ひとつの在庫場所では、この場所または子に格納した商品を含みます。\n"
-"ひとつの倉庫では、この倉庫の在庫場所または子に格納した商品を含みます。\n"
-"ひとつの店舗では、この店舗にある倉庫の在庫場所または子に格納した商品を含みます。\n"
-"そうでなければ、内部タイプとして任意の在庫場所に格納した商品を含みます。"
+"In a context with a single Stock Location, this includes goods stored at this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.\n"
+"In a context with a single Shop, this includes goods stored in the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods stored in any Stock Location with 'internal' type."
+msgstr "製品の現在数量。\nひとつの在庫場所では、この場所または子に格納した商品を含みます。\nひとつの倉庫では、この倉庫の在庫場所または子に格納した商品を含みます。\nひとつの店舗では、この店舗にある倉庫の在庫場所または子に格納した商品を含みます。\nそうでなければ、内部タイプとして任意の在庫場所に格納した商品を含みます。"
 
 #. module: product
 #: help:product.template,type:0
 msgid ""
 "Consumable: Will not imply stock management for this product. \n"
 "Stockable product: Will imply stock management for this product."
-msgstr ""
-"消耗品：この製品は在庫管理をしません。\n"
-"在庫可能製品：この製品は在庫管理をします。"
+msgstr "消耗品：この製品は在庫管理をしません。\n在庫可能製品：この製品は在庫管理をします。"
 
 #. module: product
 #: help:product.pricelist.type,key:0
@@ -2160,6 +2112,7 @@ msgstr ""
 
 #. module: product
 #: model:product.template,description:product.product_product_2_product_template
+#: model:product.template,description:product.product_template_2
 msgid ""
 "This type of service include assistance for security questions, system "
 "configuration requirements, implementation or special needs."
@@ -2177,6 +2130,7 @@ msgstr "単位の分類"
 
 #. module: product
 #: model:product.template,description_sale:product.product_product_4_product_template
+#: model:product.template,description_sale:product.product_template_4
 msgid ""
 "19\" LCD Monitor\n"
 "Processor Core i5 2.70 Ghz\n"
@@ -2201,6 +2155,7 @@ msgstr "内部"
 
 #. module: product
 #: model:product.template,name:product.product_product_45_product_template
+#: model:product.template,name:product.product_template_45
 msgid "Router R430"
 msgstr ""
 
@@ -2210,20 +2165,17 @@ msgid "Gives the sequence order when displaying a list of packaging."
 msgstr "パッケージのリストを表示する時の並び順を与えます。"
 
 #. module: product
-#: selection:product.category,type:0
-#: selection:product.template,state:0
+#: selection:product.category,type:0 selection:product.template,state:0
 msgid "Normal"
 msgstr "通常"
 
 #. module: product
-#: code:addons/product/pricelist.py:179
+#: code:addons/product/pricelist.py:198
 #, python-format
 msgid ""
 "At least one pricelist has no active version !\n"
 "Please create or activate one."
-msgstr ""
-"価格表には１つも有効なものがありません。\n"
-"作成するか有効化して下さい。"
+msgstr "価格表には１つも有効なものがありません。\n作成するか有効化して下さい。"
 
 #. module: product
 #: field:product.pricelist.item,price_max_margin:0
@@ -2250,17 +2202,12 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to create a pricelist.\n"
 "              </p><p>\n"
-"                A price list contains rules to be evaluated in order to "
-"compute\n"
-"                the purchase price. The default price list has only one "
-"rule; use\n"
-"                the cost price defined on the product form, so that you do "
-"not have to\n"
-"                worry about supplier pricelists if you have very simple "
-"needs.\n"
+"                A price list contains rules to be evaluated in order to compute\n"
+"                the purchase price. The default price list has only one rule; use\n"
+"                the cost price defined on the product form, so that you do not have to\n"
+"                worry about supplier pricelists if you have very simple needs.\n"
 "              </p><p>\n"
-"                But you can also import complex price lists form your "
-"supplier\n"
+"                But you can also import complex price lists form your supplier\n"
 "                that may depends on the quantities ordered or the current\n"
 "                promotions.\n"
 "              </p>\n"
@@ -2304,6 +2251,7 @@ msgstr ""
 
 #. module: product
 #: model:product.template,description:product.product_product_25_product_template
+#: model:product.template,description:product.product_template_25
 msgid ""
 "17\" Monitor\n"
 "4GB RAM\n"
@@ -2312,8 +2260,7 @@ msgid ""
 msgstr ""
 
 #. module: product
-#: field:product.category,sequence:0
-#: field:product.packaging,sequence:0
+#: field:product.category,sequence:0 field:product.packaging,sequence:0
 #: field:product.pricelist.item,sequence:0
 #: field:product.supplierinfo,sequence:0
 msgid "Sequence"
@@ -2350,6 +2297,7 @@ msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_11_product_template
+#: model:product.template,name:product.product_template_11
 msgid "Mouse, Laser"
 msgstr ""
 
@@ -2369,10 +2317,8 @@ msgid "Creation of the product"
 msgstr "製品の創作"
 
 #. module: product
-#: field:pricelist.partnerinfo,name:0
-#: field:product.packaging,name:0
-#: report:product.pricelist:0
-#: view:product.product:0
+#: field:pricelist.partnerinfo,name:0 field:product.packaging,name:0
+#: report:product.pricelist:0 view:product.product:0
 #: field:product.template,description:0
 msgid "Description"
 msgstr "説明"
@@ -2397,12 +2343,13 @@ msgstr "容積"
 #: help:product.product,image_small:0
 msgid ""
 "Small-sized image of the product. It is automatically resized as a 64x64px "
-"image, with aspect ratio preserved. Use this field anywhere a small image is "
-"required."
+"image, with aspect ratio preserved. Use this field anywhere a small image is"
+" required."
 msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_40_product_template
+#: model:product.template,name:product.product_template_40
 msgid "Windows 7 Professional"
 msgstr ""
 
@@ -2428,11 +2375,12 @@ msgstr "変形製品"
 
 #. module: product
 #: model:product.template,name:product.product_product_6_product_template
+#: model:product.template,name:product.product_template_6
 msgid "15” LCD Monitor"
 msgstr ""
 
 #. module: product
-#: code:addons/product/pricelist.py:379
+#: code:addons/product/pricelist.py:400
 #: field:product.pricelist.item,base_pricelist_id:0
 #, python-format
 msgid "Other Pricelist"
@@ -2444,16 +2392,12 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to create a pricelist.\n"
 "              </p><p>\n"
-"                A price list contains rules to be evaluated in order to "
-"compute\n"
+"                A price list contains rules to be evaluated in order to compute\n"
 "                the sales price of the products.\n"
 "              </p><p>\n"
-"                Price lists may have several versions (2010, 2011, Promotion "
-"of\n"
-"                February 2010, etc.) and each version may have several "
-"rules.\n"
-"                (e.g. the customer price of a product category will be based "
-"on\n"
+"                Price lists may have several versions (2010, 2011, Promotion of\n"
+"                February 2010, etc.) and each version may have several rules.\n"
+"                (e.g. the customer price of a product category will be based on\n"
 "                the supplier price multiplied by 1.80).\n"
 "              </p>\n"
 "            "
@@ -2462,8 +2406,7 @@ msgstr ""
 #. module: product
 #: model:ir.model,name:product.model_product_template
 #: field:product.pricelist.item,product_tmpl_id:0
-#: field:product.product,product_tmpl_id:0
-#: view:product.template:0
+#: field:product.product,product_tmpl_id:0 view:product.template:0
 msgid "Product Template"
 msgstr "製品テンプレート"
 
@@ -2481,6 +2424,7 @@ msgstr "製品カテゴリ"
 
 #. module: product
 #: model:product.template,description:product.product_product_19_product_template
+#: model:product.template,description:product.product_template_19
 msgid "On demand hard-disk having capacity based on requirement."
 msgstr ""
 
@@ -2491,6 +2435,7 @@ msgstr "ライフサイクルの終わり"
 
 #. module: product
 #: model:product.template,name:product.product_product_15_product_template
+#: model:product.template,name:product.product_template_15
 msgid "RAM SR3"
 msgstr ""
 
@@ -2499,8 +2444,7 @@ msgstr ""
 msgid ""
 "Gives the different ways to package the same product. This has no impact on "
 "the picking order and is mainly used if you use the EDI module."
-msgstr ""
-"同じ製品を梱包するための異なる方法を提供します。これは集荷オーダーには影響を及ぼしません。また、EDIモジュールを使用する時に主に使用されます。"
+msgstr "同じ製品を梱包するための異なる方法を提供します。これは集荷オーダーには影響を及ぼしません。また、EDIモジュールを使用する時に主に使用されます。"
 
 #. module: product
 #: model:ir.actions.act_window,name:product.product_pricelist_action
@@ -2515,10 +2459,7 @@ msgid ""
 "Sets the price so that it is a multiple of this value.\n"
 "Rounding is applied after the discount and before the surcharge.\n"
 "To have prices that end in 9.99, set rounding 10, surcharge -0.01"
-msgstr ""
-"この値の倍数となる価格を設定します。\n"
-"丸めは割引後で追加料金の前に適用します。\n"
-"最終価格を9.99にするには、丸めを10に追加料金を-0.01とします。"
+msgstr "この値の倍数となる価格を設定します。\n丸めは割引後で追加料金の前に適用します。\n最終価格を9.99にするには、丸めを10に追加料金を-0.01とします。"
 
 #. module: product
 #: field:product.template,list_price:0
@@ -2564,7 +2505,3 @@ msgstr "立法メートルでの容積"
 #: field:product.pricelist.item,price_discount:0
 msgid "Price Discount"
 msgstr "価格割引"
-
-#, python-format
-#~ msgid "Partner section of the product form"
-#~ msgstr "製品フォームのパートナセクション"

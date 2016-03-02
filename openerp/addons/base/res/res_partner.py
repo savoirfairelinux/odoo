@@ -68,6 +68,10 @@ class format_address(object):
                 doc = etree.fromstring(arch)
                 for node in doc.xpath("//div[@class='address_format']"):
                     tree = etree.fromstring(v)
+                    for child in node.xpath("//field"):
+                        if child.attrib.get('modifiers'):
+                            for field in tree.xpath("//field[@name='%s']" % child.attrib.get('name')):
+                                field.attrib['modifiers'] = child.attrib.get('modifiers')
                     node.getparent().replace(node, tree)
                 arch = etree.tostring(doc)
                 break
@@ -218,6 +222,7 @@ class res_partner(osv.osv, format_address):
         'date': fields.date('Date', select=1),
         'title': fields.many2one('res.partner.title', 'Title'),
         'parent_id': fields.many2one('res.partner', 'Related Company', select=True),
+        'parent_name': fields.related('parent_id', 'name', type='char', readonly=True, string='Parent name'),
         'child_ids': fields.one2many('res.partner', 'parent_id', 'Contacts', domain=[('active','=',True)]), # force "active_test" domain to bypass _search() override    
         'ref': fields.char('Reference', size=64, select=1),
         'lang': fields.selection(_lang_get, 'Language',
@@ -433,17 +438,31 @@ class res_partner(osv.osv, format_address):
     def _commercial_sync_from_company(self, cr, uid, partner, context=None):
         """ Handle sync of commercial fields when a new parent commercial entity is set,
         as if they were related fields """
-        if partner.commercial_partner_id != partner:
+        commercial_partner = partner.commercial_partner_id
+        if not commercial_partner:
+            # On child partner creation of a parent partner,
+            # the commercial_partner_id is not yet computed
+            commercial_partner_id = self._commercial_partner_compute(
+                cr, uid, [partner.id], 'commercial_partner_id', [], context=context)[partner.id]
+            commercial_partner = self.browse(cr, uid, commercial_partner_id, context=context)
+        if commercial_partner != partner:
             commercial_fields = self._commercial_fields(cr, uid, context=context)
-            sync_vals = self._update_fields_values(cr, uid, partner.commercial_partner_id,
-                                                        commercial_fields, context=context)
+            sync_vals = self._update_fields_values(cr, uid, commercial_partner,
+                                                   commercial_fields, context=context)
             partner.write(sync_vals)
 
     def _commercial_sync_to_children(self, cr, uid, partner, context=None):
         """ Handle sync of commercial fields to descendants """
         commercial_fields = self._commercial_fields(cr, uid, context=context)
-        sync_vals = self._update_fields_values(cr, uid, partner.commercial_partner_id,
-                                                   commercial_fields, context=context)
+        commercial_partner = partner.commercial_partner_id
+        if not commercial_partner:
+            # On child partner creation of a parent partner,
+            # the commercial_partner_id is not yet computed
+            commercial_partner_id = self._commercial_partner_compute(
+                cr, uid, [partner.id], 'commercial_partner_id', [], context=context)[partner.id]
+            commercial_partner = self.browse(cr, uid, commercial_partner_id, context=context)
+        sync_vals = self._update_fields_values(cr, uid, commercial_partner,
+                                               commercial_fields, context=context)
         sync_children = [c for c in partner.child_ids if not c.is_company]
         for child in sync_children:
             self._commercial_sync_to_children(cr, uid, child, context=context)
@@ -492,6 +511,14 @@ class res_partner(osv.osv, format_address):
             parent.update_address(addr_vals)
             if not parent.is_company:
                 parent.write({'is_company': True})
+
+    def unlink(self, cr, uid, ids, context=None):
+        orphan_contact_ids = self.search(cr, uid,
+            [('parent_id', 'in', ids), ('id', 'not in', ids), ('use_parent_address', '=', True)], context=context)
+        if orphan_contact_ids:
+            # no longer have a parent address
+            self.write(cr, uid, orphan_contact_ids, {'use_parent_address': False}, context=context)
+        return super(res_partner, self).unlink(cr, uid, ids, context=context)
 
     def write(self, cr, uid, ids, vals, context=None):
         if isinstance(ids, (int, long)):
@@ -547,7 +574,7 @@ class res_partner(osv.osv, format_address):
         for record in self.browse(cr, uid, ids, context=context):
             name = record.name
             if record.parent_id and not record.is_company:
-                name =  "%s, %s" % (record.parent_id.name, name)
+                name = "%s, %s" % (record.parent_name, name)
             if context.get('show_address'):
                 name = name + "\n" + self._display_address(cr, uid, record, without_company=True, context=context)
                 name = name.replace('\n\n','\n')
@@ -595,6 +622,20 @@ class res_partner(osv.osv, format_address):
         return super(res_partner, self)._search(cr, user, args, offset=offset, limit=limit, order=order, context=context,
                                                 count=count, access_rights_uid=access_rights_uid)
 
+    def _get_display_name(self, unaccent):
+        # TODO: simplify this in trunk with `display_name`, once it is stored
+        # Perf note: a CTE expression (WITH ...) seems to have an even higher cost
+        #            than this query with duplicated CASE expressions. The bulk of
+        #            the cost is the ORDER BY, and it is inevitable if we want
+        #            relevant results for the next step, otherwise we'd return
+        #            a random selection of `limit` results.
+
+        return """CASE WHEN company.id IS NULL OR res_partner.is_company
+                       THEN {partner_name}
+                       ELSE {company_name} || ', ' || {partner_name}
+                  END""".format(partner_name=unaccent('res_partner.name'),
+                                company_name=unaccent('company.name'))
+
     def name_search(self, cr, uid, name, args=None, operator='ilike', context=None, limit=100):
         if not args:
             args = []
@@ -615,18 +656,7 @@ class res_partner(osv.osv, format_address):
 
             unaccent = get_unaccent_wrapper(cr)
 
-            # TODO: simplify this in trunk with `display_name`, once it is stored
-            # Perf note: a CTE expression (WITH ...) seems to have an even higher cost
-            #            than this query with duplicated CASE expressions. The bulk of
-            #            the cost is the ORDER BY, and it is inevitable if we want
-            #            relevant results for the next step, otherwise we'd return
-            #            a random selection of `limit` results.
-
-            display_name = """CASE WHEN company.id IS NULL OR res_partner.is_company
-                                   THEN {partner_name}
-                                   ELSE {company_name} || ', ' || {partner_name}
-                               END""".format(partner_name=unaccent('res_partner.name'),
-                                             company_name=unaccent('company.name'))
+            display_name = self._get_display_name(unaccent)
 
             query = """SELECT res_partner.id
                          FROM res_partner
@@ -762,7 +792,7 @@ class res_partner(osv.osv, format_address):
             'state_name': address.state_id and address.state_id.name or '',
             'country_code': address.country_id and address.country_id.code or '',
             'country_name': address.country_id and address.country_id.name or '',
-            'company_name': address.parent_id and address.parent_id.name or '',
+            'company_name': address.parent_id and address.parent_name or '',
         }
         for field in self._address_fields(cr, uid, context=context):
             args[field] = getattr(address, field) or ''

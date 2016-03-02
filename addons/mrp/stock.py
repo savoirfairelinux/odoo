@@ -56,9 +56,6 @@ class StockMove(osv.osv):
                 factor = move.product_qty
                 bom_point = bom_obj.browse(cr, uid, bis[0], context=context)
                 res = bom_obj._bom_explode(cr, uid, bom_point, factor, [])
-                state = 'confirmed'
-                if move.state == 'assigned':
-                    state = 'assigned'
                 for line in res[0]: 
                     valdef = {
                         'picking_id': move.picking_id.id,
@@ -68,7 +65,7 @@ class StockMove(osv.osv):
                         'product_uos': line['product_uos'],
                         'product_uos_qty': line['product_uos_qty'],
                         'move_dest_id': move.id,
-                        'state': state,
+                        'state': 'draft',  #will be confirmed below
                         'name': line['name'],
                         'move_history_ids': [(6,0,[move.id])],
                         'move_history_ids2': [(6,0,[])],
@@ -100,6 +97,9 @@ class StockMove(osv.osv):
                 for m in procurement_obj.search(cr, uid, [('move_id','=',move.id)], context):
                     wf_service.trg_validate(uid, 'procurement.order', m, 'button_confirm', cr)
                     wf_service.trg_validate(uid, 'procurement.order', m, 'button_wait_done', cr)
+        if processed_ids and move.state == 'assigned':
+            # Set the state of resulting moves according to 'assigned' as the original move is assigned
+            move_obj.write(cr, uid, list(set(processed_ids) - set([move.id])), {'state': 'assigned'}, context=context)
         return processed_ids
     
     def action_consume(self, cr, uid, ids, product_qty, location_id=False, context=None):
@@ -160,9 +160,11 @@ class StockPicking(osv.osv):
     def action_explode(self, cr, uid, move_ids, *args):
         """Explodes moves by expanding kit components"""
         move_obj = self.pool.get('stock.move')
-        todo = move_ids[:]
+        todo = list(super(StockPicking, self).action_explode(cr, uid, move_ids, *args))
         for move in move_obj.browse(cr, uid, move_ids):
-            todo.extend(move_obj._action_explode(cr, uid, move))
+            result = move_obj._action_explode(cr, uid, move)
+            moves = move_obj.browse(cr, uid, result)
+            todo.extend(move.id for move in moves if move.state not in ['confirmed', 'assigned', 'done'])
         return list(set(todo))
 
 StockPicking()

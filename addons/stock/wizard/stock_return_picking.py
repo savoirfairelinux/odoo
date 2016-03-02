@@ -63,16 +63,19 @@ class stock_return_picking(osv.osv_memory):
         result1 = []
         if context is None:
             context = {}
+        if context and context.get('active_ids', False):
+            if len(context.get('active_ids')) > 1:
+                raise osv.except_osv(_('Warning!'), _("You may only return one picking at a time!"))
         res = super(stock_return_picking, self).default_get(cr, uid, fields, context=context)
         record_id = context and context.get('active_id', False) or False
         pick_obj = self.pool.get('stock.picking')
         pick = pick_obj.browse(cr, uid, record_id, context=context)
         if pick:
             if 'invoice_state' in fields:
-                if pick.invoice_state=='invoiced':
-                    res.update({'invoice_state': '2binvoiced'})
+                if pick.invoice_state in ['invoiced','2binvoiced']:
+                    res['invoice_state'] = '2binvoiced'
                 else:
-                    res.update({'invoice_state': 'none'})
+                    res['invoice_state'] = 'none'
             return_history = self.get_return_history(cr, uid, record_id, context)       
             for line in pick.move_lines:
                 qty = line.product_qty - return_history.get(line.id, 0)
@@ -206,6 +209,7 @@ class stock_return_picking(osv.osv_memory):
                                             'location_id': new_location, 
                                             'location_dest_id': move.location_id.id,
                                             'date': date_cur,
+                                            'prodlot_id': data_get.prodlot_id.id,
                 })
                 move_obj.write(cr, uid, [move.id], {'move_history_ids2':[(4,new_move)]}, context=context)
         if not returned_lines:

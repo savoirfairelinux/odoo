@@ -1,21 +1,22 @@
-# German translation for openobject-addons
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the openobject-addons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * portal_crm
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: openobject-addons\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2014-01-25 21:59+0000\n"
-"Last-Translator: Ralf Hilgenstock <rh@dialoge.info>\n"
-"Language-Team: German <de@li.org>\n"
+"Project-Id-Version: Odoo 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-14 00:10+0000\n"
+"PO-Revision-Date: 2015-05-29 13:15+0000\n"
+"Last-Translator: Martin Trigaux\n"
+"Language-Team: German (http://www.transifex.com/odoo/odoo-7/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-26 05:15+0000\n"
-"X-Generator: Launchpad (build 16914)\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: portal_crm
 #: selection:portal_crm.crm_contact_us,type:0
@@ -63,9 +64,9 @@ msgid "Company"
 msgstr "Unternehmen"
 
 #. module: portal_crm
-#: field:portal_crm.crm_contact_us,user_id:0
-msgid "Salesperson"
-msgstr "Verkäufer"
+#: field:portal_crm.crm_contact_us,day_open:0
+msgid "Days to Open"
+msgstr "Tage bis Eröffnung"
 
 #. module: portal_crm
 #: view:portal_crm.crm_contact_us:0
@@ -96,6 +97,11 @@ msgstr "Nachrichten"
 #: field:portal_crm.crm_contact_us,color:0
 msgid "Color Index"
 msgstr "Farbindex"
+
+#. module: portal_crm
+#: field:portal_crm.crm_contact_us,partner_latitude:0
+msgid "Geo Latitude"
+msgstr "Längengrad"
 
 #. module: portal_crm
 #: field:portal_crm.crm_contact_us,partner_name:0
@@ -138,9 +144,7 @@ msgstr "Nächste Aktion"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
-"Hier finden Sie die Nachrichtenübersicht (Anzahl Nachrichten etc., ...) im "
-"html Format, um Sie später in einer Kanban Ansicht einfügen zu können."
+msgstr "Hier finden Sie die Nachrichtenübersicht (Anzahl Nachrichten etc., ...) im html Format, um Sie später in einer Kanban Ansicht einfügen zu können."
 
 #. module: portal_crm
 #: field:portal_crm.crm_contact_us,partner_id:0
@@ -180,9 +184,7 @@ msgstr "Follower"
 #. module: portal_crm
 #: help:portal_crm.crm_contact_us,partner_id:0
 msgid "Linked partner (optional). Usually created when converting the lead."
-msgstr ""
-"Verknüpfter Kunde (optional). Normalerweise erfolgt dies bei der Umwandlung "
-"eines Interessenten."
+msgstr "Verknüpfter Kunde (optional). Normalerweise erfolgt dies bei der Umwandlung eines Interessenten."
 
 #. module: portal_crm
 #: field:portal_crm.crm_contact_us,payment_mode:0
@@ -210,6 +212,11 @@ msgid "Channel"
 msgstr "Vertriebsweg"
 
 #. module: portal_crm
+#: view:portal_crm.crm_contact_us:0
+msgid "Name"
+msgstr "Name"
+
+#. module: portal_crm
 #: selection:portal_crm.crm_contact_us,priority:0
 msgid "Lowest"
 msgstr "Niedrigste"
@@ -230,11 +237,17 @@ msgid ""
 "If opt-out is checked, this contact has refused to receive emails for mass "
 "mailing and marketing campaign. Filter 'Available for Mass Mailing' allows "
 "users to filter the leads when performing mass mailing."
-msgstr ""
-"Falls 'Keine Werbung' markiert ist, hat dieser Kontakt Massen-E-Mails und "
-"Marketingkampagnen abgelehnt. Durch den Filter 'Verfügbar für Massen-E-"
-"Mails' können diejenigen Interessenten angezeigt werden, die für Massen-E-"
-"Mails verfügbar sind."
+msgstr "Falls 'Keine Werbung' markiert ist, hat dieser Kontakt Massen-E-Mails und Marketingkampagnen abgelehnt. Durch den Filter 'Verfügbar für Massen-E-Mails' können diejenigen Interessenten angezeigt werden, die für Massen-E-Mails verfügbar sind."
+
+#. module: portal_crm
+#: view:portal_crm.crm_contact_us:0
+msgid "Close"
+msgstr "Abschließen"
+
+#. module: portal_crm
+#: selection:portal_crm.crm_contact_us,state:0
+msgid "Pending"
+msgstr "Ausstehend"
 
 #. module: portal_crm
 #: help:portal_crm.crm_contact_us,type:0
@@ -334,11 +347,9 @@ msgstr "In Bearbeitung"
 #. module: portal_crm
 #: help:portal_crm.crm_contact_us,partner_name:0
 msgid ""
-"The name of the future partner company that will be created while converting "
-"the lead into opportunity"
-msgstr ""
-"Der Unternehmensname des Interessenten, der bei der Umwandlung des "
-"Interessenten zur Chance verwendet wird."
+"The name of the future partner company that will be created while converting"
+" the lead into opportunity"
+msgstr "Der Unternehmensname des Interessenten, der bei der Umwandlung des Interessenten zur Chance verwendet wird."
 
 #. module: portal_crm
 #: field:portal_crm.crm_contact_us,planned_cost:0
@@ -356,10 +367,7 @@ msgid ""
 "These email addresses will be added to the CC field of all inbound and "
 "outbound emails for this record before being sent. Separate multiple email "
 "addresses with a comma"
-msgstr ""
-"Diese E-Mail Adressen werden automatisch dem CC-Feld aller ein- und "
-"ausgehenden E-Mails hinzugefügt. Trennen Sie mehrere E-Mail-Adressen mit "
-"Kommata."
+msgstr "Diese E-Mail Adressen werden automatisch dem CC-Feld aller ein- und ausgehenden E-Mails hinzugefügt. Trennen Sie mehrere E-Mail-Adressen mit Kommata."
 
 #. module: portal_crm
 #: selection:portal_crm.crm_contact_us,priority:0
@@ -373,9 +381,9 @@ msgid "Closed"
 msgstr "Abgeschlossen"
 
 #. module: portal_crm
-#: selection:portal_crm.crm_contact_us,state:0
-msgid "Pending"
-msgstr "Ausstehend"
+#: field:portal_crm.crm_contact_us,date_assign:0
+msgid "Assignation Date"
+msgstr "Zuweisungsdatum"
 
 #. module: portal_crm
 #: field:portal_crm.crm_contact_us,state:0
@@ -418,9 +426,9 @@ msgid "Active"
 msgstr "Aktiv"
 
 #. module: portal_crm
-#: field:portal_crm.crm_contact_us,day_open:0
-msgid "Days to Open"
-msgstr "Tage bis Eröffnung"
+#: field:portal_crm.crm_contact_us,user_id:0
+msgid "Salesperson"
+msgstr "Verkäufer"
 
 #. module: portal_crm
 #: field:portal_crm.crm_contact_us,day_close:0
@@ -446,8 +454,7 @@ msgstr "Betreff..."
 #: help:portal_crm.crm_contact_us,section_id:0
 msgid ""
 "When sending mails, the default email address is taken from the sales team."
-msgstr ""
-"Für den E-Mail-Versand wird die Standardadresse des Verkaufsteams verwendet."
+msgstr "Für den E-Mail-Versand wird die Standardadresse des Verkaufsteams verwendet."
 
 #. module: portal_crm
 #: field:portal_crm.crm_contact_us,partner_address_name:0
@@ -455,14 +462,19 @@ msgid "Partner Contact Name"
 msgstr "Partner Kontakt"
 
 #. module: portal_crm
+#: field:portal_crm.crm_contact_us,partner_longitude:0
+msgid "Geo Longitude"
+msgstr "Längengrad"
+
+#. module: portal_crm
 #: view:portal_crm.crm_contact_us:0
 msgid "Your phone number..."
 msgstr "Ihre Telefonnummer..."
 
 #. module: portal_crm
-#: view:portal_crm.crm_contact_us:0
-msgid "Close"
-msgstr "Abschließen"
+#: help:portal_crm.crm_contact_us,date_assign:0
+msgid "Last date this case was forwarded/assigned to a partner"
+msgstr "Letztes Datum wenn dieser Fall einem Partner zugewiesen wurde"
 
 #. module: portal_crm
 #: help:portal_crm.crm_contact_us,email_from:0
@@ -490,14 +502,19 @@ msgid "Referred By"
 msgstr "Vermittelt durch"
 
 #. module: portal_crm
+#: field:portal_crm.crm_contact_us,partner_assigned_id:0
+msgid "Assigned Partner"
+msgstr "Zugewiesener Partner"
+
+#. module: portal_crm
 #: selection:portal_crm.crm_contact_us,type:0
 msgid "Opportunity"
 msgstr "Chance"
 
 #. module: portal_crm
-#: view:portal_crm.crm_contact_us:0
-msgid "Name"
-msgstr "Name"
+#: help:portal_crm.crm_contact_us,partner_assigned_id:0
+msgid "Partner this case has been forwarded/assigned to."
+msgstr "Partner, dem der Fall zugewiesen wurde."
 
 #. module: portal_crm
 #: field:portal_crm.crm_contact_us,country_id:0
@@ -516,11 +533,7 @@ msgid ""
 "progress the Status is set to 'Open'. When the case is over, the Status is "
 "set to 'Done'. If the case needs to be reviewed then the Status is  set to "
 "'Pending'."
-msgstr ""
-"Der Status wird bei der Anlage eines Falles auf 'Entwurf' gesetzt. Wenn der "
-"Fall bearbeitet wird, wird der Status auf 'offen' gesetzt. Wenn der Fall "
-"abgeschlossen wird, wird der Status auf 'erledigt' gesetzt. Wenn der Fall "
-"überprüft werden muss, wird der Status auf 'schwebend' gesetzt."
+msgstr "Der Status wird bei der Anlage eines Falles auf 'Entwurf' gesetzt. Wenn der Fall bearbeitet wird, wird der Status auf 'offen' gesetzt. Wenn der Fall abgeschlossen wird, wird der Status auf 'erledigt' gesetzt. Wenn der Fall überprüft werden muss, wird der Status auf 'schwebend' gesetzt."
 
 #. module: portal_crm
 #: help:portal_crm.crm_contact_us,message_ids:0
@@ -532,9 +545,7 @@ msgstr "Nachrichten- und Kommunikationsverlauf"
 msgid ""
 "From which campaign (seminar, marketing campaign, mass mailing, ...) did "
 "this contact come from?"
-msgstr ""
-"Aus welcher Kampange (Seminar, Marketing Kampange, Massen Mailing, ...) "
-"wurde dieser Kontakt erzeugt?"
+msgstr "Aus welcher Kampange (Seminar, Marketing Kampange, Massen Mailing, ...) wurde dieser Kontakt erzeugt?"
 
 #. module: portal_crm
 #: selection:portal_crm.crm_contact_us,priority:0
@@ -560,28 +571,3 @@ msgstr "Letzte Aktion"
 #: model:ir.model,name:portal_crm.model_portal_crm_crm_contact_us
 msgid "Contact form for the portal"
 msgstr "Kontaktformular für das Portal"
-
-#~ msgid "Geo Latitude"
-#~ msgstr "Längengrad"
-
-#~ msgid ""
-#~ "If opt-out is checked, this contact has refused to receive emails or "
-#~ "unsubscribed to a campaign."
-#~ msgstr ""
-#~ "Wenn Sie opt-out aktivieren, werden diesem Kontakt keine weiteren E-Mails "
-#~ "zugestellt."
-
-#~ msgid "Assignation Date"
-#~ msgstr "Zuweisungsdatum"
-
-#~ msgid "Last date this case was forwarded/assigned to a partner"
-#~ msgstr "Letztes Datum wenn dieser Fall einem Partner zugewiesen wurde"
-
-#~ msgid "Geo Longitude"
-#~ msgstr "Längengrad"
-
-#~ msgid "Assigned Partner"
-#~ msgstr "Zugewiesener Partner"
-
-#~ msgid "Partner this case has been forwarded/assigned to."
-#~ msgstr "Partner, dem der Fall zugewiesen wurde."

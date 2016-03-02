@@ -114,16 +114,14 @@ class crossovered_budget_lines(osv.osv):
         result = 0.0
         if context is None: 
             context = {}
+        account_obj = self.pool.get('account.account')
         for line in self.browse(cr, uid, ids, context=context):
             acc_ids = [x.id for x in line.general_budget_id.account_ids]
             if not acc_ids:
                 raise osv.except_osv(_('Error!'),_("The Budget '%s' has no accounts!") % ustr(line.general_budget_id.name))
+            acc_ids = account_obj._get_children_and_consol(cr, uid, acc_ids, context=context)
             date_to = line.date_to
             date_from = line.date_from
-            if context.has_key('wizard_date_from'):
-                date_from = context['wizard_date_from']
-            if context.has_key('wizard_date_to'):
-                date_to = context['wizard_date_to']
             if line.analytic_account_id.id:
                 cr.execute("SELECT SUM(amount) FROM account_analytic_line WHERE account_id=%s AND (date "
                        "between to_date(%s,'yyyy-mm-dd') AND to_date(%s,'yyyy-mm-dd')) AND "

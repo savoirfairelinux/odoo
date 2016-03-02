@@ -61,7 +61,7 @@ class pos_order_report(osv.osv):
                     sum(l.qty * u.factor) as product_qty,
                     sum(l.qty * l.price_unit) as price_total,
                     sum((l.qty * l.price_unit) * (l.discount / 100)) as total_discount,
-                    (sum(l.qty*l.price_unit)/sum(l.qty * u.factor))::decimal(16,2) as average_price,
+                    (sum(l.qty*l.price_unit)/sum(l.qty * u.factor))::decimal as average_price,
                     sum(cast(to_char(date_trunc('day',s.date_order) - date_trunc('day',s.create_date),'DD') as int)) as delay_validation,
                     to_char(s.date_order, 'YYYY') as year,
                     to_char(s.date_order, 'MM') as month,
@@ -75,7 +75,8 @@ class pos_order_report(osv.osv):
                     l.product_id as product_id
                 from pos_order_line as l
                     left join pos_order s on (s.id=l.order_id)
-                    left join product_template pt on (pt.id=l.product_id)
+                    left join product_product p on (p.id=l.product_id)
+                    left join product_template pt on (pt.id=p.product_tmpl_id)
                     left join product_uom u on (u.id=pt.uom_id)
                 group by
                     to_char(s.date_order, 'dd-MM-YYYY'),to_char(s.date_order, 'YYYY'),to_char(s.date_order, 'MM'),

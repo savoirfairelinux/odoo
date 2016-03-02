@@ -224,7 +224,7 @@ class account_bank_statement(osv.osv):
             amount_currency=amt_cur, currency_id=cur_id, analytic_id=anl_id, context=context)
         return res
 
-    def _get_counter_part_account(sefl, cr, uid, st_line, context=None):
+    def _get_counter_part_account(self, cr, uid, st_line, context=None):
         """Retrieve the account to use in the counterpart move.
            This method may be overridden to implement custom move generation (making sure to
            call super() to establish a clean extension chain).
@@ -237,7 +237,7 @@ class account_bank_statement(osv.osv):
             return st_line.statement_id.journal_id.default_credit_account_id.id
         return st_line.statement_id.journal_id.default_debit_account_id.id
 
-    def _get_counter_part_partner(sefl, cr, uid, st_line, context=None):
+    def _get_counter_part_partner(self, cr, uid, st_line, context=None):
         """Retrieve the partner to use in the counterpart move.
            This method may be overridden to implement custom move generation (making sure to
            call super() to establish a clean extension chain).
@@ -576,6 +576,13 @@ class account_bank_statement_line(osv.osv):
         'date': lambda self,cr,uid,context={}: context.get('date', fields.date.context_today(self,cr,uid,context=context)),
         'type': 'general',
     }
+
+    def copy(self, cr, uid, id, default=None, context=None):
+        if default is None:
+            default = {}
+        default = dict(default, move_ids=[])
+        return super(account_bank_statement_line, self).copy(
+            cr, uid, id, default=default, context=context)
 
 account_bank_statement_line()
 

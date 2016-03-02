@@ -27,6 +27,7 @@ from openerp.osv import fields, osv
 from openerp.tools import ustr
 from openerp.modules.registry import RegistryManager
 from openerp import SUPERUSER_ID
+from openerp.tools.safe_eval import safe_eval as eval
 
 _logger = logging.getLogger(__name__)
 
@@ -59,7 +60,7 @@ class mail_alias(osv.Model):
 
     def _get_alias_domain(self, cr, uid, ids, name, args, context=None):
         ir_config_parameter = self.pool.get("ir.config_parameter")
-        domain = ir_config_parameter.get_param(cr, uid, "mail.catchall.domain", context=context)
+        domain = ir_config_parameter.get_param(cr, SUPERUSER_ID, "mail.catchall.domain", context=context)
         return dict.fromkeys(ids, domain or "")
 
     _columns = {

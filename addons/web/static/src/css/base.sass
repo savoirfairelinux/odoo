@@ -55,7 +55,7 @@ $sheet-padding: 16px
     background-image: -webkit-radial-gradient(circle, $gradient)
     background-image: -moz-radial-gradient($gradient)
     background-image: -ms-radial-gradient($gradient)
-    background-image: radial-gradient($gradient)
+    background-image: radial-gradient(circle, $gradient)
 
 @mixin radius($radius: 5px)
     -moz-border-radius: $radius
@@ -623,8 +623,7 @@ $sheet-padding: 16px
         width: 0
         height: 0
         display: inline-block
-        content: "&darr"
-        text-indent: -99999px
+        content: ""
         vertical-align: top
         margin-top: 8px
         //margin-left set at 3px to avoid a strange overflow
@@ -2248,7 +2247,8 @@ $sheet-padding: 16px
                 &.oe_readonly
                     padding: 6px 0px 0px
                     text-align: right
-                    max-width: 100px
+                span
+                    padding: 0px 6px
                 input
                     width: 100% !important
                     text-align: right

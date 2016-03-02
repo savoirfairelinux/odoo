@@ -85,8 +85,8 @@ class res_partner_activation(osv.osv):
 class res_partner(osv.osv):
     _inherit = "res.partner"
     _columns = {
-        'partner_latitude': fields.float('Geo Latitude'),
-        'partner_longitude': fields.float('Geo Longitude'),
+        'partner_latitude': fields.float('Geo Latitude', digits=(16, 5)),
+        'partner_longitude': fields.float('Geo Longitude', digits=(16, 5)),
         'date_localization': fields.date('Geo Localization Date'),
         'partner_weight': fields.integer('Weight',
             help="Gives the probability to assign a lead to this partner. (0 means no assignation.)"),
@@ -240,7 +240,8 @@ class crm_lead(osv.osv):
                     # warning: point() type takes (longitude, latitude) as parameters in this order!
                     cr.execute("""SELECT id, distance
                                   FROM  (select id, (point(partner_longitude, partner_latitude) <-> point(%s,%s)) AS distance FROM res_partner
-                                  WHERE partner_longitude is not null
+                                  WHERE active
+                                        AND partner_longitude is not null
                                         AND partner_latitude is not null
                                         AND partner_weight > 0) AS d
                                   ORDER BY distance LIMIT 1""", (longitude, latitude))

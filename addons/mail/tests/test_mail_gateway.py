@@ -141,6 +141,53 @@ X-Attachment-Id: f_hkpb27k00
 dGVzdAo=
 --089e01536c4ed4d17204e49b8e96--"""
 
+MAIL_MULTIPART_MIXED_TWO = """X-Original-To: raoul@grosbedon.fr
+Delivered-To: raoul@grosbedon.fr
+Received: by mail1.grosbedon.com (Postfix, from userid 10002)
+    id E8166BFACA; Fri, 23 Aug 2013 13:18:01 +0200 (CEST)
+From: "Bruce Wayne" <bruce@wayneenterprises.com>
+Content-Type: multipart/alternative;
+ boundary="Apple-Mail=_9331E12B-8BD2-4EC7-B53E-01F3FBEC9227"
+Message-Id: <6BB1FAB2-2104-438E-9447-07AE2C8C4A92@sexample.com>
+Mime-Version: 1.0 (Mac OS X Mail 7.3 \(1878.6\))
+
+--Apple-Mail=_9331E12B-8BD2-4EC7-B53E-01F3FBEC9227
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain;
+    charset=us-ascii
+
+First and second part
+
+--Apple-Mail=_9331E12B-8BD2-4EC7-B53E-01F3FBEC9227
+Content-Type: multipart/mixed;
+ boundary="Apple-Mail=_CA6C687E-6AA0-411E-B0FE-F0ABB4CFED1F"
+
+--Apple-Mail=_CA6C687E-6AA0-411E-B0FE-F0ABB4CFED1F
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html;
+    charset=us-ascii
+
+<html><head></head><body>First part</body></html>
+
+--Apple-Mail=_CA6C687E-6AA0-411E-B0FE-F0ABB4CFED1F
+Content-Disposition: inline;
+    filename=thetruth.pdf
+Content-Type: application/pdf;
+    name="thetruth.pdf"
+Content-Transfer-Encoding: base64
+
+SSBhbSB0aGUgQmF0TWFuCg==
+
+--Apple-Mail=_CA6C687E-6AA0-411E-B0FE-F0ABB4CFED1F
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html;
+    charset=us-ascii
+
+<html><head></head><body>Second part</body></html>
+--Apple-Mail=_CA6C687E-6AA0-411E-B0FE-F0ABB4CFED1F--
+
+--Apple-Mail=_9331E12B-8BD2-4EC7-B53E-01F3FBEC9227--
+"""
 
 class TestMailgateway(TestMailBase):
 
@@ -201,6 +248,14 @@ class TestMailgateway(TestMailBase):
                          'message_parse: text version should not be in body after parsing multipart/mixed')
         self.assertIn('<div dir="ltr">Should create a multipart/mixed: from gmail, <b>bold</b>, with attachment.<br clear="all"><div><br></div>', res.get('body', ''),
                       'message_parse: html version should be in body after parsing multipart/mixed')
+
+        res = self.mail_thread.message_parse(cr, uid, MAIL_MULTIPART_MIXED_TWO)
+        self.assertNotIn('First and second part', res.get('body', ''),
+                         'message_parse: text version should not be in body after parsing multipart/mixed')
+        self.assertIn('First part', res.get('body', ''),
+                      'message_parse: first part of the html version should be in body after parsing multipart/mixed')
+        self.assertIn('Second part', res.get('body', ''),
+                      'message_parse: second part of the html version should be in body after parsing multipart/mixed')
 
     def test_10_message_process(self):
         """ Testing incoming emails processing. """
@@ -375,6 +430,16 @@ class TestMailgateway(TestMailBase):
         self.assertEqual(frog_group.message_ids[0].author_id.id, extra_partner_id,
                          'message_process: email_from -> author_id wrong')
 
+        # Do: post a new message with a non-existant email that is a substring of a partner email
+        format_and_process(MAIL_TEMPLATE, email_from='Not really Lombrik Lubrik <oul@email.com>',
+                           subject='Re: news (2)',
+                           msg_id='<zzzbbbaaaa@agrolait.com>',
+                           extra='In-Reply-To: <1198923581.41972151344608186760.JavaMail@agrolait.com>\n')
+        frog_groups = self.mail_group.search(cr, uid, [('name', '=', 'Frogs')])
+        frog_group = self.mail_group.browse(cr, uid, frog_groups[0])
+        # Test: author must not be set, otherwise the system is confusing different users
+        self.assertFalse(frog_group.message_ids[0].author_id, 'message_process: email_from -> mismatching author_id')
+
         # Do: post a new message, with a known partner -> duplicate emails -> user
         frog_group.message_unsubscribe([extra_partner_id])
         raoul_email = self.user_raoul.email
@@ -468,7 +533,7 @@ class TestMailgateway(TestMailBase):
 
         # 1. In-Reply-To header
         reply_msg2 = format(MAIL_TEMPLATE, to='erroneous@example.com',
-                                extra='In-Reply-To: %s' % msg1.message_id,
+                                extra='In-Reply-To:\r\n\t%s' % msg1.message_id,
                                 msg_id='<1198923581.41972151344608186760.JavaMail.3@agrolait.com>')
         self.mail_group.message_process(cr, uid, None, reply_msg2)
 

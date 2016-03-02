@@ -1,38 +1,38 @@
-# Mongolian translation for openobject-addons
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the openobject-addons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * hr_timesheet_sheet
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: openobject-addons\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:36+0000\n"
-"PO-Revision-Date: 2014-02-01 12:14+0000\n"
-"Last-Translator: gobi <Unknown>\n"
-"Language-Team: Mongolian <mn@li.org>\n"
+"Project-Id-Version: Odoo 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-14 00:10+0000\n"
+"PO-Revision-Date: 2015-07-17 09:10+0000\n"
+"Last-Translator: Martin Trigaux\n"
+"Language-Team: Mongolian (http://www.transifex.com/odoo/odoo-7/language/mn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-02-02 06:00+0000\n"
-"X-Generator: Launchpad (build 16916)\n"
+"Content-Transfer-Encoding: \n"
+"Language: mn\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: hr_timesheet_sheet
-#: field:hr.analytic.timesheet,sheet_id:0
-#: field:hr.attendance,sheet_id:0
+#: field:hr.analytic.timesheet,sheet_id:0 field:hr.attendance,sheet_id:0
 #: field:hr_timesheet_sheet.sheet.account,sheet_id:0
 #: field:hr_timesheet_sheet.sheet.day,sheet_id:0
 msgid "Sheet"
 msgstr "Хуудас"
 
 #. module: hr_timesheet_sheet
-#: model:process.transition,name:hr_timesheet_sheet.process_transition_timesheetdraft0
-msgid "Service"
-msgstr "Үйлчилгээ"
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:101
+#, python-format
+msgid "Error ! Sign in (resp. Sign out) must follow Sign out (resp. Sign in)"
+msgstr "Алдаа ! Орох нь (resp. Sign out) заавал гарсны (resp. Sign in) дараа байх ёстой"
 
 #. module: hr_timesheet_sheet
-#: field:hr.timesheet.report,quantity:0
-#: field:timesheet.report,quantity:0
+#: field:hr.timesheet.report,quantity:0 field:timesheet.report,quantity:0
 msgid "Time"
 msgstr "Цаг"
 
@@ -40,15 +40,11 @@ msgstr "Цаг"
 #: help:hr.config.settings,timesheet_max_difference:0
 msgid ""
 "Allowed difference in hours between the sign in/out and the timesheet\n"
-"                computation for one sheet. Set this to 0 if you do not want "
-"any control."
-msgstr ""
-"Орсон/гарсны хоорондын зөвшөөрөгдөх хугацаа цагаар ба нэг цагийн хуудасд "
-"зөвшөөрөгдөх тооцооллын ялгаа цагаар. Хэрэв 0 бол ямар нэг хяналт хийгдэхгүй."
+"                computation for one sheet. Set this to 0 if you do not want any control."
+msgstr "Орсон/гарсны хоорондын зөвшөөрөгдөх хугацаа цагаар ба нэг цагийн хуудасд зөвшөөрөгдөх тооцооллын ялгаа цагаар. Хэрэв 0 бол ямар нэг хяналт хийгдэхгүй."
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: view:hr_timesheet_sheet.sheet:0
+#: view:hr.timesheet.report:0 view:hr_timesheet_sheet.sheet:0
 #: view:timesheet.report:0
 msgid "Group By..."
 msgstr "Бүлэглэх..."
@@ -60,8 +56,7 @@ msgstr "Бүх ирц"
 
 #. module: hr_timesheet_sheet
 #: view:hr_timesheet_sheet.sheet:0
-#: field:hr_timesheet_sheet.sheet,department_id:0
-#: view:timesheet.report:0
+#: field:hr_timesheet_sheet.sheet,department_id:0 view:timesheet.report:0
 #: field:timesheet.report,department_id:0
 msgid "Department"
 msgstr "Хэлтэс"
@@ -72,25 +67,26 @@ msgid "Task timesheet"
 msgstr "Даалгаврын цагийн хуудас"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:73
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:86
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:76
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:92
 #, python-format
 msgid ""
 "In order to create a timesheet for this employee, you must assign an "
 "analytic journal to the employee, like 'Timesheet Journal'."
-msgstr ""
-"Ажилчинд цагийн хуудас үүсгэхдээ ажилчинд шинжилгээний журнал оноох ётой, "
-"тухайлбал 'Цагийн хуудсын журнал'"
+msgstr "Ажилчинд цагийн хуудас үүсгэхдээ ажилчинд шинжилгээний журнал оноох ётой, тухайлбал 'Цагийн хуудсын журнал'"
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "March"
 msgstr "3 сар"
 
 #. module: hr_timesheet_sheet
-#: view:timesheet.report:0
-#: field:timesheet.report,cost:0
+#: model:process.transition,name:hr_timesheet_sheet.process_transition_timesheetdraft0
+msgid "Service"
+msgstr "Үйлчилгээ"
+
+#. module: hr_timesheet_sheet
+#: view:timesheet.report:0 field:timesheet.report,cost:0
 msgid "#Cost"
 msgstr "#Үнэ"
 
@@ -100,17 +96,14 @@ msgid "Unread Messages"
 msgstr "Уншаагүй Зурвасууд"
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: field:hr.timesheet.report,company_id:0
-#: field:hr_timesheet_sheet.sheet,company_id:0
-#: view:timesheet.report:0
+#: view:hr.timesheet.report:0 field:hr.timesheet.report,company_id:0
+#: field:hr_timesheet_sheet.sheet,company_id:0 view:timesheet.report:0
 #: field:timesheet.report,company_id:0
 msgid "Company"
 msgstr "Компани"
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: view:hr_timesheet_sheet.sheet:0
+#: view:hr.timesheet.report:0 view:hr_timesheet_sheet.sheet:0
 #: model:ir.model,name:hr_timesheet_sheet.model_hr_timesheet_report
 #: model:ir.model,name:hr_timesheet_sheet.model_hr_timesheet_sheet_sheet
 #: model:ir.model,name:hr_timesheet_sheet.model_timesheet_report
@@ -130,8 +123,7 @@ msgid "Timesheet Period"
 msgstr "Цагийн хуудсын мөчлөг"
 
 #. module: hr_timesheet_sheet
-#: field:hr_timesheet_sheet.sheet,date_to:0
-#: field:timesheet.report,date_to:0
+#: field:hr_timesheet_sheet.sheet,date_to:0 field:timesheet.report,date_to:0
 msgid "Date to"
 msgstr "Дуусах огноо,цаг"
 
@@ -146,15 +138,13 @@ msgid "Based on the timesheet"
 msgstr "Үндсэн цагийн хуудас"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:327
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:398
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:358
 #, python-format
 msgid "You cannot modify an entry in a confirmed timesheet."
 msgstr "Та баталгаажсан цагийн хуудсыг орж өөрчлөх боломжгүй."
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: view:timesheet.report:0
+#: view:hr.timesheet.report:0 view:timesheet.report:0
 msgid "Group by day of date"
 msgstr "Огнооны өдөрөөр бүлэглэх"
 
@@ -202,15 +192,14 @@ msgid "Please create an employee and associate it with this user."
 msgstr "Ажилчинг үүсгэх холбогдох хэрэглэгчтэй холбоно уу."
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:402
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:422
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:493
 #, python-format
 msgid ""
 "You cannot enter an attendance date outside the current timesheet dates."
 msgstr "Цагийн хуудсын гадна хамаарах ирцийг оруулах боломжгүй."
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:205
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:236
 #, python-format
 msgid "Week "
 msgstr "7 хоног "
@@ -222,15 +211,9 @@ msgid ""
 "the system. From the same form, you can register your attendances (Sign "
 "In/Out) and describe the working hours made on the different projects. At "
 "the end of the period defined in the company, the timesheet is confirmed by "
-"the user and can be validated by his manager. If required, as defined on the "
-"project, you can generate the invoices based on the timesheet."
-msgstr ""
-"Өөрийн цагийн хуудас цэс нь таны цаг бүртгэлийг нээж системд та өөрийн "
-"ажлуудаа бүртгэж болно. Энэ маягт дээр та өөрийн ирцийг бүртгэж янз бүрийн "
-"төслүүдэд зарцуулсан цагаа тайлбарлан бичиж болно. Компаниас тогтоосон "
-"мөчлөгийн эцэст, хэрэглэгч цаг бүртгэлээ баталж өөрийн менежерээр "
-"батламжлуулна. Шаардлагатай бол төсөлд тодорхойлсны дагуу, цаг бүртгэлд "
-"үндэслэсэн нэхэмжлэлийг үүсгэж болно."
+"the user and can be validated by his manager. If required, as defined on the"
+" project, you can generate the invoices based on the timesheet."
+msgstr "Өөрийн цагийн хуудас цэс нь таны цаг бүртгэлийг нээж системд та өөрийн ажлуудаа бүртгэж болно. Энэ маягт дээр та өөрийн ирцийг бүртгэж янз бүрийн төслүүдэд зарцуулсан цагаа тайлбарлан бичиж болно. Компаниас тогтоосон мөчлөгийн эцэст, хэрэглэгч цаг бүртгэлээ баталж өөрийн менежерээр батламжлуулна. Шаардлагатай бол төсөлд тодорхойлсны дагуу, цаг бүртгэлд үндэслэсэн нэхэмжлэлийг үүсгэж болно."
 
 #. module: hr_timesheet_sheet
 #: field:hr_timesheet_sheet.sheet,message_ids:0
@@ -240,29 +223,21 @@ msgstr "Зурвасууд"
 #. module: hr_timesheet_sheet
 #: help:hr_timesheet_sheet.sheet,state:0
 msgid ""
-" * The 'Draft' status is used when a user is encoding a new and unconfirmed "
-"timesheet.                 \n"
-"* The 'Confirmed' status is used for to confirm the timesheet by user.       "
-"          \n"
-"* The 'Done' status is used when users timesheet is accepted by his/her "
-"senior."
-msgstr ""
-" * Ажилчин батлаагүй шинэ цагийн хуудас оруулсан дараа 'Ноорог' төлөтэй "
-"байна.                 \n"
-"* Хэрэглэгч цагийн хуудсыг батласан дараа 'Батласан' төлөтэй байна.          "
-"       \n"
-"* Удирдагч цагийн хуудсыг зөвшөөрсөн дараа 'Хийгдсэн' төлөвтэй болно."
+" * The 'Draft' status is used when a user is encoding a new and unconfirmed timesheet.                 \n"
+"* The 'Confirmed' status is used for to confirm the timesheet by user.                 \n"
+"* The 'Done' status is used when users timesheet is accepted by his/her senior."
+msgstr " * Ажилчин батлаагүй шинэ цагийн хуудас оруулсан дараа 'Ноорог' төлөтэй байна.                 \n* Хэрэглэгч цагийн хуудсыг батласан дараа 'Батласан' төлөтэй байна.                 \n* Удирдагч цагийн хуудсыг зөвшөөрсөн дараа 'Хийгдсэн' төлөвтэй болно."
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:64
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:69
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:71
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:80
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:82
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:84
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:327
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:398
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:429
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:67
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:72
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:74
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:86
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:88
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:90
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:358
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:472
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:500
 #: code:addons/hr_timesheet_sheet/wizard/hr_timesheet_current.py:38
 #, python-format
 msgid "Error!"
@@ -272,11 +247,10 @@ msgstr "Алдаа!"
 #: field:hr.config.settings,timesheet_max_difference:0
 msgid ""
 "Allow a difference of time between timesheets and attendances of (in hours)"
-msgstr ""
-"Ирц болон цагийн хуудсын цагийн зөрүүний зөвшөөрөгдөх дээд хэмжээ (цагаар)"
+msgstr "Ирц болон цагийн хуудсын цагийн зөрүүний зөвшөөрөгдөх дээд хэмжээ (цагаар)"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:99
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:130
 #, python-format
 msgid ""
 "Please verify that the total difference of the sheet is lower than %.2f."
@@ -299,19 +273,24 @@ msgid "Validation"
 msgstr "Хяналт"
 
 #. module: hr_timesheet_sheet
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:101
+#, python-format
+msgid "Warning !"
+msgstr "Сануулга !"
+
+#. module: hr_timesheet_sheet
 #: help:hr_timesheet_sheet.sheet,message_unread:0
 msgid "If checked new messages require your attention."
 msgstr "Хэрэв тэмдэглэгдсэн бол шинэ зурвас нь анхаарал татахыг шаардана."
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:69
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:80
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:72
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:86
 #, python-format
 msgid ""
 "In order to create a timesheet for this employee, you must assign it to a "
 "user."
-msgstr ""
-"Энэ ажилчинд цагийн хуудас үүсгэхийн тулд хэрэглэгч холбож өгөх ёстой."
+msgstr "Энэ ажилчинд цагийн хуудас үүсгэхийн тулд хэрэглэгч холбож өгөх ёстой."
 
 #. module: hr_timesheet_sheet
 #: model:process.node,note:hr_timesheet_sheet.process_node_attendance0
@@ -319,17 +298,15 @@ msgid "Employee's timesheet entry"
 msgstr "Ажилтны цагийн хуудасны бичилт"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:213
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:215
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:244
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:246
 #, python-format
 msgid "Invalid Action!"
 msgstr "Буруу Үйлдэл!"
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: field:hr.timesheet.report,account_id:0
-#: view:timesheet.report:0
-#: field:timesheet.report,account_id:0
+#: view:hr.timesheet.report:0 field:hr.timesheet.report,account_id:0
+#: view:timesheet.report:0 field:timesheet.report,account_id:0
 msgid "Analytic Account"
 msgstr "Шинжилгээний Данс"
 
@@ -338,9 +315,7 @@ msgstr "Шинжилгээний Данс"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
-"Чаатлагчийн хураангуйг агуулна (зурвасын тоо,...). Энэ хураангуй нь шууд "
-"html форматтай бөгөөд канбан харагдацад шууд орж харагдах боломжтой."
+msgstr "Чаатлагчийн хураангуйг агуулна (зурвасын тоо,...). Энэ хураангуй нь шууд html форматтай бөгөөд канбан харагдацад шууд орж харагдах боломжтой."
 
 #. module: hr_timesheet_sheet
 #: field:timesheet.report,nbr:0
@@ -354,8 +329,7 @@ msgid "Date from"
 msgstr "Эхлэх огноо"
 
 #. module: hr_timesheet_sheet
-#: view:hr.employee:0
-#: view:hr_timesheet_sheet.sheet:0
+#: view:hr.employee:0 view:hr_timesheet_sheet.sheet:0
 #: model:ir.actions.act_window,name:hr_timesheet_sheet.act_hr_employee_2_hr_timesheet
 #: view:res.company:0
 msgid "Timesheets"
@@ -363,8 +337,7 @@ msgstr "Цаг бүртгэлүүд"
 
 #. module: hr_timesheet_sheet
 #: model:process.node,name:hr_timesheet_sheet.process_node_confirmedtimesheet0
-#: view:timesheet.report:0
-#: selection:timesheet.report,state:0
+#: view:timesheet.report:0 selection:timesheet.report,state:0
 msgid "Confirmed"
 msgstr "Баталсан"
 
@@ -423,14 +396,12 @@ msgid "Timesheets to Validate"
 msgstr "Батлах цагийн хуудсууд"
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: view:hr_timesheet_sheet.sheet:0
+#: view:hr.timesheet.report:0 view:hr_timesheet_sheet.sheet:0
 msgid "Hours"
 msgstr "Хугацаа"
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: view:timesheet.report:0
+#: view:hr.timesheet.report:0 view:timesheet.report:0
 msgid "Group by month of date"
 msgstr "Огнооны сараар бүлэглэх"
 
@@ -440,8 +411,7 @@ msgid "The project manager validates the timesheets."
 msgstr "Төслийн менежер цаг бүртгэлийг батламжилна."
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "July"
 msgstr "7 сар"
 
@@ -451,15 +421,14 @@ msgid "Validate timesheets every"
 msgstr "Бүх цагийн хуудсуудыг батламжлах"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:73
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:86
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:76
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:92
 #, python-format
 msgid "Configuration Error!"
 msgstr "Тохиргооны алдаа!"
 
 #. module: hr_timesheet_sheet
-#: field:hr_timesheet_sheet.sheet,state:0
-#: view:timesheet.report:0
+#: field:hr_timesheet_sheet.sheet,state:0 view:timesheet.report:0
 #: field:timesheet.report,state:0
 msgid "Status"
 msgstr "Төлөв"
@@ -497,8 +466,7 @@ msgid "Sign In"
 msgstr "Нэвтрэх"
 
 #. module: hr_timesheet_sheet
-#: view:timesheet.report:0
-#: field:timesheet.report,total_timesheet:0
+#: view:timesheet.report:0 field:timesheet.report,total_timesheet:0
 msgid "#Total Timesheet"
 msgstr "#Нийт цагийн хуудас"
 
@@ -508,24 +476,20 @@ msgid "hr.timesheet.current.open"
 msgstr "Одоогийн нээлттэй цаг бүртгэл"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:71
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:74
 #, python-format
 msgid ""
-"In order to create a timesheet for this employee, you must link the employee "
-"to a product, like 'Consultant'."
-msgstr ""
-"Энэ ажилчинд цагийн хуудас үүсгэхийн тулд ажилчинд барааг холбож өгөх ёстой, "
-"тухайлбал 'Зөвлөгөө'"
+"In order to create a timesheet for this employee, you must link the employee"
+" to a product, like 'Consultant'."
+msgstr "Энэ ажилчинд цагийн хуудас үүсгэхийн тулд ажилчинд барааг холбож өгөх ёстой, тухайлбал 'Зөвлөгөө'"
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "September"
 msgstr "9 сар"
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "December"
 msgstr "12 сар"
 
@@ -535,18 +499,14 @@ msgid "It will open your current timesheet"
 msgstr "Таны одоогийн цагийн хуудсыг нээнэ"
 
 #. module: hr_timesheet_sheet
-#: selection:hr.config.settings,timesheet_range:0
-#: view:hr.timesheet.report:0
-#: field:hr.timesheet.report,month:0
-#: selection:res.company,timesheet_range:0
-#: view:timesheet.report:0
-#: field:timesheet.report,month:0
+#: selection:hr.config.settings,timesheet_range:0 view:hr.timesheet.report:0
+#: field:hr.timesheet.report,month:0 selection:res.company,timesheet_range:0
+#: view:timesheet.report:0 field:timesheet.report,month:0
 msgid "Month"
 msgstr "Сар"
 
 #. module: hr_timesheet_sheet
-#: view:timesheet.report:0
-#: field:timesheet.report,total_diff:0
+#: view:timesheet.report:0 field:timesheet.report,total_diff:0
 msgid "#Total Diff"
 msgstr "# Бүх зөрүү"
 
@@ -561,13 +521,12 @@ msgid "Sign in/out"
 msgstr "Нэврэх/Гарах"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:84
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:90
 #, python-format
 msgid ""
-"In order to create a timesheet for this employee, you must link the employee "
-"to a product."
-msgstr ""
-"Энэ ажилчинд цагийн хуудас үүсгэхийн тулд ажилчинд барааг холбож өгөх ёстой."
+"In order to create a timesheet for this employee, you must link the employee"
+" to a product."
+msgstr "Энэ ажилчинд цагийн хуудас үүсгэхийн тулд ажилчинд барааг холбож өгөх ёстой."
 
 #. module: hr_timesheet_sheet
 #. openerp-web
@@ -576,9 +535,7 @@ msgstr ""
 msgid ""
 "You will be able to register your working hours and\n"
 "                        activities."
-msgstr ""
-"Ажилласан цаг, хийсэн ажлаа бүртгэх боломжтой \n"
-"                                           байна."
+msgstr "Ажилласан цаг, хийсэн ажлаа бүртгэх боломжтой \n                                           байна."
 
 #. module: hr_timesheet_sheet
 #: view:hr.timesheet.current.open:0
@@ -595,9 +552,7 @@ msgstr "Нэхэмжлэл"
 msgid ""
 "The timesheet line represents the time spent by the employee on a specific "
 "service provided."
-msgstr ""
-"Цаг бүртгэлийн мөр нь өгөгдсөн тодорхой үйлчилгээнд зарцуулсан хугацааг "
-"илэрхийлнэ."
+msgstr "Цаг бүртгэлийн мөр нь өгөгдсөн тодорхой үйлчилгээнд зарцуулсан хугацааг илэрхийлнэ."
 
 #. module: hr_timesheet_sheet
 #: field:hr_timesheet_sheet.sheet,name:0
@@ -612,8 +567,7 @@ msgid "Add"
 msgstr "Нэмэх"
 
 #. module: hr_timesheet_sheet
-#: view:timesheet.report:0
-#: selection:timesheet.report,state:0
+#: view:timesheet.report:0 selection:timesheet.report,state:0
 msgid "Draft"
 msgstr "Ноорог"
 
@@ -642,26 +596,11 @@ msgid ""
 "                of the week. Once the timesheet is confirmed, it should be\n"
 "                validated by a manager.\n"
 "              </p><p>\n"
-"                Timesheets can also be invoiced to customers, depending on "
-"the\n"
+"                Timesheets can also be invoiced to customers, depending on the\n"
 "                configuration of each project's related contract.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Батлах шинэ цагийн хуудас.\n"
-"              </p><p>\n"
-"                Та Цагийн хуудсыг өдөр тутам хөтлөх ёстой бөгөөд долоо "
-"хоногийн \n"
-"                төгсгөл тутамд батлах ёстой. Цагийн хуудас нэгэнтээ "
-"батлагдсан \n"
-"                бол менежер үүнийг шалгах ёстой.\n"
-"              </p><p>\n"
-"                Цагийн хуудас нь мөн захиалагчаас нэхэмжлэх боломжтой бөгөөд "
-"\n"
-"                төсөл бүрийн гэрээний тохиргооноос хамаарна.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Батлах шинэ цагийн хуудас.\n              </p><p>\n                Та Цагийн хуудсыг өдөр тутам хөтлөх ёстой бөгөөд долоо хоногийн \n                төгсгөл тутамд батлах ёстой. Цагийн хуудас нэгэнтээ батлагдсан \n                бол менежер үүнийг шалгах ёстой.\n              </p><p>\n                Цагийн хуудас нь мөн захиалагчаас нэхэмжлэх боломжтой бөгөөд \n                төсөл бүрийн гэрээний тохиргооноос хамаарна.\n              </p>\n            "
 
 #. module: hr_timesheet_sheet
 #: model:ir.model,name:hr_timesheet_sheet.model_account_analytic_line
@@ -669,8 +608,7 @@ msgid "Analytic Line"
 msgstr "Шинжилгээний мөр"
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "August"
 msgstr "8 сар"
 
@@ -680,8 +618,7 @@ msgid "Differences"
 msgstr "Зөрүү"
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "June"
 msgstr "6 сар"
 
@@ -708,10 +645,8 @@ msgid "Is a Follower"
 msgstr "Дагагч эсэх"
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: field:hr.timesheet.report,user_id:0
-#: field:hr_timesheet_sheet.sheet,user_id:0
-#: view:timesheet.report:0
+#: view:hr.timesheet.report:0 field:hr.timesheet.report,user_id:0
+#: field:hr_timesheet_sheet.sheet,user_id:0 view:timesheet.report:0
 #: field:timesheet.report,user_id:0
 msgid "User"
 msgstr "Хэрэглэгч"
@@ -722,21 +657,18 @@ msgid "Timesheet by Account"
 msgstr "Цаг бүртгэлийг дансаар харах"
 
 #. module: hr_timesheet_sheet
-#: field:hr.timesheet.report,date:0
-#: field:hr_timesheet_sheet.sheet.day,name:0
+#: field:hr.timesheet.report,date:0 field:hr_timesheet_sheet.sheet.day,name:0
 #: field:timesheet.report,date:0
 msgid "Date"
 msgstr "Огноо"
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "November"
 msgstr "11 сар"
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: view:timesheet.report:0
+#: view:hr.timesheet.report:0 view:timesheet.report:0
 msgid "Extended Filters..."
 msgstr "Өргөтгөсөн хайлт..."
 
@@ -751,23 +683,20 @@ msgid "My Total Attendance By Week"
 msgstr "Өөрийн бүх цаг бүртгэлийг 7 хоногоор харах"
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "October"
 msgstr "10 сар"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:60
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:63
 #, python-format
 msgid ""
 "The timesheet cannot be validated as it does not contain an equal number of "
 "sign ins and sign outs."
-msgstr ""
-"Орсон болон гарсан нь тэнцүү биш учир цагийн хуудсыг батлах боломжгүй."
+msgstr "Орсон болон гарсан нь тэнцүү биш учир цагийн хуудсыг батлах боломжгүй."
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "January"
 msgstr "1 сар"
 
@@ -788,7 +717,7 @@ msgid "Summary"
 msgstr "Хураангуй"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:215
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:246
 #, python-format
 msgid "You cannot delete a timesheet which have attendance entries."
 msgstr "Та ирцийн бүртгэл хийгдсэн цагийн хуудас устгах боломжгүй."
@@ -799,14 +728,12 @@ msgid "Unvalidated Timesheets"
 msgstr "Батламжлагдаагүй цаг бүртгэл"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:82
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:88
 #, python-format
 msgid ""
 "You cannot have 2 timesheets that overlap!\n"
 "You should use the menu 'My Timesheet' to avoid this problem."
-msgstr ""
-"Давхацсан хоёр цагийн хуудас байж болохгүй!\n"
-"'Өөрийн цагийн хуудас' менюг ашигласнаар энэ асуудлаас зайлсхийж болно."
+msgstr "Давхацсан хоёр цагийн хуудас байж болохгүй!\n'Өөрийн цагийн хуудас' менюг ашигласнаар энэ асуудлаас зайлсхийж болно."
 
 #. module: hr_timesheet_sheet
 #: view:hr_timesheet_sheet.sheet:0
@@ -814,10 +741,16 @@ msgid "Submit to Manager"
 msgstr "Менежерт Илгээх"
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: field:hr.timesheet.report,general_account_id:0
-#: view:timesheet.report:0
-#: field:timesheet.report,general_account_id:0
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:472
+#, python-format
+msgid ""
+"You can not enter an attendance in a submitted timesheet. Ask your manager "
+"to reset it before adding attendance."
+msgstr "Илгээгдсэн цагийн хуудсанд ирж оруулах боломжгүй. Менежерээсээ буцаахыг асуу."
+
+#. module: hr_timesheet_sheet
+#: view:hr.timesheet.report:0 field:hr.timesheet.report,general_account_id:0
+#: view:timesheet.report:0 field:timesheet.report,general_account_id:0
 msgid "General Account"
 msgstr "Ерөнхий данс"
 
@@ -833,7 +766,7 @@ msgid "Search Account"
 msgstr "Данс Хайх"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:429
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:500
 #, python-format
 msgid "You cannot modify an entry in a confirmed timesheet"
 msgstr "Та батлагдсан цагийн хуудсыг өөрчлөх боломжгүй"
@@ -843,24 +776,18 @@ msgstr "Та батлагдсан цагийн хуудсыг өөрчлөх б�
 msgid ""
 "Allowed difference in hours between the sign in/out and the timesheet "
 "computation for one sheet. Set this to 0 if you do not want any control."
-msgstr ""
-"Нэвтрэх/ гарахын хоорондох зөвшөөрөгдсөн зөрүү бөгөөд 1  хүснэгтийн цаг "
-"бүртгэлийн тооцоололд хэрэглэнэ. Ямар ч хяналт хэрэггүй бол 0 утга олгоно уу"
+msgstr "Нэвтрэх/ гарахын хоорондох зөвшөөрөгдсөн зөрүү бөгөөд 1  хүснэгтийн цаг бүртгэлийн тооцоололд хэрэглэнэ. Ямар ч хяналт хэрэггүй бол 0 утга олгоно уу"
 
 #. module: hr_timesheet_sheet
-#: view:hr_timesheet_sheet.sheet:0
-#: field:hr_timesheet_sheet.sheet,period_ids:0
+#: view:hr_timesheet_sheet.sheet:0 field:hr_timesheet_sheet.sheet,period_ids:0
 #: view:hr_timesheet_sheet.sheet.day:0
 msgid "Period"
 msgstr "Мөчлөг"
 
 #. module: hr_timesheet_sheet
-#: selection:hr.config.settings,timesheet_range:0
-#: view:hr.timesheet.report:0
-#: field:hr.timesheet.report,day:0
-#: selection:res.company,timesheet_range:0
-#: view:timesheet.report:0
-#: field:timesheet.report,day:0
+#: selection:hr.config.settings,timesheet_range:0 view:hr.timesheet.report:0
+#: field:hr.timesheet.report,day:0 selection:res.company,timesheet_range:0
+#: view:timesheet.report:0 field:timesheet.report,day:0
 msgid "Day"
 msgstr "Өдөр"
 
@@ -869,9 +796,7 @@ msgstr "Өдөр"
 msgid ""
 "You cannot have 2 timesheets that overlap!\n"
 "Please use the menu 'My Current Timesheet' to avoid this problem."
-msgstr ""
-"Давхацсан хоёр зцагийн хуудастай байж болохгүй!\n"
-"'Өөрийн одоогийн цагийн хуудас' менюг ашигласнаар энэ асуудлаас зайлсхийнэ."
+msgstr "Давхацсан хоёр зцагийн хуудастай байж болохгүй!\n'Өөрийн одоогийн цагийн хуудас' менюг ашигласнаар энэ асуудлаас зайлсхийнэ."
 
 #. module: hr_timesheet_sheet
 #: view:hr.timesheet.current.open:0
@@ -881,8 +806,7 @@ msgid "My Timesheet"
 msgstr "Өөрийн цагийн хуудас"
 
 #. module: hr_timesheet_sheet
-#: view:timesheet.report:0
-#: selection:timesheet.report,state:0
+#: view:timesheet.report:0 selection:timesheet.report,state:0
 msgid "Done"
 msgstr "Дууссан"
 
@@ -918,8 +842,7 @@ msgid "Open Timesheet"
 msgstr "Цагийн хуудас нээх"
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: view:timesheet.report:0
+#: view:hr.timesheet.report:0 view:timesheet.report:0
 msgid "Group by year of date"
 msgstr "Огнооны жилээр бүлэглэх"
 
@@ -968,16 +891,21 @@ msgid "Timesheet Line"
 msgstr "Цагийн хуудасны мөр"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:213
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:474
+#, python-format
+msgid ""
+"You can not enter an attendance date outside the current timesheet dates."
+msgstr "Одоогийн цагийн хуудсаас гадны огноотой ирцийг оруулах боломжгүй."
+
+#. module: hr_timesheet_sheet
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:244
 #, python-format
 msgid "You cannot delete a timesheet which is already confirmed."
 msgstr "Та аль хэдийн батлагдсан цагийн хуудас устгаж чадахгүй."
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: field:hr.timesheet.report,product_id:0
-#: view:timesheet.report:0
-#: field:timesheet.report,product_id:0
+#: view:hr.timesheet.report:0 field:hr.timesheet.report,product_id:0
+#: view:timesheet.report:0 field:timesheet.report,product_id:0
 msgid "Product"
 msgstr "Бараа"
 
@@ -989,8 +917,7 @@ msgid "Attendances"
 msgstr "Ирц"
 
 #. module: hr_timesheet_sheet
-#: field:hr.timesheet.report,name:0
-#: field:timesheet.report,name:0
+#: field:hr.timesheet.report,name:0 field:timesheet.report,name:0
 msgid "Description"
 msgstr "Тайлбар"
 
@@ -1000,8 +927,7 @@ msgid "The employee periodically confirms his own timesheets."
 msgstr "Ажилтан үе шаттайгаар цаг бүртгэлээ батална."
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "May"
 msgstr "5 сар"
 
@@ -1039,7 +965,7 @@ msgid "Difference"
 msgstr "Зөрүү"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:64
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:67
 #, python-format
 msgid "You cannot duplicate a timesheet."
 msgstr "Та цагийн хуудсыг хувилбах боломжгүй."
@@ -1050,8 +976,7 @@ msgid "Absent"
 msgstr "Байхгүй"
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "February"
 msgstr "2 сар"
 
@@ -1061,21 +986,11 @@ msgid ""
 "<p>\n"
 "                This report performs analysis on timesheets created by your\n"
 "                human resources in the system. It allows you to have a full\n"
-"                overview of  entries done by your employees. You can group "
-"them\n"
+"                overview of  entries done by your employees. You can group them\n"
 "                by specific selection criteria thanks to the search tool.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p>\n"
-"                Энэ тайлан нь хэрэглэгчдээр үүссэн цагийн хуудсыг шинжлэхэд "
-"\n"
-"                хэрэглэгдэнэ. Энэ нь ажилчдын оруулсан бичилтийг бүх тоймыг "
-"\n"
-"                харах боломжийг олгоно. Хайлтыг нь ашиглан тухайлсан \n"
-"                шинжүүрээр бүлэглэх боломжтой.\n"
-"              </p>\n"
-"            "
+msgstr "<p>\n                Энэ тайлан нь хэрэглэгчдээр үүссэн цагийн хуудсыг шинжлэхэд \n                хэрэглэгдэнэ. Энэ нь ажилчдын оруулсан бичилтийг бүх тоймыг \n                харах боломжийг олгоно. Хайлтыг нь ашиглан тухайлсан \n                шинжүүрээр бүлэглэх боломжтой.\n              </p>\n            "
 
 #. module: hr_timesheet_sheet
 #: view:hr_timesheet_sheet.sheet:0
@@ -1093,8 +1008,7 @@ msgid "Information of time spent on a service"
 msgstr "Үйлчилгээнд зарцуулсан цагийн мэдээлэл"
 
 #. module: hr_timesheet_sheet
-#: selection:hr.timesheet.report,month:0
-#: selection:timesheet.report,month:0
+#: selection:hr.timesheet.report,month:0 selection:timesheet.report,month:0
 msgid "April"
 msgstr "4 сар"
 
@@ -1104,7 +1018,7 @@ msgid "Confirmation"
 msgstr "Баталгаа"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:99
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:130
 #, python-format
 msgid "Warning!"
 msgstr "Анхааруулга!"
@@ -1115,8 +1029,8 @@ msgid "Invoice rate"
 msgstr "Нэхэмжлэлийн хөнгөлөлтийн харьцаа"
 
 #. module: hr_timesheet_sheet
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:402
-#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:422
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:474
+#: code:addons/hr_timesheet_sheet/hr_timesheet_sheet.py:493
 #, python-format
 msgid "User Error!"
 msgstr "Хэрэглэгчийн алдаа!"
@@ -1142,14 +1056,12 @@ msgid "Analytic accounts"
 msgstr "Шинжилгээний данс"
 
 #. module: hr_timesheet_sheet
-#: view:timesheet.report:0
-#: field:timesheet.report,to_invoice:0
+#: view:timesheet.report:0 field:timesheet.report,to_invoice:0
 msgid "Type of Invoicing"
 msgstr "Нэхэмжлэлийн төрөл"
 
 #. module: hr_timesheet_sheet
-#: view:timesheet.report:0
-#: field:timesheet.report,total_attendance:0
+#: view:timesheet.report:0 field:timesheet.report,total_attendance:0
 msgid "#Total Attendance"
 msgstr "# Бүх  ирц"
 
@@ -1169,16 +1081,13 @@ msgid "Hr Timesheet"
 msgstr "ХН-ийн цаг бүртгэл"
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.report:0
-#: field:hr.timesheet.report,year:0
-#: view:timesheet.report:0
-#: field:timesheet.report,year:0
+#: view:hr.timesheet.report:0 field:hr.timesheet.report,year:0
+#: view:timesheet.report:0 field:timesheet.report,year:0
 msgid "Year"
 msgstr "Он"
 
 #. module: hr_timesheet_sheet
-#: view:hr.timesheet.current.open:0
-#: selection:hr_timesheet_sheet.sheet,state:0
+#: view:hr.timesheet.current.open:0 selection:hr_timesheet_sheet.sheet,state:0
 msgid "Open"
 msgstr "Нээх"
 

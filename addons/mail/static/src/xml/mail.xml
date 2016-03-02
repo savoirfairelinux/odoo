@@ -50,9 +50,10 @@
             <t t-if="!widget.options.view_mailbox">
                 <div class="field_text oe_compact oe_compact_record">
                     <a class="oe_compose_post" t-if="widget.options.compose_placeholder"><t t-raw="widget.options.compose_placeholder"/></a>
-                    <a class="oe_compose_post" t-if="!widget.options.compose_placeholder and !widget.options.view_mailbox">Send a message</a>
+                    <a class="oe_compose_post" t-if="!widget.options.compose_placeholder and !widget.options.view_mailbox"
+                        title="Send a message to all followers of the document">Send a message</a>
                     <span class="oe_grey oe_sep_word">or</span>
-                    <a class="oe_compose_log">Log a note</a>
+                    <a class="oe_compose_log" title="Log a note for this document. No notification will be sent">Log a note</a>
                 </div>
             </t>
         </div>
@@ -92,7 +93,7 @@
                         <img t-att-src="'/mail/static/src/img/mimetypes/' + attachment.filetype + '.png'"></img>
                         <div class='oe_name'><t t-raw='attachment.name' /></div>
                     </a>
-                    <div class='oe_delete oe_e' title="Delete this attachment" t-att-data-id="attachment.id">[</div>
+                    <div t-if="!attachment.upload" class='oe_delete oe_e' title="Delete this attachment" t-att-data-id="attachment.id">[</div>
                     <div class='oe_progress_bar'>
                         uploading
                     </div>
@@ -104,7 +105,7 @@
                         <img t-att-src="widget.attachments_resize_image(attachment.id, [100,80])"></img>
                         <div class='oe_name'><t t-raw='attachment.name' /></div>
                     </a>
-                    <div class='oe_delete oe_e' title="Delete this attachment" t-att-data-id="attachment.id">[</div>
+                    <div t-if="!attachment.upload" class='oe_delete oe_e' title="Delete this attachment" t-att-data-id="attachment.id">[</div>
                     <div class='oe_progress_bar'>
                         uploading
                     </div>

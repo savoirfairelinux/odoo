@@ -75,11 +75,23 @@ class stock_partial_picking(osv.osv_memory):
             res[wizard.id] = any([not(x.tracking) for x in wizard.move_ids])
         return res
 
+    def __get_help_text(self, cursor, user, picking_id, context=None):
+        text = _("The proposed cost is made based on %s")
+        value = _("standard prices set on the products")
+        return text % value
+
+    def _get_help_text(self, cursor, user, ids, name, arg, context=None):
+        res = {}
+        for wiz in self.browse(cursor, user, ids, context=context):
+            res[wiz.id] = self.__get_help_text(cursor, user, wiz.picking_id.id, context=context)
+        return res
+
     _columns = {
         'date': fields.datetime('Date', required=True),
         'move_ids' : fields.one2many('stock.partial.picking.line', 'wizard_id', 'Product Moves'),
         'picking_id': fields.many2one('stock.picking', 'Picking', required=True, ondelete='CASCADE'),
         'hide_tracking': fields.function(_hide_tracking, string='Tracking', type='boolean', help='This field is for internal purpose. It is used to decide if the column production lot has to be shown on the moves or not.'),
+        'help_text': fields.function(_get_help_text, string='Note', type='char'),
      }
 
     def fields_view_get(self, cr, uid, view_id=None, view_type='form', context=None, toolbar=False, submenu=False):
@@ -118,10 +130,11 @@ class stock_partial_picking(osv.osv_memory):
             res.update(picking_id=picking_id)
         if 'move_ids' in fields:
             picking = self.pool.get('stock.picking').browse(cr, uid, picking_id, context=context)
-            moves = [self._partial_move_for(cr, uid, m) for m in picking.move_lines if m.state not in ('done','cancel')]
+            moves = [self._partial_move_for(cr, uid, m, context=context) for m in picking.move_lines if m.state not in ('done','cancel')]
             res.update(move_ids=moves)
         if 'date' in fields:
             res.update(date=time.strftime(DEFAULT_SERVER_DATETIME_FORMAT))
+        res['help_text'] = self.__get_help_text(cr, uid, picking_id, context=context)
         return res
 
     def _product_cost_for_average_update(self, cr, uid, move):
@@ -141,7 +154,7 @@ class stock_partial_picking(osv.osv_memory):
         return {'cost': move.product_id.standard_price,
                 'currency': product_currency_id or picking_currency_id or False}
 
-    def _partial_move_for(self, cr, uid, move):
+    def _partial_move_for(self, cr, uid, move, context=None):
         partial_move = {
             'product_id' : move.product_id.id,
             'quantity' : move.product_qty if move.state == 'assigned' or move.picking_id.type == 'in' else 0,
@@ -150,12 +163,15 @@ class stock_partial_picking(osv.osv_memory):
             'move_id' : move.id,
             'location_id' : move.location_id.id,
             'location_dest_id' : move.location_dest_id.id,
+            'currency': move.picking_id and move.picking_id.company_id.currency_id.id or False,
         }
         if move.picking_id.type == 'in' and move.product_id.cost_method == 'average':
             partial_move.update(update_cost=True, **self._product_cost_for_average_update(cr, uid, move))
         return partial_move
 
     def do_partial(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
         assert len(ids) == 1, 'Partial picking processing may only be done one at a time.'
         stock_picking = self.pool.get('stock.picking')
         stock_move = self.pool.get('stock.move')
@@ -211,7 +227,21 @@ class stock_partial_picking(osv.osv_memory):
             if (picking_type == 'in') and (wizard_line.product_id.cost_method == 'average'):
                 partial_data['move%s' % (wizard_line.move_id.id)].update(product_price=wizard_line.cost,
                                                                   product_currency=wizard_line.currency.id)
-        stock_picking.do_partial(cr, uid, [partial.picking_id.id], partial_data, context=context)
-        return {'type': 'ir.actions.act_window_close'}
+        
+        # Do the partial delivery and open the picking that was delivered
+        # We don't need to find which view is required, stock.picking does it.
+        done = stock_picking.do_partial(
+            cr, uid, [partial.picking_id.id], partial_data, context=context)
+        if done[partial.picking_id.id]['delivered_picking'] == partial.picking_id.id:
+            return {'type': 'ir.actions.act_window_close'}
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': context.get('active_model', 'stock.picking'),
+            'name': _('Partial Delivery'),
+            'res_id': done[partial.picking_id.id]['delivered_picking'],
+            'view_type': 'form',
+            'view_mode': 'form,tree,calendar',
+            'context': context,
+        }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

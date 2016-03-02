@@ -1,21 +1,22 @@
-# Czech translation for openobject-addons
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the openobject-addons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * product
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: openobject-addons\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2013-10-03 18:16+0000\n"
-"Last-Translator: Jan Grmela <Unknown>\n"
-"Language-Team: Czech <cs@li.org>\n"
+"Project-Id-Version: Odoo 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-14 00:10+0000\n"
+"PO-Revision-Date: 2015-05-29 13:01+0000\n"
+"Last-Translator: Martin Trigaux\n"
+"Language-Team: Czech (http://www.transifex.com/odoo/odoo-7/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-21 06:26+0000\n"
-"X-Generator: Launchpad (build 16831)\n"
+"Content-Transfer-Encoding: \n"
+"Language: cs\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #. module: product
 #: field:product.packaging,rows:0
@@ -39,6 +40,7 @@ msgstr "Nejmenší množství k objednání od Hlavního dodavatele"
 
 #. module: product
 #: model:product.template,name:product.product_product_34_product_template
+#: model:product.template,name:product.product_template_34
 msgid "Webcam"
 msgstr "Webkamera"
 
@@ -62,9 +64,7 @@ msgstr "Druhá měrná jednotka"
 msgid ""
 "This pricelist will be used, instead of the default one, for sales to the "
 "current partner"
-msgstr ""
-"Místo výchozího ceníku bude použít tento ceník pro prodej aktuálnímu "
-"partnerovi"
+msgstr "Místo výchozího ceníku bude použít tento ceník pro prodej aktuálnímu partnerovi"
 
 #. module: product
 #: field:product.product,seller_qty:0
@@ -78,6 +78,7 @@ msgstr "Pevné"
 
 #. module: product
 #: model:product.template,name:product.product_product_10_product_template
+#: model:product.template,name:product.product_template_10
 msgid "Mouse, Optical"
 msgstr "Myš, optická"
 
@@ -94,13 +95,13 @@ msgstr "Název pravidla"
 #. module: product
 #: help:product.template,list_price:0
 msgid ""
-"Base price to compute the customer price. Sometimes called the catalog price."
-msgstr ""
-"Základní cena pro výpočet zákaznické ceny. Často se také nazývá katalogová "
-"cena."
+"Base price to compute the customer price. Sometimes called the catalog "
+"price."
+msgstr "Základní cena pro výpočet zákaznické ceny. Často se také nazývá katalogová cena."
 
 #. module: product
 #: model:product.template,name:product.product_product_3_product_template
+#: model:product.template,name:product.product_template_3
 msgid "PC Assemble SC234"
 msgstr "Počítačová sestava SC234"
 
@@ -109,13 +110,10 @@ msgstr "Počítačová sestava SC234"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
-"Udržuje souhrn klábosení (počet zpráv, ...). Tento souhrn je přímo ve "
-"formátu HTML aby jej bylo možné vložit do pohledů kanban."
+msgstr "Udržuje souhrn klábosení (počet zpráv, ...). Tento souhrn je přímo ve formátu HTML aby jej bylo možné vložit do pohledů kanban."
 
 #. module: product
-#: code:addons/product/pricelist.py:179
-#: code:addons/product/product.py:208
+#: code:addons/product/pricelist.py:198 code:addons/product/product.py:208
 #, python-format
 msgid "Warning!"
 msgstr "Varování!"
@@ -131,9 +129,7 @@ msgstr "Malý obrázek"
 msgid ""
 "Conversion from Product UoM %s to Default UoM %s is not possible as they "
 "both belong to different Category!."
-msgstr ""
-"Převod z MJ výrobku %s na výchozí MJ %s není množný jelikož jednotky spadají "
-"do různých kategorií!"
+msgstr "Převod z MJ výrobku %s na výchozí MJ %s není množný jelikož jednotky spadají do různých kategorií!"
 
 #. module: product
 #: selection:product.template,cost_method:0
@@ -157,6 +153,7 @@ msgstr "Ceník"
 
 #. module: product
 #: model:product.template,name:product.product_product_4_product_template
+#: model:product.template,name:product.product_template_4
 msgid "PC Assemble SC349"
 msgstr "Počítačová sestava SC349"
 
@@ -164,12 +161,9 @@ msgstr "Počítačová sestava SC349"
 #: help:product.product,seller_delay:0
 msgid ""
 "This is the average delay in days between the purchase order confirmation "
-"and the reception of goods for this product and for the default supplier. It "
-"is used by the scheduler to order requests based on reordering delays."
-msgstr ""
-"Průměrné zpoždění ve dnech mezi potvrzením objednávky a přijetím zboží pro "
-"tento výrobek od výchozího dodavatele. Je použito plánovačem v objednávách "
-"výroby na základě zpoždění znovuobjednání."
+"and the reception of goods for this product and for the default supplier. It"
+" is used by the scheduler to order requests based on reordering delays."
+msgstr "Průměrné zpoždění ve dnech mezi potvrzením objednávky a přijetím zboží pro tento výrobek od výchozího dodavatele. Je použito plánovačem v objednávách výroby na základě zpoždění znovuobjednání."
 
 #. module: product
 #: model:product.pricelist.version,name:product.ver0
@@ -188,8 +182,7 @@ msgid "Sale Pricelist"
 msgstr "Prodejní ceník"
 
 #. module: product
-#: view:product.template:0
-#: field:product.template,type:0
+#: view:product.template:0 field:product.template,type:0
 msgid "Product Type"
 msgstr "Typ výrobku"
 
@@ -204,9 +197,7 @@ msgstr "Výrobky: "
 msgid ""
 "Error! You cannot define the decimal precision of 'Account' as greater than "
 "the rounding factor of the company's main currency"
-msgstr ""
-"Chyba! Nemůžete určit desetinnou přesnost 'účtu' jako větší než "
-"zakorouhlovací faktor hlavní měny společnosti"
+msgstr "Chyba! Nemůžete určit desetinnou přesnost 'účtu' jako větší než zakorouhlovací faktor hlavní měny společnosti"
 
 #. module: product
 #: field:product.category,parent_id:0
@@ -215,6 +206,7 @@ msgstr "Nadřazená kategorie"
 
 #. module: product
 #: model:product.template,description:product.product_product_33_product_template
+#: model:product.template,description:product.product_template_33
 msgid "Headset for laptop PC with USB connector."
 msgstr "Sluchátka k notebooku s USB konektorem."
 
@@ -233,42 +225,25 @@ msgstr "Jméno dodavatele, cena, kód výrobku, ..."
 msgid ""
 "Error! You cannot define a rounding factor for the company's main currency "
 "that is smaller than the decimal precision of 'Account'."
-msgstr ""
-"Chyba! Nemůžete určit desetinnou přesnost hlavní měny společnosti menší než "
-"desetinnou přesnost 'účtu'."
+msgstr "Chyba! Nemůžete určit desetinnou přesnost hlavní měny společnosti menší než desetinnou přesnost 'účtu'."
 
 #. module: product
 #: help:product.product,outgoing_qty:0
 msgid ""
 "Quantity of products that are planned to leave.\n"
-"In a context with a single Stock Location, this includes goods leaving this "
-"Location, or any of its children.\n"
-"In a context with a single Warehouse, this includes goods leaving the Stock "
-"Location of this Warehouse, or any of its children.\n"
-"In a context with a single Shop, this includes goods leaving the Stock "
-"Location of the Warehouse of this Shop, or any of its children.\n"
-"Otherwise, this includes goods leaving any Stock Location with 'internal' "
-"type."
-msgstr ""
-"Množství výrobků plánovaných k vyskladnění.\n"
-"V kontextu jednoho umístění zboží je zde zahrnuto zboží vyskladněné z tohoto "
-"umístění nebo jeho podřazených umístění.\n"
-"V kontextu jednoho skladu je zde zahrnuto zboží vyskladněné z umístění zboží "
-"v tomto skladu nebo jeho podřazných umístění.\n"
-"V kontextu jednoho obchodu je zde zahrnuto zboží vyskladněné z tohoto "
-"umístění zboží v tomto skladu v tomto obchodě nebo jeho podřazených "
-"umístění.\n"
-"Jinak je zde zahrnuto zboží opouštějící kterékoli umístění zboží druhu "
-"'vnitřní'."
+"In a context with a single Stock Location, this includes goods leaving this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods leaving the Stock Location of this Warehouse, or any of its children.\n"
+"In a context with a single Shop, this includes goods leaving the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods leaving any Stock Location with 'internal' type."
+msgstr "Množství výrobků plánovaných k vyskladnění.\nV kontextu jednoho umístění zboží je zde zahrnuto zboží vyskladněné z tohoto umístění nebo jeho podřazených umístění.\nV kontextu jednoho skladu je zde zahrnuto zboží vyskladněné z umístění zboží v tomto skladu nebo jeho podřazných umístění.\nV kontextu jednoho obchodu je zde zahrnuto zboží vyskladněné z tohoto umístění zboží v tomto skladu v tomto obchodě nebo jeho podřazených umístění.\nJinak je zde zahrnuto zboží opouštějící kterékoli umístění zboží druhu 'vnitřní'."
 
 #. module: product
 #: model:product.template,description_sale:product.product_product_42_product_template
+#: model:product.template,description_sale:product.product_template_42
 msgid ""
 "Office Editing Software with word processing, spreadsheets, presentations, "
 "graphics, and databases..."
-msgstr ""
-"Kancelářský software s textovým procesorem, tabulkami, prezentacemi, "
-"grafikou a databázemi..."
+msgstr "Kancelářský software s textovým procesorem, tabulkami, prezentacemi, grafikou a databázemi..."
 
 #. module: product
 #: field:product.product,seller_id:0
@@ -279,9 +254,7 @@ msgstr "Hlavní dodavatel"
 #: model:ir.actions.act_window,name:product.product_ul_form_action
 #: model:ir.model,name:product.model_product_packaging
 #: model:ir.ui.menu,name:product.menu_product_ul_form_action
-#: view:product.packaging:0
-#: view:product.product:0
-#: view:product.ul:0
+#: view:product.packaging:0 view:product.product:0 view:product.ul:0
 msgid "Packaging"
 msgstr "Balení"
 
@@ -292,14 +265,14 @@ msgid ""
 msgstr "Pokud není zaškrtnuto, umožní vám skrýt výrobek bez jeho odebrání."
 
 #. module: product
-#: view:product.product:0
-#: field:product.template,categ_id:0
+#: view:product.product:0 field:product.template,categ_id:0
 #: field:product.uom,category_id:0
 msgid "Category"
 msgstr "Kategorie"
 
 #. module: product
 #: model:product.template,name:product.product_product_25_product_template
+#: model:product.template,name:product.product_template_25
 msgid "Laptop E5023"
 msgstr "Notebook E5023"
 
@@ -315,6 +288,7 @@ msgstr "Počet balíků na vrstvu"
 
 #. module: product
 #: model:product.template,name:product.product_product_30_product_template
+#: model:product.template,name:product.product_template_30
 msgid "Pen drive, SP-4"
 msgstr "Flash disk, SP-4"
 
@@ -325,12 +299,12 @@ msgstr "Množství dle balíku"
 
 #. module: product
 #: model:product.template,name:product.product_product_29_product_template
+#: model:product.template,name:product.product_template_29
 msgid "Pen drive, SP-2"
 msgstr "Flash disk, SP-2"
 
 #. module: product
-#: view:product.product:0
-#: view:product.template:0
+#: view:product.product:0 view:product.template:0
 #: field:product.template,state:0
 msgid "Status"
 msgstr "Stav"
@@ -362,23 +336,12 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to add a new packaging type.\n"
 "              </p><p>\n"
-"                The packaging type define the dimensions as well as the "
-"number\n"
-"                of products per package. This will ensure salesperson sell "
-"the\n"
+"                The packaging type define the dimensions as well as the number\n"
+"                of products per package. This will ensure salesperson sell the\n"
 "                right number of products according to the package selected.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Klikněte pro přidání nového druhu obalu.\n"
-"              </p><p>\n"
-"                Druh obsalu udává rozměry, stejně jako množství výrobků\n"
-"                na balík. Tímto je zajištěno, že prodavač prodá správné "
-"množství\n"
-"                výrobků podle zvoleného obalu.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Klikněte pro přidání nového druhu obalu.\n              </p><p>\n                Druh obsalu udává rozměry, stejně jako množství výrobků\n                na balík. Tímto je zajištěno, že prodavač prodá správné množství\n                výrobků podle zvoleného obalu.\n              </p>\n            "
 
 #. module: product
 #: field:product.template,product_manager:0
@@ -387,6 +350,7 @@ msgstr "Product manager"
 
 #. module: product
 #: model:product.template,name:product.product_product_7_product_template
+#: model:product.template,name:product.product_template_7
 msgid "17” LCD Monitor"
 msgstr "17\" LCD monitor"
 
@@ -401,8 +365,7 @@ msgid "Products Price Search"
 msgstr "Hledání ceny výrobku"
 
 #. module: product
-#: view:product.template:0
-#: field:product.template,description_sale:0
+#: view:product.template:0 field:product.template,description_sale:0
 msgid "Sale Description"
 msgstr "Prodejní popis"
 
@@ -422,8 +385,7 @@ msgid "The net weight in Kg."
 msgstr "Čistá váha v Kg."
 
 #. module: product
-#: field:pricelist.partnerinfo,min_quantity:0
-#: field:product.supplierinfo,qty:0
+#: field:pricelist.partnerinfo,min_quantity:0 field:product.supplierinfo,qty:0
 msgid "Quantity"
 msgstr "Množství"
 
@@ -437,9 +399,7 @@ msgstr "Spočítat cenu výrobku na základní jednotku dle verze ceníku."
 msgid ""
 "Specify a product if this rule only applies to one product. Keep empty "
 "otherwise."
-msgstr ""
-"Zadejte výrobek pokud se toto pravidlo vztahuje jen na jeden výrobek. Jinak "
-"pole ponechte prázdné."
+msgstr "Zadejte výrobek pokud se toto pravidlo vztahuje jen na jeden výrobek. Jinak pole ponechte prázdné."
 
 #. module: product
 #: model:product.uom.categ,name:product.product_uom_categ_kgm
@@ -450,25 +410,11 @@ msgstr "Hmotnost"
 #: help:product.product,virtual_available:0
 msgid ""
 "Forecast quantity (computed as Quantity On Hand - Outgoing + Incoming)\n"
-"In a context with a single Stock Location, this includes goods stored in "
-"this location, or any of its children.\n"
-"In a context with a single Warehouse, this includes goods stored in the "
-"Stock Location of this Warehouse, or any of its children.\n"
-"In a context with a single Shop, this includes goods stored in the Stock "
-"Location of the Warehouse of this Shop, or any of its children.\n"
-"Otherwise, this includes goods stored in any Stock Location with 'internal' "
-"type."
-msgstr ""
-"Předpokládané množství (spočítáno jako množství k dispozici - odchozí + "
-"příchozí)\n"
-"V kontextu jednoho umístění zboží je zde zahrnuto zboží na skladě v tomto "
-"umístění nebo jeho podřazených umístěních.\n"
-" V kontextu jednoho skladu je zde zahrnuto zboží na skladě v tomto umístění "
-"zboží v tomto skladu nebo jeho podřazných umístěních.\n"
-" V kontextu jednoho obchodu je zde zahrnuto zboží na skladě v tomto umístění "
-"v tomto skladu v tomto obchodě nebo jeho podřazených umístění.\n"
-" Jinak je zde zahrnuto zboží na skladě v kterémkoli umístění zboží druhu "
-"'vnitřní'."
+"In a context with a single Stock Location, this includes goods stored in this location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.\n"
+"In a context with a single Shop, this includes goods stored in the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods stored in any Stock Location with 'internal' type."
+msgstr "Předpokládané množství (spočítáno jako množství k dispozici - odchozí + příchozí)\nV kontextu jednoho umístění zboží je zde zahrnuto zboží na skladě v tomto umístění nebo jeho podřazených umístěních.\n V kontextu jednoho skladu je zde zahrnuto zboží na skladě v tomto umístění zboží v tomto skladu nebo jeho podřazných umístěních.\n V kontextu jednoho obchodu je zde zahrnuto zboží na skladě v tomto umístění v tomto skladu v tomto obchodě nebo jeho podřazených umístění.\n Jinak je zde zahrnuto zboží na skladě v kterémkoli umístění zboží druhu 'vnitřní'."
 
 #. module: product
 #: field:product.packaging,height:0
@@ -488,13 +434,9 @@ msgstr "Spravovat vlastnosti výrobků"
 #. module: product
 #: help:product.uom,factor:0
 msgid ""
-"How much bigger or smaller this unit is compared to the reference Unit of "
-"Measure for this category:\n"
+"How much bigger or smaller this unit is compared to the reference Unit of Measure for this category:\n"
 "1 * (reference unit) = ratio * (this unit)"
-msgstr ""
-"O kolik větší nebo menší je tato jednotka ve srovnání s referenční měrnou "
-"jednotkou této kategorie: \n"
-"1 * (referenční jednotka) = poměr * (tato jednotka)"
+msgstr "O kolik větší nebo menší je tato jednotka ve srovnání s referenční měrnou jednotkou této kategorie: \n1 * (referenční jednotka) = poměr * (tato jednotka)"
 
 #. module: product
 #: model:ir.model,name:product.model_pricelist_partnerinfo
@@ -528,6 +470,7 @@ msgstr "Prodeje & nákupy"
 
 #. module: product
 #: model:product.template,name:product.product_product_44_product_template
+#: model:product.template,name:product.product_template_44
 msgid "GrapWorks Software"
 msgstr "Software GrapWorks"
 
@@ -538,6 +481,7 @@ msgstr "Pracovní doba"
 
 #. module: product
 #: model:product.template,name:product.product_product_42_product_template
+#: model:product.template,name:product.product_template_42
 msgid "Office Suite"
 msgstr "Kancelářský balík"
 
@@ -548,6 +492,7 @@ msgstr "Měrný typ"
 
 #. module: product
 #: model:product.template,name:product.product_product_32_product_template
+#: model:product.template,name:product.product_template_32
 msgid "Headset standard"
 msgstr "Standard sluchátek"
 
@@ -560,33 +505,18 @@ msgstr "Dnů"
 #: help:product.product,incoming_qty:0
 msgid ""
 "Quantity of products that are planned to arrive.\n"
-"In a context with a single Stock Location, this includes goods arriving to "
-"this Location, or any of its children.\n"
-"In a context with a single Warehouse, this includes goods arriving to the "
-"Stock Location of this Warehouse, or any of its children.\n"
-"In a context with a single Shop, this includes goods arriving to the Stock "
-"Location of the Warehouse of this Shop, or any of its children.\n"
-"Otherwise, this includes goods arriving to any Stock Location with "
-"'internal' type."
-msgstr ""
-"Množství výrobků, které má dorazit.\n"
-"V kontextu jednoho umístění zboží je zde zahrnuto zboží, které má dorazit do "
-"tohoto umístění nebo jeho podřazených umístění.\n"
-"V kontextu jednoho skladu je zde zahrnuto zboží, které má dorazit do "
-"umístění zboží v tomto skladu nebo jeho podřazených umístění.\n"
-"V kontextu jednoho obchodu je zde zahrnuto zboží, které má dorazit do "
-"umístění v tomto skladu v tomto obchodě nebo jeho podřazených umístění.\n"
-"Jinak je zde zahrnuto zboží, které má dorazit do v kteréhokoli umístění "
-"zboží druhu 'vnitřní'."
+"In a context with a single Stock Location, this includes goods arriving to this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods arriving to the Stock Location of this Warehouse, or any of its children.\n"
+"In a context with a single Shop, this includes goods arriving to the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods arriving to any Stock Location with 'internal' type."
+msgstr "Množství výrobků, které má dorazit.\nV kontextu jednoho umístění zboží je zde zahrnuto zboží, které má dorazit do tohoto umístění nebo jeho podřazených umístění.\nV kontextu jednoho skladu je zde zahrnuto zboží, které má dorazit do umístění zboží v tomto skladu nebo jeho podřazených umístění.\nV kontextu jednoho obchodu je zde zahrnuto zboží, které má dorazit do umístění v tomto skladu v tomto obchodě nebo jeho podřazených umístění.\nJinak je zde zahrnuto zboží, které má dorazit do v kteréhokoli umístění zboží druhu 'vnitřní'."
 
 #. module: product
 #: constraint:product.template:0
 msgid ""
 "Error: The default Unit of Measure and the purchase Unit of Measure must be "
 "in the same category."
-msgstr ""
-"Chyba: Vychozí měrná jednotka a nákupní měrná jednotka musí být stejné "
-"kategorie."
+msgstr "Chyba: Vychozí měrná jednotka a nákupní měrná jednotka musí být stejné kategorie."
 
 #. module: product
 #: model:ir.model,name:product.model_product_uom_categ
@@ -613,9 +543,7 @@ msgstr "Výpočet ceny"
 msgid ""
 "You provided an invalid \"EAN13 Barcode\" reference. You may use the "
 "\"Internal Reference\" field instead."
-msgstr ""
-"Zadali jste neplatný odkaz na \"Čárový kód EAN13\". Můžete místo toho použít "
-"pole \"Vnitřní odkaz\"."
+msgstr "Zadali jste neplatný odkaz na \"Čárový kód EAN13\". Můžete místo toho použít pole \"Vnitřní odkaz\"."
 
 #. module: product
 #: model:res.groups,name:product.group_purchase_pricelist
@@ -624,11 +552,13 @@ msgstr "Nákupní ceníky"
 
 #. module: product
 #: model:product.template,name:product.product_product_5_product_template
+#: model:product.template,name:product.product_template_5
 msgid "PC Assemble + Custom (PC on Demand)"
 msgstr "Počítačová skříň + vlastní (PC na zakázku)"
 
 #. module: product
 #: model:product.template,description:product.product_product_27_product_template
+#: model:product.template,description:product.product_template_27
 msgid "Custom Laptop based on customer's requirement."
 msgstr "Zákaznický notebook založený na potřebách zákazníka."
 
@@ -645,6 +575,7 @@ msgstr "Neshoda kategorií měrných jednotek"
 
 #. module: product
 #: model:product.template,name:product.product_product_36_product_template
+#: model:product.template,name:product.product_template_36
 msgid "Blank DVD-RW"
 msgstr "Prázdné DVD-RW"
 
@@ -673,8 +604,7 @@ msgstr "Zadejte maximální marži nad základní cenu."
 msgid ""
 "Error! You cannot assign the Main Pricelist as Other Pricelist in PriceList "
 "Item!"
-msgstr ""
-"Chyba! Nemůžete přiřadit hlavní ceník jako další ceník v položce ceníku!"
+msgstr "Chyba! Nemůžete přiřadit hlavní ceník jako další ceník v položce ceníku!"
 
 #. module: product
 #: view:product.price_list:0
@@ -693,11 +623,13 @@ msgstr "Min. množství"
 
 #. module: product
 #: model:product.template,name:product.product_product_12_product_template
+#: model:product.template,name:product.product_template_12
 msgid "Mouse, Wireless"
 msgstr "Myš, bezdrátová"
 
 #. module: product
 #: model:product.template,name:product.product_product_22_product_template
+#: model:product.template,name:product.product_template_22
 msgid "Processor Core i5 2.70 Ghz"
 msgstr "Procesor Core i5 2.70 GHz"
 
@@ -727,36 +659,31 @@ msgid ""
 "When a version is duplicated it is set to non active, so that the dates do "
 "not overlaps with original version. You should change the dates and "
 "reactivate the pricelist"
-msgstr ""
-"Když je verze zdvojená, tak je nastaveno na neaktivní, takže data se "
-"nepřekrávají s původní verzí. Měli byste změnit data a znovu aktivovat ceník"
+msgstr "Když je verze zdvojená, tak je nastaveno na neaktivní, takže data se nepřekrávají s původní verzí. Měli byste změnit data a znovu aktivovat ceník"
 
 #. module: product
 #: model:product.template,name:product.product_product_18_product_template
+#: model:product.template,name:product.product_template_18
 msgid "HDD SH-2"
 msgstr "Pevný disk SH-2"
 
 #. module: product
 #: model:product.template,name:product.product_product_17_product_template
+#: model:product.template,name:product.product_template_17
 msgid "HDD SH-1"
 msgstr "Pevný disk SH-1"
 
 #. module: product
-#: field:product.supplierinfo,name:0
-#: field:product.template,seller_ids:0
+#: field:product.supplierinfo,name:0 field:product.template,seller_ids:0
 msgid "Supplier"
 msgstr "Dodavatel"
 
 #. module: product
 #: help:product.template,cost_method:0
 msgid ""
-"Standard Price: The cost price is manually updated at the end of a specific "
-"period (usually every year). \n"
+"Standard Price: The cost price is manually updated at the end of a specific period (usually every year). \n"
 "Average Price: The cost price is recomputed at each incoming shipment."
-msgstr ""
-"Běžná cena: Cena je ručně aktualizována na konci určitého období (obvykle "
-"každý rok). \n"
-"Průměrná cena: Cena je znovu spočítána po každé příchozí dodávce."
+msgstr "Běžná cena: Cena je ručně aktualizována na konci určitého období (obvykle každý rok). \nPrůměrná cena: Cena je znovu spočítána po každé příchozí dodávce."
 
 #. module: product
 #: field:product.product,qty_available:0
@@ -781,8 +708,7 @@ msgstr "Čárový kód EAN13"
 #. module: product
 #: model:ir.actions.act_window,name:product.action_product_price_list
 #: model:ir.model,name:product.model_product_price_list
-#: view:product.price_list:0
-#: report:product.pricelist:0
+#: view:product.price_list:0 report:product.pricelist:0
 #: field:product.pricelist.version,pricelist_id:0
 msgid "Price List"
 msgstr "Ceník"
@@ -799,6 +725,7 @@ msgstr "Nákup"
 
 #. module: product
 #: model:product.template,name:product.product_product_33_product_template
+#: model:product.template,name:product.product_template_33
 msgid "Headset USB"
 msgstr "USB sluchátka"
 
@@ -829,6 +756,7 @@ msgstr "Dodavatel výrobku"
 
 #. module: product
 #: model:product.template,name:product.product_product_28_product_template
+#: model:product.template,name:product.product_template_28
 msgid "External Hard disk"
 msgstr "Externí disk"
 
@@ -863,9 +791,7 @@ msgid "Print"
 msgstr "Tisk"
 
 #. module: product
-#: view:product.product:0
-#: field:product.ul,type:0
-#: field:product.uom,uom_type:0
+#: view:product.product:0 field:product.ul,type:0 field:product.uom,uom_type:0
 msgid "Type"
 msgstr "Typ"
 
@@ -890,8 +816,7 @@ msgstr "Klíč"
 #. module: product
 #: model:ir.actions.report.xml,name:product.report_product_pricelist
 #: model:ir.model,name:product.model_product_pricelist
-#: field:product.product,pricelist_id:0
-#: view:product.supplierinfo:0
+#: field:product.product,pricelist_id:0 view:product.supplierinfo:0
 msgid "Pricelist"
 msgstr "Ceník"
 
@@ -915,9 +840,7 @@ msgstr "Partner"
 msgid ""
 "1 or several supplier(s) can be linked to a product. All information stands "
 "in the product form."
-msgstr ""
-"1 nebo několik dodavatel(ů) může být navázáno na výrobek. Všechny informace "
-"zůstávají ve formuláři výrobku."
+msgstr "1 nebo několik dodavatel(ů) může být navázáno na výrobek. Všechny informace zůstávají ve formuláři výrobku."
 
 #. module: product
 #: field:product.pricelist.item,price_round:0
@@ -926,6 +849,7 @@ msgstr "Zaoukrouhlení ceny"
 
 #. module: product
 #: model:product.template,name:product.product_product_1_product_template
+#: model:product.template,name:product.product_template_1
 msgid "On Site Monitoring"
 msgstr "Sledování na místě"
 
@@ -942,14 +866,14 @@ msgstr "Informace o dodavateli"
 
 #. module: product
 #: model:ir.model,name:product.model_res_currency
-#: field:product.price.type,currency_id:0
-#: report:product.pricelist:0
+#: field:product.price.type,currency_id:0 report:product.pricelist:0
 #: field:product.pricelist,currency_id:0
 msgid "Currency"
 msgstr "Měna"
 
 #. module: product
 #: model:product.template,name:product.product_product_46_product_template
+#: model:product.template,name:product.product_template_46
 msgid "Datacard"
 msgstr "Datová karta"
 
@@ -958,9 +882,7 @@ msgstr "Datová karta"
 msgid ""
 "Coefficient to convert default Unit of Measure to Unit of Sale\n"
 " uos = uom * coeff"
-msgstr ""
-"Koeficient pro převod měrných jednotek na prodejní jednotky\n"
-" PJ = MJ * koef."
+msgstr "Koeficient pro převod měrných jednotek na prodejní jednotky\n PJ = MJ * koef."
 
 #. module: product
 #: model:ir.actions.act_window,name:product.product_category_action_form
@@ -976,6 +898,7 @@ msgstr "Zásobování & Místa"
 
 #. module: product
 #: model:product.template,name:product.product_product_20_product_template
+#: model:product.template,name:product.product_template_20
 msgid "Motherboard I9P57"
 msgstr "Základní deska I9P57"
 
@@ -1012,17 +935,12 @@ msgstr "Informace o dodavateli výrobku"
 #. module: product
 #: help:product.uom,factor_inv:0
 msgid ""
-"How many times this Unit of Measure is bigger than the reference Unit of "
-"Measure in this category:\n"
+"How many times this Unit of Measure is bigger than the reference Unit of Measure in this category:\n"
 "1 * (this unit) = ratio * (reference unit)"
-msgstr ""
-"Kolikrát je tato měrná jednotka větší než referenční měrná jednotka "
-"kategorie:\n"
-"1 * (tato jednotka) = poměr * (referenční jednotka)"
+msgstr "Kolikrát je tato měrná jednotka větší než referenční měrná jednotka kategorie:\n1 * (tato jednotka) = poměr * (referenční jednotka)"
 
 #. module: product
-#: view:product.template:0
-#: field:product.template,description_purchase:0
+#: view:product.template:0 field:product.template,description_purchase:0
 msgid "Purchase Description"
 msgstr "Popis nákupu"
 
@@ -1036,9 +954,7 @@ msgstr "Nemůžete mít dvě překrývající se verze ceníku!"
 msgid ""
 "Specify the minimum quantity that needs to be bought/sold for the rule to "
 "apply."
-msgstr ""
-"Zadejte minimální množství, které musí být zakoupeno/prodáno aby se pravidlo "
-"použilo."
+msgstr "Zadejte minimální množství, které musí být zakoupeno/prodáno aby se pravidlo použilo."
 
 #. module: product
 #: help:product.pricelist.version,date_start:0
@@ -1051,22 +967,17 @@ msgid ""
 "Lead time in days between the confirmation of the purchase order and the "
 "reception of the products in your warehouse. Used by the scheduler for "
 "automatic computation of the purchase order planning."
-msgstr ""
-"Rozdíl ve dnech mezi potvrzením objednávky a naskladněním výrobků. Používá "
-"ho plánovač pro automatický výpočet plánování objednávek."
+msgstr "Rozdíl ve dnech mezi potvrzením objednávky a naskladněním výrobků. Používá ho plánovač pro automatický výpočet plánování objednávek."
 
 #. module: product
 #: model:product.template,description_sale:product.product_product_3_product_template
+#: model:product.template,description_sale:product.product_template_3
 msgid ""
 "17\" LCD Monitor\n"
 "Processor AMD 8-Core\n"
 "512MB RAM\n"
 "HDD SH-1"
-msgstr ""
-"17\" LCD monitor\n"
-"Osmijádrový procesor AMD\n"
-"512MB RAM\n"
-"Pevný disk SH-1"
+msgstr "17\" LCD monitor\nOsmijádrový procesor AMD\n512MB RAM\nPevný disk SH-1"
 
 #. module: product
 #: selection:product.template,type:0
@@ -1080,6 +991,7 @@ msgstr "Kód"
 
 #. module: product
 #: model:product.template,name:product.product_product_27_product_template
+#: model:product.template,name:product.product_template_27
 msgid "Laptop Customized"
 msgstr "Notebook na míru"
 
@@ -1090,6 +1002,7 @@ msgstr "Jednotka zásilky"
 
 #. module: product
 #: model:product.template,name:product.product_product_35_product_template
+#: model:product.template,name:product.product_template_35
 msgid "Blank CD"
 msgstr "Prázdné CD"
 
@@ -1104,8 +1017,7 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to define a new product.\n"
 "              </p><p>\n"
-"                You must define a product for everything you sell, whether "
-"it's\n"
+"                You must define a product for everything you sell, whether it's\n"
 "                a physical product, a consumable or a service you offer to\n"
 "                customers.\n"
 "              </p><p>\n"
@@ -1114,19 +1026,7 @@ msgid ""
 "                procurement methods, etc.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Klikněte pro definování nového výrobku.\n"
-"              </p><p>\n"
-"                Pro vše, co prodáte, musíte definovat výrobek ať už jde\n"
-"                o fyzický výrobek, spotřební zboží nebo službu, kterou\n"
-"                nabízíte zákazníkům.\n"
-"              </p><p>\n"
-"                Formulář výrobku obsahuje informace pro zjednodušení\n"
-"                procesu prodeje: cenu, poznámky k nabídce, účetní\n"
-"                informace, způsoby zásobování a další.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Klikněte pro definování nového výrobku.\n              </p><p>\n                Pro vše, co prodáte, musíte definovat výrobek ať už jde\n                o fyzický výrobek, spotřební zboží nebo službu, kterou\n                nabízíte zákazníkům.\n              </p><p>\n                Formulář výrobku obsahuje informace pro zjednodušení\n                procesu prodeje: cenu, poznámky k nabídce, účetní\n                informace, způsoby zásobování a další.\n              </p>\n            "
 
 #. module: product
 #: view:product.price_list:0
@@ -1135,23 +1035,20 @@ msgstr "Zrušit"
 
 #. module: product
 #: model:product.template,description:product.product_product_37_product_template
+#: model:product.template,description:product.product_template_37
 msgid "All in one hi-speed printer with fax and scanner."
 msgstr "Vysokorychlostní tiskárna all-in-one s faxem a skenerem."
 
 #. module: product
 #: help:product.supplierinfo,min_qty:0
 msgid ""
-"The minimal quantity to purchase to this supplier, expressed in the supplier "
-"Product Unit of Measure if not empty, in the default unit of measure of the "
-"product otherwise."
-msgstr ""
-"Minimální nákupní množství pro nákup od tohoto dodavatele vyjádřené v "
-"měrných jednotkách dodavatele. Pokud je prázdné, tak výchozí měrná jednotka "
-"výrobku."
+"The minimal quantity to purchase to this supplier, expressed in the supplier"
+" Product Unit of Measure if not empty, in the default unit of measure of the"
+" product otherwise."
+msgstr "Minimální nákupní množství pro nákup od tohoto dodavatele vyjádřené v měrných jednotkách dodavatele. Pokud je prázdné, tak výchozí měrná jednotka výrobku."
 
 #. module: product
-#: view:product.product:0
-#: view:product.template:0
+#: view:product.product:0 view:product.template:0
 msgid "Information"
 msgstr "Informace"
 
@@ -1191,13 +1088,14 @@ msgid "Price Surcharge"
 msgstr "Cenová přirážka"
 
 #. module: product
-#: code:addons/product/pricelist.py:380
+#: code:addons/product/pricelist.py:401
 #, python-format
 msgid "Supplier Prices on the product form"
 msgstr "Dodavatelské ceny na formuláři výrobku"
 
 #. module: product
 #: model:product.template,name:product.product_product_8_product_template
+#: model:product.template,name:product.product_template_8
 msgid "USB Keyboard, QWERTY"
 msgstr "USB klávesnice, QWERTY"
 
@@ -1212,12 +1110,9 @@ msgid "Logistical Units"
 msgstr "Logistické jednotky"
 
 #. module: product
-#: field:product.category,complete_name:0
-#: field:product.category,name:0
-#: field:product.pricelist.type,name:0
-#: field:product.pricelist.version,name:0
-#: field:product.template,name:0
-#: field:product.ul,name:0
+#: field:product.category,complete_name:0 field:product.category,name:0
+#: field:product.pricelist.type,name:0 field:product.pricelist.version,name:0
+#: field:product.template,name:0 field:product.ul,name:0
 #: field:product.uom.categ,name:0
 msgid "Name"
 msgstr "Název"
@@ -1254,8 +1149,7 @@ msgstr "Cena"
 
 #. module: product
 #: help:product.category,sequence:0
-msgid ""
-"Gives the sequence order when displaying a list of product categories."
+msgid "Gives the sequence order when displaying a list of product categories."
 msgstr "Určuje pořadí posloupnosti při zobrazení seznamu kategorií výrobků."
 
 #. module: product
@@ -1264,8 +1158,7 @@ msgid "Dozen(s)"
 msgstr "Tuctů"
 
 #. module: product
-#: field:product.uom,factor:0
-#: field:product.uom,factor_inv:0
+#: field:product.uom,factor:0 field:product.uom,factor_inv:0
 msgid "Ratio"
 msgstr "Poměr"
 
@@ -1280,10 +1173,8 @@ msgid "Associated field in the product form."
 msgstr "Přidružené pole ve formuláři výrobku."
 
 #. module: product
-#: view:product.product:0
-#: view:product.template:0
-#: field:product.template,uom_id:0
-#: field:product.uom,name:0
+#: view:product.product:0 view:product.template:0
+#: field:product.template,uom_id:0 field:product.uom,name:0
 msgid "Unit of Measure"
 msgstr "Měrná jednotka"
 
@@ -1328,20 +1219,12 @@ msgstr "Mezinárodní číslo položky použité pro identifikaci výrobku."
 #: model:ir.actions.act_window,help:product.product_category_action
 msgid ""
 "<p>\n"
-"                Here is a list of all your products classified by category. "
-"You\n"
-"                can click a category to get the list of all products linked "
-"to\n"
+"                Here is a list of all your products classified by category. You\n"
+"                can click a category to get the list of all products linked to\n"
 "                this category or to a child of this category.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p>\n"
-"                Zde je seznam všech vašich výrobků tříděných do kategorií.\n"
-"                Můžete kliknout na kategorii pro získání celého seznamu\n"
-"                výrobků této kategorie nebo podřízených kategorií.\n"
-"              </p>\n"
-"            "
+msgstr "<p>\n                Zde je seznam všech vašich výrobků tříděných do kategorií.\n                Můžete kliknout na kategorii pro získání celého seznamu\n                výrobků této kategorie nebo podřízených kategorií.\n              </p>\n            "
 
 #. module: product
 #: code:addons/product/product.py:361
@@ -1349,12 +1232,9 @@ msgstr ""
 msgid ""
 "New Unit of Measure '%s' must belong to same Unit of Measure category '%s' "
 "as of old Unit of Measure '%s'. If you need to change the unit of measure, "
-"you may deactivate this product from the 'Procurements' tab and create a new "
-"one."
-msgstr ""
-"Nová měrná jednotka '%s' musí patřit do stejné kategorie měrných jednotek "
-"'%s' jako původní měrná jednotka '%s'. Pokud chcete změnit měrnou jednotku, "
-"můžete tento výrobek deaktivovat na záložce 'zásobování' a vytvořit nový."
+"you may deactivate this product from the 'Procurements' tab and create a new"
+" one."
+msgstr "Nová měrná jednotka '%s' musí patřit do stejné kategorie měrných jednotek '%s' jako původní měrná jednotka '%s'. Pokud chcete změnit měrnou jednotku, můžete tento výrobek deaktivovat na záložce 'zásobování' a vytvořit nový."
 
 #. module: product
 #: model:ir.actions.act_window,name:product.product_normal_action
@@ -1362,13 +1242,13 @@ msgstr ""
 #: model:ir.actions.act_window,name:product.product_normal_action_sell
 #: model:ir.actions.act_window,name:product.product_normal_action_tree
 #: model:ir.ui.menu,name:product.menu_products
-#: model:ir.ui.menu,name:product.prod_config_main
-#: view:product.product:0
+#: model:ir.ui.menu,name:product.prod_config_main view:product.product:0
 msgid "Products"
 msgstr "Výrobky"
 
 #. module: product
 #: model:product.template,description:product.product_product_32_product_template
+#: model:product.template,description:product.product_template_32
 msgid ""
 "Hands free headset for laptop PC with in-line microphone and headphone plug."
 msgstr "Náhlavní souprava pro notebook s konektorem mikrofonu a sluchátek."
@@ -1394,8 +1274,7 @@ msgid "Net Weight"
 msgstr "Čistá hmotnost"
 
 #. module: product
-#: view:product.packaging:0
-#: view:product.product:0
+#: view:product.packaging:0 view:product.product:0
 msgid "Pallet Dimension"
 msgstr "Rozměry palety"
 
@@ -1404,18 +1283,14 @@ msgstr "Rozměry palety"
 msgid ""
 "This field holds the image used as image for the product, limited to "
 "1024x1024px."
-msgstr ""
-"Toto pole obsahuje obrázek použitý pro výrobek o velikosti maximálně "
-"1024x1024 px."
+msgstr "Toto pole obsahuje obrázek použitý pro výrobek o velikosti maximálně 1024x1024 px."
 
 #. module: product
 #: help:product.pricelist.item,categ_id:0
 msgid ""
 "Specify a product category if this rule only applies to products belonging "
 "to this category or its children categories. Keep empty otherwise."
-msgstr ""
-"Zadejte kategorii výrobku pokud se toto pravidlo vztahuje jen na výrobky "
-"této kategorie nebo podřízených kategorií. Jinak ponechte prázdné."
+msgstr "Zadejte kategorii výrobku pokud se toto pravidlo vztahuje jen na výrobky této kategorie nebo podřízených kategorií. Jinak ponechte prázdné."
 
 #. module: product
 #: view:product.product:0
@@ -1433,26 +1308,27 @@ msgid "Supplier Info"
 msgstr "Informace dodavatele"
 
 #. module: product
-#: code:addons/product/product.py:732
+#: code:addons/product/product.py:733
 #, python-format
 msgid "%s (copy)"
 msgstr "%s (kopie)"
 
 #. module: product
 #: model:product.template,name:product.product_product_2_product_template
+#: model:product.template,name:product.product_template_2
 msgid "On Site Assistance"
 msgstr "Asistence na místě"
 
 #. module: product
 #: model:product.template,name:product.product_product_39_product_template
+#: model:product.template,name:product.product_template_39
 msgid "Toner Cartridge"
 msgstr "Náplň toneru"
 
 #. module: product
 #: model:ir.actions.act_window,name:product.product_uom_form_action
 #: model:ir.ui.menu,name:product.menu_product_uom_form_action
-#: model:ir.ui.menu,name:product.next_id_16
-#: view:product.uom:0
+#: model:ir.ui.menu,name:product.next_id_16 view:product.uom:0
 msgid "Units of Measure"
 msgstr "Měrné jednotky"
 
@@ -1466,21 +1342,18 @@ msgstr "Minimální množství"
 msgid ""
 "The prices below will only be taken into account when your pricelist is set "
 "as based on supplier prices."
-msgstr ""
-"Ceny níže budou brány v potaz pouze když je váš ceník založen na cenách "
-"dodavatele."
+msgstr "Ceny níže budou brány v potaz pouze když je váš ceník založen na cenách dodavatele."
 
 #. module: product
 #: help:product.supplierinfo,product_code:0
 msgid ""
 "This supplier's product code will be used when printing a request for "
 "quotation. Keep empty to use the internal one."
-msgstr ""
-"Kód výrobku od dodavatele bude použit při tisku žádosti o nabídku. Ponechte "
-"prázdné pro použití vnitřního kódu."
+msgstr "Kód výrobku od dodavatele bude použit při tisku žádosti o nabídku. Ponechte prázdné pro použití vnitřního kódu."
 
 #. module: product
 #: model:product.template,name:product.product_product_43_product_template
+#: model:product.template,name:product.product_template_43
 msgid "Zed+ Antivirus"
 msgstr "Antivirový program Zed+"
 
@@ -1492,17 +1365,13 @@ msgstr "Verze ceníku"
 #. module: product
 #: help:product.pricelist.item,sequence:0
 msgid ""
-"Gives the order in which the pricelist items will be checked. The evaluation "
-"gives highest priority to lowest sequence and stops as soon as a matching "
+"Gives the order in which the pricelist items will be checked. The evaluation"
+" gives highest priority to lowest sequence and stops as soon as a matching "
 "item is found."
-msgstr ""
-"Určuje pořadí, ve kterém budou kontrolovány položky ceníku. Vyhodnocení "
-"postupuje od největší priority přiřazené nejnižší posloupnosti a zastaví se "
-"jakmile najde shodující se položku."
+msgstr "Určuje pořadí, ve kterém budou kontrolovány položky ceníku. Vyhodnocení postupuje od největší priority přiřazené nejnižší posloupnosti a zastaví se jakmile najde shodující se položku."
 
 #. module: product
-#: view:product.product:0
-#: selection:product.template,type:0
+#: view:product.product:0 selection:product.template,type:0
 msgid "Consumable"
 msgstr "Spotřební zboží"
 
@@ -1518,6 +1387,7 @@ msgstr "Hrubá váha v Kg."
 
 #. module: product
 #: model:product.template,name:product.product_product_37_product_template
+#: model:product.template,name:product.product_template_37
 msgid "Printer, All-in-one"
 msgstr "Tiskárna, all-in-one"
 
@@ -1528,12 +1398,12 @@ msgstr "Zásobování"
 
 #. module: product
 #: model:product.template,name:product.product_product_23_product_template
+#: model:product.template,name:product.product_template_23
 msgid "Processor AMD 8-Core"
 msgstr "Osmijádrový procesor AMD"
 
 #. module: product
-#: view:product.product:0
-#: view:product.template:0
+#: view:product.product:0 view:product.template:0
 msgid "Weights"
 msgstr "Váhy"
 
@@ -1545,11 +1415,9 @@ msgstr "Popis do nabídek"
 #. module: product
 #: help:pricelist.partnerinfo,price:0
 msgid ""
-"This price will be considered as a price for the supplier Unit of Measure if "
-"any or the default Unit of Measure of the product otherwise"
-msgstr ""
-"Tato cena bude považována za měrnou jednotku dodavatele (pokud je zadána) "
-"nebo výchozí měrnou jednotku výrobku."
+"This price will be considered as a price for the supplier Unit of Measure if"
+" any or the default Unit of Measure of the product otherwise"
+msgstr "Tato cena bude považována za měrnou jednotku dodavatele (pokud je zadána) nebo výchozí měrnou jednotku výrobku."
 
 #. module: product
 #: field:product.template,uom_po_id:0
@@ -1579,6 +1447,7 @@ msgstr "Počáteční datum"
 
 #. module: product
 #: model:product.template,name:product.product_product_38_product_template
+#: model:product.template,name:product.product_template_38
 msgid "Ink Cartridge"
 msgstr "Inkoustová cartridge"
 
@@ -1600,30 +1469,18 @@ msgid ""
 "              </p><p>\n"
 "                There can be more than one version of a pricelist, each of\n"
 "                these must be valid during a certain period of time. Some\n"
-"                examples of versions: Main Prices, 2010, 2011, Summer "
-"Sales,\n"
+"                examples of versions: Main Prices, 2010, 2011, Summer Sales,\n"
 "                etc.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Klikněte pro přidání verze ceníku.\n"
-"              </p><p>\n"
-"                Pokud existuje více verzí ceníku, každá musí být platná\n"
-"                v jiném rozsahu dat. Příklady verzí: Hlavní ceník, 2010, "
-"2011,\n"
-"                Letní slevy a podobně.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Klikněte pro přidání verze ceníku.\n              </p><p>\n                Pokud existuje více verzí ceníku, každá musí být platná\n                v jiném rozsahu dat. Příklady verzí: Hlavní ceník, 2010, 2011,\n                Letní slevy a podobně.\n              </p>\n            "
 
 #. module: product
 #: help:product.template,uom_po_id:0
 msgid ""
 "Default Unit of Measure used for purchase orders. It must be in the same "
 "category than the default unit of measure."
-msgstr ""
-"Výchozí měrná jednotka objednávek. Musí být stejné kategorie jako výchozí "
-"měrná jednotka."
+msgstr "Výchozí měrná jednotka objednávek. Musí být stejné kategorie jako výchozí měrná jednotka."
 
 #. module: product
 #: view:product.pricelist:0
@@ -1632,16 +1489,13 @@ msgstr "Cena výrobků"
 
 #. module: product
 #: model:product.template,description:product.product_product_26_product_template
+#: model:product.template,description:product.product_template_26
 msgid ""
 "17\" Monitor\n"
 "6GB RAM\n"
 "Hi-Speed 234Q Processor\n"
 "QWERTY keyboard"
-msgstr ""
-"17\" monitor\n"
-"6GB RAM\n"
-"Výkonný procesor 234Q\n"
-"QWERTY klávesnice"
+msgstr "17\" monitor\n6GB RAM\nVýkonný procesor 234Q\nQWERTY klávesnice"
 
 #. module: product
 #: field:product.uom,rounding:0
@@ -1655,12 +1509,15 @@ msgstr "Spotřební výrobky"
 
 #. module: product
 #: model:product.template,name:product.product_product_21_product_template
+#: model:product.template,name:product.product_template_21
 msgid "Motherboard A20Z7"
 msgstr "Základní deska A20Z7"
 
 #. module: product
 #: model:product.template,description:product.product_product_1_product_template
+#: model:product.template,description:product.product_template_1
 #: model:product.template,description_sale:product.product_product_1_product_template
+#: model:product.template,description_sale:product.product_template_1
 msgid "This type of service include basic monitoring of products."
 msgstr "Tento druh služby zahrnuje základní sledování výrobků."
 
@@ -1671,14 +1528,13 @@ msgstr "Poslední datum, kdy verze platí."
 
 #. module: product
 #: model:product.template,name:product.product_product_19_product_template
+#: model:product.template,name:product.product_template_19
 msgid "HDD on Demand"
 msgstr "Harddisk na objednávku"
 
 #. module: product
-#: field:product.price.type,active:0
-#: field:product.pricelist,active:0
-#: field:product.pricelist.version,active:0
-#: field:product.product,active:0
+#: field:product.price.type,active:0 field:product.pricelist,active:0
+#: field:product.pricelist.version,active:0 field:product.product,active:0
 #: field:product.uom,active:0
 msgid "Active"
 msgstr "Aktivní"
@@ -1705,6 +1561,7 @@ msgstr "Převodní poměr mezi měrnými jednotkami nemůže být 0!"
 
 #. module: product
 #: model:product.template,name:product.product_product_24_product_template
+#: model:product.template,name:product.product_template_24
 msgid "Graphics Card"
 msgstr "Grafická karta"
 
@@ -1725,6 +1582,7 @@ msgstr "Váha prázdného balíku"
 
 #. module: product
 #: model:product.template,name:product.product_product_41_product_template
+#: model:product.template,name:product.product_template_41
 msgid "Windows Home Server 2011"
 msgstr "Windows Home Server 2011"
 
@@ -1735,6 +1593,7 @@ msgstr "Pole výrobku"
 
 #. module: product
 #: model:product.template,description:product.product_product_5_product_template
+#: model:product.template,description:product.product_template_5
 msgid "Custom computer assembled on order based on customer's requirement."
 msgstr "Zákaznický počítač sestavený na základě požadavků zákazníka."
 
@@ -1762,30 +1621,18 @@ msgid ""
 "              </p><p>\n"
 "                Units of measure belonging to the same category can be\n"
 "                converted between each others. For example, in the category\n"
-"                <i>'Time'</i>, you will have the following units of "
-"measure:\n"
+"                <i>'Time'</i>, you will have the following units of measure:\n"
 "                Hours, Days.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Klikněte pro přidání nové měrné jednotky.\n"
-"              </p><p>\n"
-"                Mezi měrnými jednotkami náležícími do stejné kategorie lze\n"
-"                převádět. Například v kategorii <i>'Čas'</i> máte "
-"následující\n"
-"                měrné jednotky: hodiny, dny.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Klikněte pro přidání nové měrné jednotky.\n              </p><p>\n                Mezi měrnými jednotkami náležícími do stejné kategorie lze\n                převádět. Například v kategorii <i>'Čas'</i> máte následující\n                měrné jednotky: hodiny, dny.\n              </p>\n            "
 
 #. module: product
 #: help:pricelist.partnerinfo,min_quantity:0
 msgid ""
-"The minimal quantity to trigger this rule, expressed in the supplier Unit of "
-"Measure if any or in the default Unit of Measure of the product otherrwise."
-msgstr ""
-"Minimální množství které spustí toto pravidlo vyjádřené v měrných jednotkách "
-"dodavatele (pokud jsou zadány) nebo měrných jednotkách výrobku."
+"The minimal quantity to trigger this rule, expressed in the supplier Unit of"
+" Measure if any or in the default Unit of Measure of the product otherrwise."
+msgstr "Minimální množství které spustí toto pravidlo vyjádřené v měrných jednotkách dodavatele (pokud jsou zadány) nebo měrných jednotkách výrobku."
 
 #. module: product
 #: selection:product.uom,uom_type:0
@@ -1823,8 +1670,7 @@ msgstr "Balík dle vrstvy"
 #: model:process.node,name:product.process_node_product0
 #: model:process.process,name:product.process_process_productprocess0
 #: field:product.packaging,product_id:0
-#: field:product.pricelist.item,product_id:0
-#: view:product.product:0
+#: field:product.pricelist.item,product_id:0 view:product.product:0
 #: field:product.supplierinfo,product_id:0
 #: model:res.request.link,name:product.req_link_product
 msgid "Product"
@@ -1863,11 +1709,13 @@ msgstr "Výrobky podle kategorie"
 
 #. module: product
 #: model:product.template,name:product.product_product_16_product_template
+#: model:product.template,name:product.product_template_16
 msgid "Computer Case"
 msgstr "Počítačová skříň"
 
 #. module: product
 #: model:product.template,name:product.product_product_9_product_template
+#: model:product.template,name:product.product_template_9
 msgid "USB Keyboard, AZERTY"
 msgstr "USB klávesnice, AZERTY"
 
@@ -1891,9 +1739,7 @@ msgstr "Spravovat sekundární měrnou jednotku"
 msgid ""
 "The computed quantity will be a multiple of this value. Use 1.0 for a Unit "
 "of Measure that cannot be further split, such as a piece."
-msgstr ""
-"Spočítáné množství bude v násobcích této hodnoty. Použijte 1.0 pro měrnou "
-"jednotku, kterou nelze dále dělit (například kusy)."
+msgstr "Spočítáné množství bude v násobcích této hodnoty. Použijte 1.0 pro měrnou jednotku, kterou nelze dále dělit (například kusy)."
 
 #. module: product
 #: view:product.pricelist.item:0
@@ -1912,6 +1758,7 @@ msgstr "Krabice 30x40x60"
 
 #. module: product
 #: model:product.template,name:product.product_product_47_product_template
+#: model:product.template,name:product.product_template_47
 msgid "Switch, 24 ports"
 msgstr "Přepínač, 24-portový"
 
@@ -1933,6 +1780,7 @@ msgstr "Vnitřní popis"
 
 #. module: product
 #: model:product.template,name:product.product_product_48_product_template
+#: model:product.template,name:product.product_template_48
 msgid "USB Adapter"
 msgstr "USB adaptér"
 
@@ -1941,10 +1789,7 @@ msgstr "USB adaptér"
 msgid ""
 "Sepcify a unit of measure here if invoicing is made in another unit of "
 "measure than inventory. Keep empty to use the default unit of measure."
-msgstr ""
-"Zadejte zde měrnou jednotku pokud se fakturuje v jiných jednotkách než v "
-"jakých jsou sledovány zásoby. Ponechte prázdné pro použití výchozí měrné "
-"jednotky."
+msgstr "Zadejte zde měrnou jednotku pokud se fakturuje v jiných jednotkách než v jakých jsou sledovány zásoby. Ponechte prázdné pro použití výchozí měrné jednotky."
 
 #. module: product
 #: code:addons/product/product.py:208
@@ -1965,15 +1810,14 @@ msgstr "Ceník výrobků"
 #. module: product
 #: field:product.pricelist,company_id:0
 #: field:product.pricelist.item,company_id:0
-#: field:product.pricelist.version,company_id:0
-#: view:product.product:0
-#: field:product.supplierinfo,company_id:0
-#: field:product.template,company_id:0
+#: field:product.pricelist.version,company_id:0 view:product.product:0
+#: field:product.supplierinfo,company_id:0 field:product.template,company_id:0
 msgid "Company"
 msgstr "Společnost"
 
 #. module: product
 #: model:product.template,name:product.product_product_26_product_template
+#: model:product.template,name:product.product_template_26
 msgid "Laptop S3450"
 msgstr "Notebook S3450"
 
@@ -1994,6 +1838,7 @@ msgstr "Jiné výrobky"
 
 #. module: product
 #: model:product.template,description:product.product_product_9_product_template
+#: model:product.template,description:product.product_template_9
 msgid "This product is configured with example of push/pull flows"
 msgstr "Tento výrobek je nastaven s příkladem tlačných/tažných toků"
 
@@ -2029,8 +1874,7 @@ msgid "Components"
 msgstr "Komponenty"
 
 #. module: product
-#: field:product.product,code:0
-#: field:product.product,default_code:0
+#: field:product.product,code:0 field:product.product,default_code:0
 msgid "Internal Reference"
 msgstr "Vnitřní odkaz"
 
@@ -2061,8 +1905,7 @@ msgid "Specify if the product can be selected in a sales order line."
 msgstr "Zvolte, zda může být výrobek vybrán na řádku potvrzení objednávky."
 
 #. module: product
-#: view:product.product:0
-#: field:product.template,sale_ok:0
+#: view:product.product:0 field:product.template,sale_ok:0
 msgid "Can be Sold"
 msgstr "Lze prodat"
 
@@ -2088,11 +1931,13 @@ msgstr "Surový materiál"
 
 #. module: product
 #: model:product.template,name:product.product_product_13_product_template
+#: model:product.template,name:product.product_template_13
 msgid "RAM SR5"
 msgstr "RAM SR5"
 
 #. module: product
 #: model:product.template,name:product.product_product_14_product_template
+#: model:product.template,name:product.product_template_14
 msgid "RAM SR2"
 msgstr "RAM SR2"
 
@@ -2102,42 +1947,26 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to define a new product.\n"
 "              </p><p>\n"
-"                You must define a product for everything you purchase, "
-"whether\n"
-"                it's a physical product, a consumable or services you buy "
-"to\n"
+"                You must define a product for everything you purchase, whether\n"
+"                it's a physical product, a consumable or services you buy to\n"
 "                subcontractants.\n"
 "              </p><p>\n"
-"                The product form contains detailed information to improve "
-"the\n"
-"                purchase process: prices, procurement logistics, accounting "
-"data,\n"
+"                The product form contains detailed information to improve the\n"
+"                purchase process: prices, procurement logistics, accounting data,\n"
 "                available suppliers, etc.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Klikněte pro nadefinování nového výrobku.\n"
-"              </p><p>\n"
-"                Pro vše, co prodáte, musíte definovat výrobek ať už jde\n"
-"                o fyzický výrobek, spotřební zboží nebo službu, kterou\n"
-"                nabízíte zákazníkům.\n"
-"              </p><p>\n"
-"                Formulář výrobku obsahuje informace pro zjednodušení\n"
-"                procesu prodeje: cenu, poznámky k nabídce, účetní\n"
-"                informace, způsoby zásobování a další.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Klikněte pro nadefinování nového výrobku.\n              </p><p>\n                Pro vše, co prodáte, musíte definovat výrobek ať už jde\n                o fyzický výrobek, spotřební zboží nebo službu, kterou\n                nabízíte zákazníkům.\n              </p><p>\n                Formulář výrobku obsahuje informace pro zjednodušení\n                procesu prodeje: cenu, poznámky k nabídce, účetní\n                informace, způsoby zásobování a další.\n              </p>\n            "
 
 #. module: product
 #: model:product.template,description_sale:product.product_product_44_product_template
+#: model:product.template,description_sale:product.product_template_44
 msgid "Full featured image editing software."
 msgstr "Grafický software s plným rozsahem funkcí"
 
 #. module: product
 #: model:ir.model,name:product.model_product_pricelist_version
-#: view:product.pricelist:0
-#: view:product.pricelist.version:0
+#: view:product.pricelist:0 view:product.pricelist.version:0
 msgid "Pricelist Version"
 msgstr "Verze ceníku"
 
@@ -2148,6 +1977,7 @@ msgstr "* ( 1 + "
 
 #. module: product
 #: model:product.template,name:product.product_product_31_product_template
+#: model:product.template,name:product.product_template_31
 msgid "Multimedia Speakers"
 msgstr "Multimediální reproduktory"
 
@@ -2162,8 +1992,7 @@ msgid "Sale Conditions"
 msgstr "Podmínky prodeje"
 
 #. module: product
-#: view:product.packaging:0
-#: view:product.product:0
+#: view:product.packaging:0 view:product.product:0
 msgid "Palletization"
 msgstr "Paletizace"
 
@@ -2192,9 +2021,7 @@ msgstr "měsíců"
 msgid ""
 "By unchecking the active field you can disable a unit of measure without "
 "deleting it."
-msgstr ""
-"Odškrtnutím aktivního pole můžete zakázat měrnou jednotku bez jejího "
-"odstranění."
+msgstr "Odškrtnutím aktivního pole můžete zakázat měrnou jednotku bez jejího odstranění."
 
 #. module: product
 #: field:product.product,seller_delay:0
@@ -2216,49 +2043,31 @@ msgstr "Krabice"
 msgid ""
 "Specify the fixed amount to add or substract(if negative) to the amount "
 "calculated with the discount."
-msgstr ""
-"Zadejte pevnou částku pro přičtení nebo odečtení (zápornou částku) od ceny "
-"vypočtené s touto slevou."
+msgstr "Zadejte pevnou částku pro přičtení nebo odečtení (zápornou částku) od ceny vypočtené s touto slevou."
 
 #. module: product
 #: help:product.product,qty_available:0
 msgid ""
 "Current quantity of products.\n"
-"In a context with a single Stock Location, this includes goods stored at "
-"this Location, or any of its children.\n"
-"In a context with a single Warehouse, this includes goods stored in the "
-"Stock Location of this Warehouse, or any of its children.\n"
-"In a context with a single Shop, this includes goods stored in the Stock "
-"Location of the Warehouse of this Shop, or any of its children.\n"
-"Otherwise, this includes goods stored in any Stock Location with 'internal' "
-"type."
-msgstr ""
-"Aktuální množství výrobků.\n"
-"V kontextu jednoho umístění zboží je zde zahrnuto zboží uložené v tomto "
-"umístění nebo v jeho podřazených umístěních.\n"
-"V kontextu jednoho skladu je zde zahrnuto zboží uložené v místění zboží v "
-"tomto skladu nebo jeho podřazených umístěních.\n"
-"V kontextu jednoho obchodu je zde zahrnuto zboží uložené v umístění v tomto "
-"skladu v tomto obchodě nebo jeho podřazených umístěních.\n"
-"Jinak je zde zahrnuto zboží druhu 'vnitřní' umístěné v kterémkoli umístění."
+"In a context with a single Stock Location, this includes goods stored at this Location, or any of its children.\n"
+"In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.\n"
+"In a context with a single Shop, this includes goods stored in the Stock Location of the Warehouse of this Shop, or any of its children.\n"
+"Otherwise, this includes goods stored in any Stock Location with 'internal' type."
+msgstr "Aktuální množství výrobků.\nV kontextu jednoho umístění zboží je zde zahrnuto zboží uložené v tomto umístění nebo v jeho podřazených umístěních.\nV kontextu jednoho skladu je zde zahrnuto zboží uložené v místění zboží v tomto skladu nebo jeho podřazených umístěních.\nV kontextu jednoho obchodu je zde zahrnuto zboží uložené v umístění v tomto skladu v tomto obchodě nebo jeho podřazených umístěních.\nJinak je zde zahrnuto zboží druhu 'vnitřní' umístěné v kterémkoli umístění."
 
 #. module: product
 #: help:product.template,type:0
 msgid ""
 "Consumable: Will not imply stock management for this product. \n"
 "Stockable product: Will imply stock management for this product."
-msgstr ""
-"Spotřební: Neovlivňuje správu skladu tohoto výrobku \n"
-"Naskladnitelný výrobek: Ovlivňuje správu skladu tohoto výrobku."
+msgstr "Spotřební: Neovlivňuje správu skladu tohoto výrobku \nNaskladnitelný výrobek: Ovlivňuje správu skladu tohoto výrobku."
 
 #. module: product
 #: help:product.pricelist.type,key:0
 msgid ""
 "Used in the code to select specific prices based on the context. Keep "
 "unchanged."
-msgstr ""
-"Použito v kódu k výběru určitých cen založených na kontextu. Nechejte bez "
-"změny."
+msgstr "Použito v kódu k výběru určitých cen založených na kontextu. Nechejte bez změny."
 
 #. module: product
 #: model:ir.actions.act_window,help:product.product_normal_action
@@ -2270,14 +2079,7 @@ msgid ""
 "                whether it's a physical product, a consumable or service.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Klikněte pro definování nového výrobku.\n"
-"              </p><p>\n"
-"                Pro vše, co prodáte, musíte definovat výrobek ať už jde\n"
-"                o fyzický výrobek, spotřební zboží nebo službu.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Klikněte pro definování nového výrobku.\n              </p><p>\n                Pro vše, co prodáte, musíte definovat výrobek ať už jde\n                o fyzický výrobek, spotřební zboží nebo službu.\n              </p>\n            "
 
 #. module: product
 #: view:product.product:0
@@ -2294,9 +2096,7 @@ msgstr "Typ balíku"
 msgid ""
 "A category of the view type is a virtual category that can be used as the "
 "parent of another category to create a hierarchical structure."
-msgstr ""
-"Kategorie druhu pohledu je virtuální kategorie použitelná jako rodičovská "
-"kategorie jiné kategorie pro vytvoření hierarchické struktury."
+msgstr "Kategorie druhu pohledu je virtuální kategorie použitelná jako rodičovská kategorie jiné kategorie pro vytvoření hierarchické struktury."
 
 #. module: product
 #: selection:product.ul,type:0
@@ -2308,18 +2108,15 @@ msgstr "Balík"
 msgid ""
 "Specify a template if this rule only applies to one product template. Keep "
 "empty otherwise."
-msgstr ""
-"Zvolte šablonu pokud se toto pravidlo vztahuje jen na jednu šablonu výrobku. "
-"Jinak ponechte prázdné."
+msgstr "Zvolte šablonu pokud se toto pravidlo vztahuje jen na jednu šablonu výrobku. Jinak ponechte prázdné."
 
 #. module: product
 #: model:product.template,description:product.product_product_2_product_template
+#: model:product.template,description:product.product_template_2
 msgid ""
 "This type of service include assistance for security questions, system "
 "configuration requirements, implementation or special needs."
-msgstr ""
-"Tento druh služby zahrnuje asistenci v bezpečnostních otázkách, požadavcích "
-"systémového nastavení, implementace nebo zvláštních požadavcích."
+msgstr "Tento druh služby zahrnuje asistenci v bezpečnostních otázkách, požadavcích systémového nastavení, implementace nebo zvláštních požadavcích."
 
 #. module: product
 #: field:product.product,image:0
@@ -2333,16 +2130,13 @@ msgstr "Kategorie měrných jednotek"
 
 #. module: product
 #: model:product.template,description_sale:product.product_product_4_product_template
+#: model:product.template,description_sale:product.product_template_4
 msgid ""
 "19\" LCD Monitor\n"
 "Processor Core i5 2.70 Ghz\n"
 "2GB RAM\n"
 "HDD SH-1"
-msgstr ""
-"19\" LCD monitor\n"
-"Procesor Core i5 2.70 GHz\n"
-"2GB RAM\n"
-"Pevný disk SH-1"
+msgstr "19\" LCD monitor\nProcesor Core i5 2.70 GHz\n2GB RAM\nPevný disk SH-1"
 
 #. module: product
 #: view:product.template:0
@@ -2361,6 +2155,7 @@ msgstr "Vnitřní"
 
 #. module: product
 #: model:product.template,name:product.product_product_45_product_template
+#: model:product.template,name:product.product_template_45
 msgid "Router R430"
 msgstr "Směrovač R430"
 
@@ -2370,20 +2165,17 @@ msgid "Gives the sequence order when displaying a list of packaging."
 msgstr "Dává pořadí posloupnosti, když zobrazuje seznam balení."
 
 #. module: product
-#: selection:product.category,type:0
-#: selection:product.template,state:0
+#: selection:product.category,type:0 selection:product.template,state:0
 msgid "Normal"
 msgstr "Normální"
 
 #. module: product
-#: code:addons/product/pricelist.py:179
+#: code:addons/product/pricelist.py:198
 #, python-format
 msgid ""
 "At least one pricelist has no active version !\n"
 "Please create or activate one."
-msgstr ""
-"Nejméně jeden ceník nemá aktivní verzi!\n"
-"Prosím vytvořte nebo aktivuje alespoň jednu."
+msgstr "Nejméně jeden ceník nemá aktivní verzi!\nProsím vytvořte nebo aktivuje alespoň jednu."
 
 #. module: product
 #: field:product.pricelist.item,price_max_margin:0
@@ -2395,18 +2187,14 @@ msgstr "Max. marže ceny"
 msgid ""
 "Cost price of the product used for standard stock valuation in accounting "
 "and used as a base price on purchase orders."
-msgstr ""
-"Nákladová cena výrobku je použita pro nacenění běžné hodnoty zásob v "
-"účetnictví a je používána jako základní cena v objednávkách."
+msgstr "Nákladová cena výrobku je použita pro nacenění běžné hodnoty zásob v účetnictví a je používána jako základní cena v objednávkách."
 
 #. module: product
 #: help:product.supplierinfo,product_name:0
 msgid ""
 "This supplier's product name will be used when printing a request for "
 "quotation. Keep empty to use the internal one."
-msgstr ""
-"Název výrobku od dodavatele bude použit při tisku požadavku na cenovou "
-"nabídku. Ponechte prázdné pro použití vnitřního."
+msgstr "Název výrobku od dodavatele bude použit při tisku požadavku na cenovou nabídku. Ponechte prázdné pro použití vnitřního."
 
 #. module: product
 #: model:ir.actions.act_window,help:product.product_pricelist_action_for_purchase
@@ -2414,38 +2202,17 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to create a pricelist.\n"
 "              </p><p>\n"
-"                A price list contains rules to be evaluated in order to "
-"compute\n"
-"                the purchase price. The default price list has only one "
-"rule; use\n"
-"                the cost price defined on the product form, so that you do "
-"not have to\n"
-"                worry about supplier pricelists if you have very simple "
-"needs.\n"
+"                A price list contains rules to be evaluated in order to compute\n"
+"                the purchase price. The default price list has only one rule; use\n"
+"                the cost price defined on the product form, so that you do not have to\n"
+"                worry about supplier pricelists if you have very simple needs.\n"
 "              </p><p>\n"
-"                But you can also import complex price lists form your "
-"supplier\n"
+"                But you can also import complex price lists form your supplier\n"
 "                that may depends on the quantities ordered or the current\n"
 "                promotions.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Klikněte pro vytvoření ceníku.\n"
-"              </p><p>\n"
-"                Ceník obsahuje pravidla, které je třeba vyhodnotit pro "
-"získání\n"
-"                nákupní ceny. Výchozí ceník má jen jedno pravidlo; použijte\n"
-"                nákladovou cenu zadanou ve formuláři výrobku takže se "
-"nemusíte\n"
-"                starat o ceníky vašich dodavatelů pokud máte jen základní\n"
-"                požadavky.\n"
-"</p><p>\n"
-"                Můžete však též importovat komplexní ceníky vašeho\n"
-"                dodavatele s množstevními slevami nebo momentálními\n"
-"                nabídkami.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Klikněte pro vytvoření ceníku.\n              </p><p>\n                Ceník obsahuje pravidla, které je třeba vyhodnotit pro získání\n                nákupní ceny. Výchozí ceník má jen jedno pravidlo; použijte\n                nákladovou cenu zadanou ve formuláři výrobku takže se nemusíte\n                starat o ceníky vašich dodavatelů pokud máte jen základní\n                požadavky.\n</p><p>\n                Můžete však též importovat komplexní ceníky vašeho\n                dodavatele s množstevními slevami nebo momentálními\n                nabídkami.\n              </p>\n            "
 
 #. module: product
 #: selection:product.template,mes_type:0
@@ -2484,20 +2251,16 @@ msgstr "např.: 1 * (tato jednotka) = poměr * (referenční jednotka)"
 
 #. module: product
 #: model:product.template,description:product.product_product_25_product_template
+#: model:product.template,description:product.product_template_25
 msgid ""
 "17\" Monitor\n"
 "4GB RAM\n"
 "Standard-1294P Processor\n"
 "QWERTY keyboard"
-msgstr ""
-"17\" monitor\n"
-"4GB RAM\n"
-"Standardní procesor 1294P\n"
-"QWERTY klávesnice"
+msgstr "17\" monitor\n4GB RAM\nStandardní procesor 1294P\nQWERTY klávesnice"
 
 #. module: product
-#: field:product.category,sequence:0
-#: field:product.packaging,sequence:0
+#: field:product.category,sequence:0 field:product.packaging,sequence:0
 #: field:product.pricelist.item,sequence:0
 #: field:product.supplierinfo,sequence:0
 msgid "Sequence"
@@ -2508,9 +2271,7 @@ msgstr "Posloupnost"
 msgid ""
 "Average delay in days to produce this product. In the case of multi-level "
 "BOM, the manufacturing lead times of the components will be added."
-msgstr ""
-"Průměrné zpoždění ve dnech pro vyrobení tohoto výrobku. V případě "
-"víceúrovňových kusovníků budou přidány časy výroby komponent."
+msgstr "Průměrné zpoždění ve dnech pro vyrobení tohoto výrobku. V případě víceúrovňových kusovníků budou přidány časy výroby komponent."
 
 #. module: product
 #: model:product.template,name:product.product_assembly_product_template
@@ -2532,17 +2293,11 @@ msgid ""
 "                Measure within the same category.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Klikněte pro přidání nové měrné jednotky.\n"
-"              </p><p>\n"
-"                Musíte určit převodní poměr mezi několika\n"
-"                měrnými jednotkami stejné kategorie.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Klikněte pro přidání nové měrné jednotky.\n              </p><p>\n                Musíte určit převodní poměr mezi několika\n                měrnými jednotkami stejné kategorie.\n              </p>\n            "
 
 #. module: product
 #: model:product.template,name:product.product_product_11_product_template
+#: model:product.template,name:product.product_template_11
 msgid "Mouse, Laser"
 msgstr "Myš, laserová"
 
@@ -2562,10 +2317,8 @@ msgid "Creation of the product"
 msgstr "Vytvoření výrobku"
 
 #. module: product
-#: field:pricelist.partnerinfo,name:0
-#: field:product.packaging,name:0
-#: report:product.pricelist:0
-#: view:product.product:0
+#: field:pricelist.partnerinfo,name:0 field:product.packaging,name:0
+#: report:product.pricelist:0 view:product.product:0
 #: field:product.template,description:0
 msgid "Description"
 msgstr "Popis"
@@ -2590,14 +2343,13 @@ msgstr "Objem"
 #: help:product.product,image_small:0
 msgid ""
 "Small-sized image of the product. It is automatically resized as a 64x64px "
-"image, with aspect ratio preserved. Use this field anywhere a small image is "
-"required."
-msgstr ""
-"Malý obrázek výrobku. Je automaticky zmenšen na velikost 64x64 pixelů se "
-"zachováním poměru stran. Použijte toto pole kdekoli je potřeba malý obrázek."
+"image, with aspect ratio preserved. Use this field anywhere a small image is"
+" required."
+msgstr "Malý obrázek výrobku. Je automaticky zmenšen na velikost 64x64 pixelů se zachováním poměru stran. Použijte toto pole kdekoli je potřeba malý obrázek."
 
 #. module: product
 #: model:product.template,name:product.product_product_40_product_template
+#: model:product.template,name:product.product_template_40
 msgid "Windows 7 Professional"
 msgstr "Windows 7 Professional"
 
@@ -2623,11 +2375,12 @@ msgstr "Varianta výrobku"
 
 #. module: product
 #: model:product.template,name:product.product_product_6_product_template
+#: model:product.template,name:product.product_template_6
 msgid "15” LCD Monitor"
 msgstr "15\" LCD monitor"
 
 #. module: product
-#: code:addons/product/pricelist.py:379
+#: code:addons/product/pricelist.py:400
 #: field:product.pricelist.item,base_pricelist_id:0
 #, python-format
 msgid "Other Pricelist"
@@ -2639,40 +2392,21 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to create a pricelist.\n"
 "              </p><p>\n"
-"                A price list contains rules to be evaluated in order to "
-"compute\n"
+"                A price list contains rules to be evaluated in order to compute\n"
 "                the sales price of the products.\n"
 "              </p><p>\n"
-"                Price lists may have several versions (2010, 2011, Promotion "
-"of\n"
-"                February 2010, etc.) and each version may have several "
-"rules.\n"
-"                (e.g. the customer price of a product category will be based "
-"on\n"
+"                Price lists may have several versions (2010, 2011, Promotion of\n"
+"                February 2010, etc.) and each version may have several rules.\n"
+"                (e.g. the customer price of a product category will be based on\n"
 "                the supplier price multiplied by 1.80).\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Klikněte pro vytvoření ceníku.\n"
-"              </p><p>\n"
-"                Ceník obsahuje pravidla, které je třeba vyhodnotit pro "
-"získání\n"
-"                prodejních cen výrobků.\n"
-"              </p><p>\n"
-"                Ceníky mohou mít několik verzí (2010, 2011, Nabídka únor\n"
-"                2010, atd.) a každá verze může mít několik pravidel. (např. "
-"\n"
-"                zákaznická cena kategorie výrobků bude založena na ceně\n"
-"                dodavatele násobené 1,80)\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Klikněte pro vytvoření ceníku.\n              </p><p>\n                Ceník obsahuje pravidla, které je třeba vyhodnotit pro získání\n                prodejních cen výrobků.\n              </p><p>\n                Ceníky mohou mít několik verzí (2010, 2011, Nabídka únor\n                2010, atd.) a každá verze může mít několik pravidel. (např. \n                zákaznická cena kategorie výrobků bude založena na ceně\n                dodavatele násobené 1,80)\n              </p>\n            "
 
 #. module: product
 #: model:ir.model,name:product.model_product_template
 #: field:product.pricelist.item,product_tmpl_id:0
-#: field:product.product,product_tmpl_id:0
-#: view:product.template:0
+#: field:product.product,product_tmpl_id:0 view:product.template:0
 msgid "Product Template"
 msgstr "Šablona výrobku"
 
@@ -2690,6 +2424,7 @@ msgstr "Kategorie výrobku"
 
 #. module: product
 #: model:product.template,description:product.product_product_19_product_template
+#: model:product.template,description:product.product_template_19
 msgid "On demand hard-disk having capacity based on requirement."
 msgstr "Harddisk na vyžádání s kapacitou podle požadavků."
 
@@ -2700,6 +2435,7 @@ msgstr "Konec životního cyklu"
 
 #. module: product
 #: model:product.template,name:product.product_product_15_product_template
+#: model:product.template,name:product.product_template_15
 msgid "RAM SR3"
 msgstr "RAM SR3"
 
@@ -2708,9 +2444,7 @@ msgstr "RAM SR3"
 msgid ""
 "Gives the different ways to package the same product. This has no impact on "
 "the picking order and is mainly used if you use the EDI module."
-msgstr ""
-"Udává různé způsoby balení stejného výrobku. Nemá žádný vliv na naskladnění "
-"a používá se hlavně ve spojení s modulem EDI."
+msgstr "Udává různé způsoby balení stejného výrobku. Nemá žádný vliv na naskladnění a používá se hlavně ve spojení s modulem EDI."
 
 #. module: product
 #: model:ir.actions.act_window,name:product.product_pricelist_action
@@ -2725,11 +2459,7 @@ msgid ""
 "Sets the price so that it is a multiple of this value.\n"
 "Rounding is applied after the discount and before the surcharge.\n"
 "To have prices that end in 9.99, set rounding 10, surcharge -0.01"
-msgstr ""
-"Nastaví cenu tak, aby byla násobkem této hodnoty.\n"
-"Zaokrouhlení se provede po slevě a před příplatky.\n"
-"Abyste dosáhli cen končících na 9.99, nastavte zaokrouhlení na 10 a "
-"příplatek na -0.01."
+msgstr "Nastaví cenu tak, aby byla násobkem této hodnoty.\nZaokrouhlení se provede po slevě a před příplatky.\nAbyste dosáhli cen končících na 9.99, nastavte zaokrouhlení na 10 a příplatek na -0.01."
 
 #. module: product
 #: field:product.template,list_price:0
@@ -2741,9 +2471,7 @@ msgstr "Prodejní cena"
 msgid ""
 "Conversion between Units of Measure can only occur if they belong to the "
 "same category. The conversion will be made based on the ratios."
-msgstr ""
-"Převod mezi měrnými jednotkami lze uskutečnit jen když patří do stejné "
-"kategorie. Převod bude proveden na základě vzájemných poměrů."
+msgstr "Převod mezi měrnými jednotkami lze uskutečnit jen když patří do stejné kategorie. Převod bude proveden na základě vzájemných poměrů."
 
 #. module: product
 #: constraint:product.category:0
@@ -2756,10 +2484,7 @@ msgid ""
 "Medium-sized image of the product. It is automatically resized as a "
 "128x128px image, with aspect ratio preserved, only when the image exceeds "
 "one of those sizes. Use this field in form views or some kanban views."
-msgstr ""
-"Střední obrázek výrobku. Automaticky se zmenší na 128x128 pixelů se "
-"zachováním poměru stran (a to jen když obrázek překročí jeden z rozměrů). "
-"Použijte toto pole v zobrazeních formuláře a v některých pohledech kanban."
+msgstr "Střední obrázek výrobku. Automaticky se zmenší na 128x128 pixelů se zachováním poměru stran (a to jen když obrázek překročí jeden z rozměrů). Použijte toto pole v zobrazeních formuláře a v některých pohledech kanban."
 
 #. module: product
 #: view:product.uom:0
@@ -2780,7 +2505,3 @@ msgstr "Objem v m3."
 #: field:product.pricelist.item,price_discount:0
 msgid "Price Discount"
 msgstr "Sleva"
-
-#, python-format
-#~ msgid "Partner section of the product form"
-#~ msgstr "Sekce partnera ve formuláři výrobku"

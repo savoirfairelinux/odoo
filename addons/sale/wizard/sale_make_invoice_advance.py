@@ -37,6 +37,7 @@ class sale_advance_payment_inv(osv.osv_memory):
                 Use Some Order Lines to invoice a selection of the sales order lines."""),
         'qtty': fields.float('Quantity', digits=(16, 2), required=True),
         'product_id': fields.many2one('product.product', 'Advance Product',
+            domain=[('type', '=', 'service')],
             help="""Select a product of type service which is called 'Advance Product'.
                 You may have to create it and set it as a default value on this field."""),
         'amount': fields.float('Advance Amount', digits_compute= dp.get_precision('Account'),
@@ -56,6 +57,9 @@ class sale_advance_payment_inv(osv.osv_memory):
         'qtty': 1.0,
         'product_id': _get_advance_product,
     }
+
+    def _translate_advance(self, cr, uid, percentage=False, context=None):
+        return _("Advance of %s %%") if percentage else _("Advance of %s %s")
 
     def onchange_method(self, cr, uid, ids, advance_payment_method, product_id, context=None):
         if advance_payment_method == 'percentage':
@@ -101,18 +105,19 @@ class sale_advance_payment_inv(osv.osv_memory):
                 raise osv.except_osv(_('Incorrect Data'),
                     _('The value of Advance Amount must be positive.'))
             if wizard.advance_payment_method == 'percentage':
-                inv_amount = sale.amount_total * wizard.amount / 100
+                inv_amount = sale.amount_untaxed * wizard.amount / 100
                 if not res.get('name'):
-                    res['name'] = _("Advance of %s %%") % (wizard.amount)
+                    res['name'] = self._translate_advance(cr, uid, percentage=True, context=dict(context, lang=sale.partner_id.lang)) % (wizard.amount)
             else:
                 inv_amount = wizard.amount
                 if not res.get('name'):
                     #TODO: should find a way to call formatLang() from rml_parse
                     symbol = sale.pricelist_id.currency_id.symbol
                     if sale.pricelist_id.currency_id.position == 'after':
-                        res['name'] = _("Advance of %s %s") % (inv_amount, symbol)
+                        symbol_order = (inv_amount, symbol)
                     else:
-                        res['name'] = _("Advance of %s %s") % (symbol, inv_amount)
+                        symbol_order = (symbol, inv_amount)
+                    res['name'] = self._translate_advance(cr, uid, context=dict(context, lang=sale.partner_id.lang)) % symbol_order
 
             # determine taxes
             if res.get('invoice_line_tax_id'):
@@ -142,7 +147,7 @@ class sale_advance_payment_inv(osv.osv_memory):
                 'partner_id': sale.partner_invoice_id.id,
                 'invoice_line': [(0, 0, inv_line_values)],
                 'currency_id': sale.pricelist_id.currency_id.id,
-                'comment': '',
+                'comment': sale.note,
                 'payment_term': sale.payment_term.id,
                 'fiscal_position': sale.fiscal_position.id or sale.partner_id.property_account_position.id
             }
@@ -157,7 +162,6 @@ class sale_advance_payment_inv(osv.osv_memory):
         # add the invoice to the sales order's invoices
         sale_obj.write(cr, uid, sale_id, {'invoice_ids': [(4, inv_id)]}, context=context)
         return inv_id
-
 
     def create_invoices(self, cr, uid, ids, context=None):
         """ create invoices for the active sales orders """

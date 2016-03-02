@@ -461,7 +461,7 @@
                 <t t-set="debug" t-value="__debug__ ? '&amp;debug' : ''"/>
                 <a class="oe_logo" t-attf-href="/?ts=#{Date.now()}#{debug}">
                     <span class="oe_logo_edit">Edit Company data</span>
-                    <img t-att-src='widget.session.url("/web/binary/company_logo")'/>
+                    <img />
                 </a>
                 <div class="oe_secondary_menus_container"/>
                 <div class="oe_footer">
@@ -1202,16 +1202,18 @@
 </t>
 <t t-name="FieldBinaryImage">
     <span class="oe_form_field oe_form_field_image" t-att-style="widget.node.attrs.style">
-        <div class="oe_form_field_image_controls oe_edit_only">
-            <t t-call="HiddenInputFile">
-                <t t-set="fileupload_id" t-value="widget.fileupload_id"/>
-                Edit 
-            </t>
-            <div class="oe_form_binary_progress" style="display: none">
-                <img t-att-src='_s + "/web/static/src/img/throbber.gif"' width="16" height="16"/>
-                <b>Uploading ...</b>
+        <t t-if="!widget.get('effective_readonly')">
+            <div class="oe_form_field_image_controls oe_edit_only">
+                <t t-call="HiddenInputFile">
+                    <t t-set="fileupload_id" t-value="widget.fileupload_id"/>
+                    Edit 
+                </t>
+                <div class="oe_form_binary_progress" style="display: none">
+                    <img t-att-src='_s + "/web/static/src/img/throbber.gif"' width="16" height="16"/>
+                    <b>Uploading ...</b>
+                </div>
             </div>
-        </div>
+        </t>
     </span>
 </t>
 <t t-name="FieldBinaryImage-img">
@@ -1671,7 +1673,11 @@
     <input type="number" class="field_integer" value = "0" step="1"/>
 </t>
 <t t-name="SearchView.extended_search.proposition.float">
-    <input type="number" class="field_float" value = "0.0" step="0.01"/>
+    <input class="field_float"
+        t-att-type="widget.decimal_point === '.' ? 'number' : 'text'"
+        t-attf-title="Number using #{widget.decimal_point  || '.' } as decimal separator."
+        t-attf-pattern="[0-9]+([\\#{widget.decimal_point || '.' }][0-9]+)?"
+        t-attf-value="0#{widget.decimal_point || '.' }0" step="0.01"/>
 </t>
 <t t-name="SearchView.extended_search.proposition.selection">
     <select>

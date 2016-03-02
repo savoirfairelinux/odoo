@@ -113,7 +113,7 @@ class account_fiscalyear_close(osv.osv_memory):
 
         cr.execute("SELECT id FROM account_fiscalyear WHERE date_stop < %s", (str(new_fyear.date_start),))
         result = cr.dictfetchall()
-        fy_ids = ','.join([str(x['id']) for x in result])
+        fy_ids = [x['id'] for x in result]
         query_line = obj_acc_move_line._query_get(cr, uid,
                 obj='account_move_line', context={'fiscalyear': fy_ids})
         #create the opening move
@@ -132,7 +132,7 @@ class account_fiscalyear_close(osv.osv_memory):
             FROM account_account a
             LEFT JOIN account_account_type t ON (a.user_type = t.id)
             WHERE a.active
-              AND a.type != 'view'
+              AND a.type not in ('view', 'consolidation')
               AND a.company_id = %s
               AND t.close_method = %s''', (company_id, 'unreconciled', ))
         account_ids = map(lambda x: x[0], cr.fetchall())
@@ -182,7 +182,7 @@ class account_fiscalyear_close(osv.osv_memory):
             FROM account_account a
             LEFT JOIN account_account_type t ON (a.user_type = t.id)
             WHERE a.active
-              AND a.type != 'view'
+              AND a.type not in ('view', 'consolidation')
               AND a.company_id = %s
               AND t.close_method = %s''', (company_id, 'detail', ))
         account_ids = map(lambda x: x[0], cr.fetchall())
@@ -211,7 +211,7 @@ class account_fiscalyear_close(osv.osv_memory):
             FROM account_account a
             LEFT JOIN account_account_type t ON (a.user_type = t.id)
             WHERE a.active
-              AND a.type != 'view'
+              AND a.type not in ('view', 'consolidation')
               AND a.company_id = %s
               AND t.close_method = %s''', (company_id, 'balance', ))
         account_ids = map(lambda x: x[0], cr.fetchall())

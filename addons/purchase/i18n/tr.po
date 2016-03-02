@@ -1,21 +1,22 @@
-# Turkish translation for openobject-addons
-# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the openobject-addons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
-#
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * purchase
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: openobject-addons\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-06-07 19:36+0000\n"
-"PO-Revision-Date: 2014-05-17 04:51+0000\n"
-"Last-Translator: Ediz Duman <neps1192@gmail.com>\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"Project-Id-Version: Odoo 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-14 00:10+0000\n"
+"PO-Revision-Date: 2015-07-22 03:23+0000\n"
+"Last-Translator: Martin Trigaux\n"
+"Language-Team: Turkish (http://www.transifex.com/odoo/odoo-7/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-05-18 05:53+0000\n"
-"X-Generator: Launchpad (build 17007)\n"
+"Content-Transfer-Encoding: \n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: purchase
 #: model:res.groups,name:purchase.group_analytic_accounting
@@ -35,15 +36,10 @@ msgstr "Kategoriye göre Aylık Satınalmalar"
 #. module: purchase
 #: help:purchase.config.settings,module_warning:0
 msgid ""
-"Allow to configure notification on products and trigger them when a user "
-"wants to purchase a given product or a given supplier.\n"
+"Allow to configure notification on products and trigger them when a user wants to purchase a given product or a given supplier.\n"
 "Example: Product: this product is deprecated, do not purchase more than 5.\n"
 "                Supplier: don't forget to ask for an express delivery."
-msgstr ""
-"Ürünler üzerine bildirim yapılandırmanıza ve bir kullanıcının verilen bir "
-"ürünü ya da verilen bir tedarikçiden satınalmak istediğinde ürünü tetikler.\n"
-"Örnek: Ürün: bu ürün uygun bulunmamıştır, 5 adetten fazla satınalmayın.\n"
-"                Tedarikçi: hızlı teslimat yapmasını istemeyi unutmayın."
+msgstr "Ürünler üzerine bildirim yapılandırmanıza ve bir kullanıcının verilen bir ürünü ya da verilen bir tedarikçiden satınalmak istediğinde ürünü tetikler.\nÖrnek: Ürün: bu ürün uygun bulunmamıştır, 5 adetten fazla satınalmayın.\n                Tedarikçi: hızlı teslimat yapmasını istemeyi unutmayın."
 
 #. module: purchase
 #: model:product.pricelist,name:purchase.list0
@@ -60,14 +56,10 @@ msgstr "Tel :"
 msgid ""
 "The pricelist sets the currency used for this purchase order. It also "
 "computes the supplier price for the selected products/quantities."
-msgstr ""
-"Fiyat listesi bu satınalma siparişi için kullanılacak para birimini "
-"belirler. Ayrıca, seçilen ürünler/miktarlar için tedarikçi fiyatını da "
-"hesaplar."
+msgstr "Fiyat listesi bu satınalma siparişi için kullanılacak para birimini belirler. Ayrıca, seçilen ürünler/miktarlar için tedarikçi fiyatını da hesaplar."
 
 #. module: purchase
-#: view:purchase.report:0
-#: field:purchase.report,day:0
+#: view:purchase.report:0 field:purchase.report,day:0
 msgid "Day"
 msgstr "Gün"
 
@@ -108,22 +100,19 @@ msgstr "Analitik Hesabı"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr ""
-"Sohbetçi özetini tutar (mesajların sayısı, ...). Bu özet kanban ekranlarına "
-"eklenebilmesi için html biçimindedir."
+msgstr "Sohbetçi özetini tutar (mesajların sayısı, ...). Bu özet kanban ekranlarına eklenebilmesi için html biçimindedir."
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:1050
+#: code:addons/purchase/purchase.py:1087
 #, python-format
 msgid "Configuration Error!"
 msgstr "Yapılandırma Hatası!"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:589
+#: code:addons/purchase/purchase.py:598
 #, python-format
 msgid "You must first cancel all receptions related to this purchase order."
-msgstr ""
-"Önce bu satınalma siparişi ile ilişkili bütün alımları iptal etmelisiniz."
+msgstr "Önce bu satınalma siparişi ile ilişkili bütün alımları iptal etmelisiniz."
 
 #. module: purchase
 #: model:ir.model,name:purchase.model_res_partner
@@ -137,7 +126,7 @@ msgid "Purchase-Standard Price"
 msgstr "Satınalma-Standart Fiyat"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:1037
+#: code:addons/purchase/purchase.py:1074
 #, python-format
 msgid "No supplier defined for this product !"
 msgstr "Bu Ürün için tanımlı tedarikçi yok !"
@@ -148,14 +137,10 @@ msgid ""
 "Margin of error for supplier lead times. When the systemgenerates Purchase "
 "Orders for procuring products,they will be scheduled that many days earlier "
 "to cope with unexpected supplier delays."
-msgstr ""
-"Tedarikçi teslim süresi hata oranı. Ürün tedariki için sistem Satınalma "
-"Siparişi oluşturduğunda, beklenmedik tedarikçi teslim sürelerini bertaraf "
-"edebilmek için planlama bir kaç gün öncesine yapılır."
+msgstr "Tedarikçi teslim süresi hata oranı. Ürün tedariki için sistem Satınalma Siparişi oluşturduğunda, beklenmedik tedarikçi teslim sürelerini bertaraf edebilmek için planlama bir kaç gün öncesine yapılır."
 
 #. module: purchase
-#: view:purchase.report:0
-#: field:purchase.report,price_average:0
+#: view:purchase.report:0 field:purchase.report,price_average:0
 msgid "Average Price"
 msgstr "Ortalama Fiyat"
 
@@ -170,16 +155,13 @@ msgid "Merge Purchase orders"
 msgstr "Satınalma Siparişlerini Birleştir"
 
 #. module: purchase
-#: view:purchase.report:0
-#: field:purchase.report,price_total:0
+#: view:purchase.report:0 field:purchase.report,price_total:0
 msgid "Total Price"
 msgstr "Toplam Fiyat"
 
 #. module: purchase
-#: view:purchase.order:0
-#: field:purchase.order,minimum_planned_date:0
-#: report:purchase.quotation:0
-#: field:purchase.report,expected_date:0
+#: view:purchase.order:0 field:purchase.order,minimum_planned_date:0
+#: report:purchase.quotation:0 field:purchase.report,expected_date:0
 msgid "Expected Date"
 msgstr "Beklenen Tarih"
 
@@ -199,8 +181,7 @@ msgid "Alerts by products or supplier"
 msgstr "Ürün ya da tedarikçi tarafından uyarılar"
 
 #. module: purchase
-#: field:purchase.order,name:0
-#: view:purchase.order.line:0
+#: field:purchase.order,name:0 view:purchase.order.line:0
 #: field:purchase.order.line,order_id:0
 msgid "Order Reference"
 msgstr "Sipariş Referansı"
@@ -219,20 +200,17 @@ msgstr "Onama"
 #: help:purchase.config.settings,group_uom:0
 msgid ""
 "Allows you to select and maintain different units of measure for products."
-msgstr ""
-"Ürünler için farklı ölçü birimleri seçmenizi ve değiştirmenizi sağlar."
+msgstr "Ürünler için farklı ölçü birimleri seçmenizi ve değiştirmenizi sağlar."
 
 #. module: purchase
 #: help:purchase.order,minimum_planned_date:0
 msgid ""
 "This is computed as the minimum scheduled date of all purchase order lines' "
 "products."
-msgstr ""
-"Bu, tüm satınalma sipariş kalemlerindeki ürünlerin enaz planlanan tarihi "
-"olarak hesaplanır."
+msgstr "Bu, tüm satınalma sipariş kalemlerindeki ürünlerin enaz planlanan tarihi olarak hesaplanır."
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:262
+#: code:addons/purchase/purchase.py:259
 #, python-format
 msgid "In order to delete a purchase order, you must cancel it first."
 msgstr "Bir satınalma siparişi silmek için, önce onu iptal etmeniz gerekir."
@@ -248,37 +226,26 @@ msgid "Approved purchase orders"
 msgstr "Onaylı satınalma siparişleri"
 
 #. module: purchase
-#: model:email.template,subject:purchase.email_template_edi_purchase
-msgid "${object.company_id.name} Order (Ref ${object.name or 'n/a' })"
-msgstr "${object.company_id.name} Sipariş (Ref ${object.name or 'n/a' })"
-
-#. module: purchase
 #: view:purchase.order:0
 msgid "Total Untaxed amount"
 msgstr "Vergisiz Toplam tutar"
 
 #. module: purchase
-#: view:purchase.report:0
-#: field:purchase.report,category_id:0
+#: view:purchase.report:0 field:purchase.report,category_id:0
 msgid "Category"
 msgstr "Kategori"
 
 #. module: purchase
 #: model:process.transition,note:purchase.process_transition_purchaseinvoice0
 msgid ""
-"A purchase order generates a supplier invoice, as soon as it is confirmed by "
-"the buyer. Depending on the Invoicing control of the purchase order, the "
+"A purchase order generates a supplier invoice, as soon as it is confirmed by"
+" the buyer. Depending on the Invoicing control of the purchase order, the "
 "invoice is based on received or on ordered quantities."
-msgstr ""
-"Satınalma siparişi, alıcı tarafından onaylandığı anda bir tedarikçi faturası "
-"oluşturur. Satınalma siparişi faturalama kontrolüne göre, fatura alınanlara "
-"ya da sipariş edilen miktarlara dayanır."
+msgstr "Satınalma siparişi, alıcı tarafından onaylandığı anda bir tedarikçi faturası oluşturur. Satınalma siparişi faturalama kontrolüne göre, fatura alınanlara ya da sipariş edilen miktarlara dayanır."
 
 #. module: purchase
-#: view:purchase.order:0
-#: field:purchase.order,state:0
-#: view:purchase.order.line:0
-#: field:purchase.order.line,state:0
+#: view:purchase.order:0 field:purchase.order,state:0
+#: view:purchase.order.line:0 field:purchase.order.line,state:0
 #: view:purchase.report:0
 msgid "Status"
 msgstr "Durumu"
@@ -323,19 +290,7 @@ msgid ""
 "            draft invoice and validate it.\n"
 "          </p>\n"
 "        "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"            Taslak fatura oluşturmak için tıklayın\n"
-"          </p><p>\n"
-"            Bu menüyü tedarikçinizden gelecek faturaları denetlemek için\n"
-"            kullanın. OpenERP, ayarlarınıza göre satınalma "
-"siparişlerinizden\n"
-"            kabullerinizden taslak faturalar oluşturur.\n"
-"          </p><p>\n"
-"            Tedarikçi faturasını aldığınızda, onu taslak fatura ile\n"
-"            karşılaştırıp doğrulayabilirsiniz.\n"
-"          </p>\n"
-"        "
+msgstr "<p class=\"oe_view_nocontent_create\">\n            Taslak fatura oluşturmak için tıklayın\n          </p><p>\n            Bu menüyü tedarikçinizden gelecek faturaları denetlemek için\n            kullanın. OpenERP, ayarlarınıza göre satınalma siparişlerinizden\n            kabullerinizden taslak faturalar oluşturur.\n          </p><p>\n            Tedarikçi faturasını aldığınızda, onu taslak fatura ile\n            karşılaştırıp doğrulayabilirsiniz.\n          </p>\n        "
 
 #. module: purchase
 #: selection:purchase.report,month:0
@@ -343,14 +298,12 @@ msgid "October"
 msgstr "Ekim"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:1050
+#: code:addons/purchase/purchase.py:1087
 #, python-format
 msgid ""
 "The product \"%s\" has been defined with your company as reseller which "
 "seems to be a configuration error!"
-msgstr ""
-"\"%s\" Ürünü firmanızda satıcı olarak olarak tanımlanmış, bu bir "
-"yapılandırma hatası olarak görünüyor!"
+msgstr "\"%s\" Ürünü firmanızda satıcı olarak olarak tanımlanmış, bu bir yapılandırma hatası olarak görünüyor!"
 
 #. module: purchase
 #: view:product.product:0
@@ -364,8 +317,7 @@ msgstr "Gelen ürünleri izlemek için bir toplama listesi oluşturulur."
 
 #. module: purchase
 #: model:ir.actions.act_window,name:purchase.purchase_rfq
-#: model:ir.ui.menu,name:purchase.menu_purchase_rfq
-#: view:purchase.order:0
+#: model:ir.ui.menu,name:purchase.menu_purchase_rfq view:purchase.order:0
 #: view:purchase.report:0
 msgid "Quotations"
 msgstr "Teklifler"
@@ -376,8 +328,7 @@ msgid "Do you want to generate the supplier invoices?"
 msgstr "Tedarikçi faturaları oluşturmak istiyor musunuz?"
 
 #. module: purchase
-#: field:purchase.order.line,product_qty:0
-#: view:purchase.report:0
+#: field:purchase.order.line,product_qty:0 view:purchase.report:0
 #: field:purchase.report,quantity:0
 msgid "Quantity"
 msgstr "Miktar"
@@ -393,6 +344,12 @@ msgid "Default invoicing control method"
 msgstr "Varsayılan faturalama kontrol yöntemi"
 
 #. module: purchase
+#: code:addons/purchase/purchase.py:909
+#, python-format
+msgid "Cannot delete a purchase order line which is in state '%s'."
+msgstr "'%s' Durumundaki satınalma satırı silinemiyor"
+
+#. module: purchase
 #: model:ir.model,name:purchase.model_stock_picking_in
 #: model:ir.ui.menu,name:purchase.menu_action_picking_tree4
 #: view:purchase.order:0
@@ -405,30 +362,16 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                    Click here to record a supplier invoice.\n"
 "                </p><p>\n"
-"                    Supplier invoices can be pre-generated based on "
-"purchase\n"
-"                    orders or receptions. This allows you to control "
-"invoices\n"
+"                    Supplier invoices can be pre-generated based on purchase\n"
+"                    orders or receptions. This allows you to control invoices\n"
 "                    you receive from your supplier according to the draft\n"
 "                    document in OpenERP.\n"
 "                </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                    Bir tedarikçi faturası kaydetmek için buraya tıklayın.\n"
-"                </p><p>\n"
-"                    Tedarikçi faturaları satınalma siparişleri ya da "
-"kabuller bazalınarak\n"
-"                    önceden oluşturulabilir. Bu sizin tedarikçinizden "
-"aldığınız\n"
-"                    faturaları OpenERP deki taslak belgeye göre\n"
-"                    denetlemenizi sağlar.\n"
-"                </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                    Bir tedarikçi faturası kaydetmek için buraya tıklayın.\n                </p><p>\n                    Tedarikçi faturaları satınalma siparişleri ya da kabuller bazalınarak\n                    önceden oluşturulabilir. Bu sizin tedarikçinizden aldığınız\n                    faturaları OpenERP deki taslak belgeye göre\n                    denetlemenizi sağlar.\n                </p>\n            "
 
 #. module: purchase
-#: view:purchase.order:0
-#: view:purchase.order.line:0
+#: view:purchase.order:0 view:purchase.order.line:0
 msgid "Search Purchase Order"
 msgstr "Satınalma Siparişi Ara"
 
@@ -438,8 +381,7 @@ msgid "Date Req."
 msgstr "İstek Tarihi"
 
 #. module: purchase
-#: view:purchase.order:0
-#: view:purchase.order.line:0
+#: view:purchase.order:0 view:purchase.order.line:0
 msgid "Purchase Order Lines"
 msgstr "Satınalma Siparişi Kalemleri"
 
@@ -448,33 +390,19 @@ msgstr "Satınalma Siparişi Kalemleri"
 msgid ""
 "Put an address if you want to deliver directly from the supplier to the "
 "customer. Otherwise, keep empty to deliver to your own company."
-msgstr ""
-"Doğrudan tedarikçiden müşteriye teslimat yapmak istiyorsanız bir adres "
-"girin. Aksi takdirde, kendi firmanıza teslimat için boş bırakın."
+msgstr "Doğrudan tedarikçiden müşteriye teslimat yapmak istiyorsanız bir adres girin. Aksi takdirde, kendi firmanıza teslimat için boş bırakın."
 
 #. module: purchase
 #: model:ir.actions.act_window,help:purchase.purchase_line_form_action2
 msgid ""
 "<p>\n"
-"                Here you can track all the lines of purchase orders where "
-"the\n"
-"                invoicing is \"Based on Purchase Order Lines\", and for "
-"which you\n"
-"                have not received a supplier invoice yet. You can generate "
-"a\n"
+"                Here you can track all the lines of purchase orders where the\n"
+"                invoicing is \"Based on Purchase Order Lines\", and for which you\n"
+"                have not received a supplier invoice yet. You can generate a\n"
 "                draft supplier invoice based on the lines from this list.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p>\n"
-"                Burada, faturalamanın \"Gelen Gönderilere Göre\" olduğu\n"
-"                satınalma siparişlerine ait tüm kalemleri ve henüz "
-"tedarikçi\n"
-"                faturası almadığınız malları izleyebilirsiniz.\n"
-"                Bu listedeki kalemlere göre tedarikçi faturası "
-"oluşturabilirsiniz\n"
-"              </p>\n"
-"            "
+msgstr "<p>\n                Burada, faturalamanın \"Gelen Gönderilere Göre\" olduğu\n                satınalma siparişlerine ait tüm kalemleri ve henüz tedarikçi\n                faturası almadığınız malları izleyebilirsiniz.\n                Bu listedeki kalemlere göre tedarikçi faturası oluşturabilirsiniz\n              </p>\n            "
 
 #. module: purchase
 #: field:purchase.order.line,date_planned:0
@@ -492,8 +420,7 @@ msgid "Journal"
 msgstr "Yevmiye"
 
 #. module: purchase
-#: view:board.board:0
-#: model:ir.actions.act_window,name:purchase.purchase_draft
+#: view:board.board:0 model:ir.actions.act_window,name:purchase.purchase_draft
 msgid "Request for Quotations"
 msgstr "Teklif İsteği"
 
@@ -508,8 +435,7 @@ msgid "Purchase orders that include lines not invoiced."
 msgstr "İçinde faturalanmamış kalemler içeren satınalma siparişleri"
 
 #. module: purchase
-#: view:product.product:0
-#: field:product.template,purchase_ok:0
+#: view:product.product:0 field:product.template,purchase_ok:0
 msgid "Can be Purchased"
 msgstr "Satın Alınabilir"
 
@@ -526,17 +452,13 @@ msgstr "Teklif İsteği "
 #. module: purchase
 #: help:purchase.order,partner_ref:0
 msgid ""
-"Reference of the sales order or quotation sent by your supplier. It's mainly "
-"used to do the matching when you receive the products as this reference is "
+"Reference of the sales order or quotation sent by your supplier. It's mainly"
+" used to do the matching when you receive the products as this reference is "
 "usually written on the delivery order sent by your supplier."
-msgstr ""
-"Tedarikçi tarafından gönderilen satış siparişi ya da teklifin referansı. "
-"Genellikle tedarikçiniz tarafından gönderilen teslimat emirlerinde yazılı bu "
-"ürüne ait referansın eşleştirilmesinde kullanılır."
+msgstr "Tedarikçi tarafından gönderilen satış siparişi ya da teklifin referansı. Genellikle tedarikçiniz tarafından gönderilen teslimat emirlerinde yazılı bu ürüne ait referansın eşleştirilmesinde kullanılır."
 
 #. module: purchase
-#: view:purchase.config.settings:0
-#: view:purchase.order.group:0
+#: view:purchase.config.settings:0 view:purchase.order.group:0
 #: view:purchase.order.line_invoice:0
 msgid "or"
 msgstr "ya da"
@@ -552,10 +474,7 @@ msgid ""
 "The invoice is created automatically if the Invoice control of the purchase "
 "order is 'On order'. The invoice can also be generated manually by the "
 "accountant (Invoice control = Manual)."
-msgstr ""
-"Satınalma siparişinin fatura denetimi 'Siparişte' ise, fatura kendiliğinden "
-"oluşur. Fatura muhasebeci tarafından el ile de oluşturulabilir (Fatura "
-"denetimi= El ile)."
+msgstr "Satınalma siparişinin fatura denetimi 'Siparişte' ise, fatura kendiliğinden oluşur. Fatura muhasebeci tarafından el ile de oluşturulabilir (Fatura denetimi= El ile)."
 
 #. module: purchase
 #: model:mail.message.subtype,name:purchase.mt_rfq_approved
@@ -577,9 +496,7 @@ msgstr "Vergisiz Tutar"
 msgid ""
 "The buyer has to approve the RFQ before being sent to the supplier. The RFQ "
 "becomes a confirmed Purchase Order."
-msgstr ""
-"Alıcı, tedarikçiye göndermeden önce Tİ ni onaylamalıdır. Tİ onaylanmış bir "
-"Satınalma Siparişi haline gelir."
+msgstr "Alıcı, tedarikçiye göndermeden önce Tİ ni onaylamalıdır. Tİ onaylanmış bir Satınalma Siparişi haline gelir."
 
 #. module: purchase
 #: model:mail.message.subtype,name:purchase.mt_rfq_confirmed
@@ -602,16 +519,14 @@ msgid "Not Invoiced"
 msgstr "Faturalanmadı"
 
 #. module: purchase
-#: view:purchase.order:0
-#: field:purchase.order,partner_id:0
-#: view:purchase.order.line:0
-#: view:purchase.report:0
+#: view:purchase.order:0 field:purchase.order,partner_id:0
+#: view:purchase.order.line:0 view:purchase.report:0
 #: field:purchase.report,partner_id:0
 msgid "Supplier"
 msgstr "Tedarikçi"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:527
+#: code:addons/purchase/purchase.py:473
 #, python-format
 msgid "Define expense account for this company: \"%s\" (id:%d)."
 msgstr "Bu firma için gider hesabı tanımlayın: \"%s\" (id:%d)."
@@ -657,31 +572,15 @@ msgstr "Satınalınacak"
 #: model:ir.actions.act_window,help:purchase.purchase_form_action
 msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
-"                Click to create a quotation that will be converted into a "
-"purchase order. \n"
+"                Click to create a quotation that will be converted into a purchase order. \n"
 "              </p><p>\n"
 "                Use this menu to search within your purchase orders by\n"
-"                references, supplier, products, etc. For each purchase "
-"order,\n"
-"                you can track the related discussion with the supplier, "
-"control\n"
+"                references, supplier, products, etc. For each purchase order,\n"
+"                you can track the related discussion with the supplier, control\n"
 "                the products received and control the supplier invoices.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Bir satınalma siparişine dönüştürülecek bir teklif "
-"oluşturmak için tıklayın. \n"
-"              </p><p>\n"
-"                Bu menüyü satınalma siparişleriniz içinde referanslara, "
-"tedarikçiye, ürüne,\n"
-"                v.b göre aramak için kullanın. Her satınalma siparişi için "
-"tedarikçinizle yapılan\n"
-"                ilgili görüşmeleri izleyebilir, kabul edilen ürünleri ve "
-"tedarikçi faturalarını\n"
-"                denetleyebilirsiniz.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Bir satınalma siparişine dönüştürülecek bir teklif oluşturmak için tıklayın. \n              </p><p>\n                Bu menüyü satınalma siparişleriniz içinde referanslara, tedarikçiye, ürüne,\n                v.b göre aramak için kullanın. Her satınalma siparişi için tedarikçinizle yapılan\n                ilgili görüşmeleri izleyebilir, kabul edilen ürünleri ve tedarikçi faturalarını\n                denetleyebilirsiniz.\n              </p>\n            "
 
 #. module: purchase
 #: view:purchase.order.line:0
@@ -693,22 +592,12 @@ msgstr "Faturalar ve Kabuller"
 msgid ""
 "A Pick list generates an invoice. Depending on the Invoicing control of the "
 "sales order, the invoice is based on delivered or on ordered quantities."
-msgstr ""
-"Bir Toplama listesi fatura oluşturur. Satış siparişinin faturalama "
-"denetimine göre, fatura teslimatı yapılan ya da siparişte olan miktarlara "
-"dayalıdır."
+msgstr "Bir Toplama listesi fatura oluşturur. Satış siparişinin faturalama denetimine göre, fatura teslimatı yapılan ya da siparişte olan miktarlara dayalıdır."
 
 #. module: purchase
-#: view:purchase.report:0
-#: field:purchase.report,nbr:0
+#: view:purchase.report:0 field:purchase.report,nbr:0
 msgid "# of Lines"
 msgstr "Kalem Sayısı"
-
-#. module: purchase
-#: code:addons/purchase/wizard/purchase_line_invoice.py:106
-#, python-format
-msgid "Define expense account for this product: \"%s\" (id:%d)."
-msgstr "Bu ürün için gider hesabı tanımlayın: \"%s\" (id:%d)."
 
 #. module: purchase
 #: view:purchase.order:0
@@ -726,8 +615,7 @@ msgid "It indicates that a picking has been done"
 msgstr "Bir toplama yapıldığını gösterir"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:581
-#: code:addons/purchase/purchase.py:588
+#: code:addons/purchase/purchase.py:590 code:addons/purchase/purchase.py:597
 #, python-format
 msgid "Unable to cancel this purchase order."
 msgstr "Bu satınalma siparişi iptal edilemiyor."
@@ -740,11 +628,9 @@ msgstr "Fatura Denetimi"
 #. module: purchase
 #: model:ir.actions.act_window,help:purchase.action_stock_move_report_po
 msgid ""
-"Reception Analysis allows you to easily check and analyse your company order "
-"receptions and the performance of your supplier's deliveries."
-msgstr ""
-"Kabul Analizi şirketinizin sipariş kabullerinin ve tedarikçi teslimatlarının "
-"performansını kolayca denetleme ve incelemenizi sağlar."
+"Reception Analysis allows you to easily check and analyse your company order"
+" receptions and the performance of your supplier's deliveries."
+msgstr "Kabul Analizi şirketinizin sipariş kabullerinin ve tedarikçi teslimatlarının performansını kolayca denetleme ve incelemenizi sağlar."
 
 #. module: purchase
 #: view:purchase.order:0
@@ -761,9 +647,7 @@ msgstr "Sipariş Kalemleri"
 msgid ""
 "Unique number of the purchase order, computed automatically when the "
 "purchase order is created."
-msgstr ""
-"Eşsiz satınalma siparişi numarası, satınalma siparişi oluşturulduğunda "
-"kendiliğinden hesaplanır."
+msgstr "Eşsiz satınalma siparişi numarası, satınalma siparişi oluşturulduğunda kendiliğinden hesaplanır."
 
 #. module: purchase
 #: model:ir.ui.menu,name:purchase.menu_product_pricelist_action2_purchase
@@ -783,8 +667,7 @@ msgid "Total :"
 msgstr "Toplam :"
 
 #. module: purchase
-#: field:purchase.order,pricelist_id:0
-#: field:purchase.report,pricelist_id:0
+#: field:purchase.order,pricelist_id:0 field:purchase.report,pricelist_id:0
 msgid "Pricelist"
 msgstr "Fiyat Listesi"
 
@@ -794,9 +677,8 @@ msgid "Draft PO"
 msgstr "Taslak SS"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:967
-#: code:addons/purchase/purchase.py:982
-#: code:addons/purchase/purchase.py:986
+#: code:addons/purchase/purchase.py:1001 code:addons/purchase/purchase.py:1016
+#: code:addons/purchase/purchase.py:1020
 #: code:addons/purchase/wizard/purchase_order_group.py:47
 #, python-format
 msgid "Warning!"
@@ -814,10 +696,8 @@ msgid "Send by Email"
 msgstr "Epostayla Gönder"
 
 #. module: purchase
-#: report:purchase.order:0
-#: view:purchase.order:0
-#: field:purchase.order,date_order:0
-#: field:purchase.order.line,date_order:0
+#: report:purchase.order:0 view:purchase.order:0
+#: field:purchase.order,date_order:0 field:purchase.order.line,date_order:0
 #: field:purchase.report,date:0
 msgid "Order Date"
 msgstr "Sipariş Tarihi"
@@ -875,7 +755,7 @@ msgid "Stock Moves"
 msgstr "Stok Hareketleri"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:1182
+#: code:addons/purchase/purchase.py:1240
 #, python-format
 msgid "Draft Purchase Order created"
 msgstr "Taslak Satınalma Siparişi oluşturuldu"
@@ -884,11 +764,6 @@ msgstr "Taslak Satınalma Siparişi oluşturuldu"
 #: model:ir.ui.menu,name:purchase.menu_product_category_config_purchase
 msgid "Product Categories"
 msgstr "Ürün Kategorileri"
-
-#. module: purchase
-#: help:purchase.order,invoiced:0
-msgid "It indicates that an invoice has been paid"
-msgstr "Bir faturanın ödendiğini gösterir"
 
 #. module: purchase
 #: field:purchase.order,notes:0
@@ -956,14 +831,12 @@ msgstr "işi taşeron etmek için oluşturulacaktır"
 #: model:ir.actions.act_window,name:purchase.action_purchase_line_product_tree
 #: model:ir.actions.act_window,name:purchase.open_board_purchase
 #: model:ir.ui.menu,name:purchase.menu_board_purchase
-#: model:ir.ui.menu,name:purchase.menu_purchase_config
-#: view:res.partner:0
+#: model:ir.ui.menu,name:purchase.menu_purchase_config view:res.partner:0
 msgid "Purchases"
 msgstr "Satınalma"
 
 #. module: purchase
-#: view:purchase.report:0
-#: field:purchase.report,delay:0
+#: view:purchase.report:0 field:purchase.report,delay:0
 msgid "Days to Validate"
 msgstr "Doğrulama Günler"
 
@@ -973,16 +846,14 @@ msgid "Supplier Features"
 msgstr "Tedarikçi Özellikleri"
 
 #. module: purchase
-#: report:purchase.order:0
-#: report:purchase.quotation:0
+#: report:purchase.order:0 report:purchase.quotation:0
 msgid "Qty"
 msgstr "Mik"
 
 #. module: purchase
 #: model:process.transition.action,name:purchase.process_transition_action_approvingcancelpurchaseorder0
 #: model:process.transition.action,name:purchase.process_transition_action_cancelpurchaseorder0
-#: view:purchase.config.settings:0
-#: view:purchase.order.group:0
+#: view:purchase.config.settings:0 view:purchase.order.group:0
 #: view:purchase.order.line_invoice:0
 msgid "Cancel"
 msgstr "İptal"
@@ -1009,14 +880,12 @@ msgid "Order of Month"
 msgstr "Ayın Siparişi"
 
 #. module: purchase
-#: report:purchase.order:0
-#: field:purchase.order.line,price_unit:0
+#: report:purchase.order:0 field:purchase.order.line,price_unit:0
 msgid "Unit Price"
 msgstr "Birim Fiyat"
 
 #. module: purchase
-#: field:purchase.order,date_approve:0
-#: field:purchase.report,date_approve:0
+#: field:purchase.order,date_approve:0 field:purchase.report,date_approve:0
 msgid "Date Approved"
 msgstr "Onay Tarihi"
 
@@ -1046,19 +915,14 @@ msgstr "Satınalmalar için analitik muhasebe"
 msgid ""
 "In case there is no supplier for this product, the buyer can fill the form "
 "manually and confirm it. The RFQ becomes a confirmed Purchase Order."
-msgstr ""
-"Bu ürün için tedarikçi olmaması durumunda, alıcı formu elle doldurup "
-"onaylayabilir. Tİ, onaylanan bir Satınalma Siparişi haline gelir."
+msgstr "Bu ürün için tedarikçi olmaması durumunda, alıcı formu elle doldurup onaylayabilir. Tİ, onaylanan bir Satınalma Siparişi haline gelir."
 
 #. module: purchase
 #: help:purchase.config.settings,group_purchase_pricelist:0
 msgid ""
 "Allows to manage different prices based on rules per category of Supplier.\n"
-"                Example: 10% for retailers, promotion of 5 EUR on this "
-"product, etc."
-msgstr ""
-"Tedarikçi kategorilerine göre olan değişik fiyatları yürütmenizi sağlar.\n"
-"                Örnek: satıcılar için 10%, tanıtımı için bu üründe 5 EUR, vb."
+"                Example: 10% for retailers, promotion of 5 EUR on this product, etc."
+msgstr "Tedarikçi kategorilerine göre olan değişik fiyatları yürütmenizi sağlar.\n                Örnek: satıcılar için 10%, tanıtımı için bu üründe 5 EUR, vb."
 
 #. module: purchase
 #: model:ir.model,name:purchase.model_mail_mail
@@ -1066,12 +930,10 @@ msgid "Outgoing Mails"
 msgstr "Giden Postalar"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:458
+#: code:addons/purchase/purchase.py:455
 #, python-format
 msgid "You cannot confirm a purchase order without any purchase order line."
-msgstr ""
-"Herhangi bir satın alma siparişi satırı olmadan bir satınalma siparişini "
-"onaylayamazsınız."
+msgstr "Herhangi bir satın alma siparişi satırı olmadan bir satınalma siparişini onaylayamazsınız."
 
 #. module: purchase
 #: help:purchase.order,message_ids:0
@@ -1079,19 +941,17 @@ msgid "Messages and communication history"
 msgstr "Mesajlar ve iletişim geçmişi"
 
 #. module: purchase
-#: field:purchase.order,warehouse_id:0
-#: field:stock.picking.in,warehouse_id:0
+#: field:purchase.order,warehouse_id:0 field:stock.picking.in,warehouse_id:0
 msgid "Destination Warehouse"
 msgstr "Hedef Konum"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:967
+#: code:addons/purchase/purchase.py:1001
 #, python-format
 msgid ""
-"Selected Unit of Measure does not belong to the same category as the product "
-"Unit of Measure."
-msgstr ""
-"Seçilen Ölçü Birimi ürünün Ölçü Birimi ile aynı kategoriye ait değildir."
+"Selected Unit of Measure does not belong to the same category as the product"
+" Unit of Measure."
+msgstr "Seçilen Ölçü Birimi ürünün Ölçü Birimi ile aynı kategoriye ait değildir."
 
 #. module: purchase
 #: view:purchase.order.line_invoice:0
@@ -1115,7 +975,7 @@ msgid "Purchase Dashboard"
 msgstr "SatınAlma Paneli"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:582
+#: code:addons/purchase/purchase.py:591
 #, python-format
 msgid "First cancel all receptions related to this purchase order."
 msgstr "Öncelikle bu sipariş ile ilgili tüm kabulleri iptal edin."
@@ -1131,9 +991,7 @@ msgid "Date on which this document has been created"
 msgstr "Bu belgenin oluşturulduğu tarih"
 
 #. module: purchase
-#: view:purchase.order:0
-#: view:purchase.order.line:0
-#: view:purchase.report:0
+#: view:purchase.order:0 view:purchase.order.line:0 view:purchase.report:0
 msgid "Group By..."
 msgstr "Gruplandır..."
 
@@ -1148,8 +1006,7 @@ msgid "Purchase Orders Statistics"
 msgstr "Satınalma Siparişi İstatistikleri"
 
 #. module: purchase
-#: view:purchase.order:0
-#: field:purchase.order,message_unread:0
+#: view:purchase.order:0 field:purchase.order,message_unread:0
 msgid "Unread Messages"
 msgstr "Okunmamış Mesajlar"
 
@@ -1168,9 +1025,7 @@ msgstr "Taslağa Ayarla"
 msgid ""
 "Reference of the document that generated this purchase order request; a "
 "sales order or an internal procurement request."
-msgstr ""
-"Bu satınalma siparişi isteğini oluşturan belgenin referansı; bir satış "
-"siparişi ya da iç tedarik isteği."
+msgstr "Bu satınalma siparişi isteğini oluşturan belgenin referansı; bir satış siparişi ya da iç tedarik isteği."
 
 #. module: purchase
 #: view:purchase.order.line:0
@@ -1183,8 +1038,7 @@ msgid "Manage purchase requisitions"
 msgstr "Satınalma isteklerini yürütme"
 
 #. module: purchase
-#: report:purchase.order:0
-#: field:purchase.order,amount_tax:0
+#: report:purchase.order:0 field:purchase.order,amount_tax:0
 #: field:purchase.order.line,taxes_id:0
 msgid "Taxes"
 msgstr "Vergiler"
@@ -1207,20 +1061,18 @@ msgid "Stock Move"
 msgstr "Stok Hareketi"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:262
+#: code:addons/purchase/purchase.py:259 code:addons/purchase/purchase.py:909
 #, python-format
 msgid "Invalid Action!"
 msgstr "İşlem Geçersiz!"
 
 #. module: purchase
-#: field:purchase.order,validator:0
-#: view:purchase.report:0
+#: field:purchase.order,validator:0 view:purchase.report:0
 msgid "Validated by"
 msgstr "Onaylayan"
 
 #. module: purchase
-#: view:purchase.report:0
-#: field:purchase.report,price_standard:0
+#: view:purchase.report:0 field:purchase.report,price_standard:0
 msgid "Products Value"
 msgstr "Ürünler Değeri"
 
@@ -1272,10 +1124,7 @@ msgid ""
 "The invoice is created automatically if the Invoice control of the purchase "
 "order is 'On picking'. The invoice can also be generated manually by the "
 "accountant (Invoice control = Manual)."
-msgstr ""
-"Satınalma siparişinin Fatura denetimi 'Toplanıyor' durumundaysa, fatura "
-"kendiliğinden oluşturulur. Fatura muhasebeci tarafından elle de "
-"oluşturulabilir (Fatura denetimi = Manuel)."
+msgstr "Satınalma siparişinin Fatura denetimi 'Toplanıyor' durumundaysa, fatura kendiliğinden oluşturulur. Fatura muhasebeci tarafından elle de oluşturulabilir (Fatura denetimi = Manuel)."
 
 #. module: purchase
 #: report:purchase.quotation:0
@@ -1296,25 +1145,19 @@ msgstr "Giden Ürünler"
 #: view:product.product:0
 msgid ""
 "to buy the required quantities to the supplier.\n"
-"                        The delivery order will be ready after having "
-"received the\n"
+"                        The delivery order will be ready after having received the\n"
 "                        products."
-msgstr ""
-"tedarikçiden istenen miktarları satınalmak için.\n"
-"                        Ürünler kabul edildikte sonra teslimat emri\n"
-"                        hazır olacaktır."
+msgstr "tedarikçiden istenen miktarları satınalmak için.\n                        Ürünler kabul edildikte sonra teslimat emri\n                        hazır olacaktır."
 
 #. module: purchase
 #: view:product.product:0
 msgid ""
 "a draft\n"
 "                        purchase order"
-msgstr ""
-"bir taslak\n"
-"                        Satınalma siparişi"
+msgstr "bir taslak\n                        Satınalma siparişi"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:322
+#: code:addons/purchase/purchase.py:319
 #, python-format
 msgid "Please create Invoices."
 msgstr "Lütfen Faturalar oluşturun."
@@ -1326,23 +1169,12 @@ msgid ""
 "                Click to create a new incoming shipment.\n"
 "              </p><p> \n"
 "                Here you can track all the product receptions of purchase\n"
-"                orders where the invoicing is \"Based on Incoming "
-"Shipments\",\n"
+"                orders where the invoicing is \"Based on Incoming Shipments\",\n"
 "                and for which you have not received a supplier invoice yet.\n"
-"                You can generate a supplier invoice based on those "
-"receptions.\n"
+"                You can generate a supplier invoice based on those receptions.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Yeni gelen bir sevkiyat oluşturmak için tıklayın.\n"
-"              </p><p> \n"
-"                Burada satınalınan tüm ürün kabullerini izleyebilirsiniz\n"
-"                siparişleri faturaya bilirsiniz \"SevkiyatBazında\",\n"
-"                ve bunlar için henüz bir tedarikçi faturası yoksa.\n"
-"                kabul bazalı bir tedarikçi faturası oluşturabilir.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Yeni gelen bir sevkiyat oluşturmak için tıklayın.\n              </p><p> \n                Burada satınalınan tüm ürün kabullerini izleyebilirsiniz\n                siparişleri faturaya bilirsiniz \"SevkiyatBazında\",\n                ve bunlar için henüz bir tedarikçi faturası yoksa.\n                kabul bazalı bir tedarikçi faturası oluşturabilir.\n              </p>\n            "
 
 #. module: purchase
 #: model:ir.model,name:purchase.model_procurement_order
@@ -1350,8 +1182,7 @@ msgid "Procurement"
 msgstr "Tedarik"
 
 #. module: purchase
-#: selection:purchase.order,state:0
-#: selection:purchase.report,state:0
+#: selection:purchase.order,state:0 selection:purchase.report,state:0
 msgid "Shipping Exception"
 msgstr "Sevkiyat İstisnası"
 
@@ -1371,8 +1202,7 @@ msgid "Receive Products"
 msgstr "Ürün Kabulleri"
 
 #. module: purchase
-#: view:purchase.report:0
-#: field:purchase.report,month:0
+#: view:purchase.report:0 field:purchase.report,month:0
 msgid "Month"
 msgstr "Ay"
 
@@ -1386,6 +1216,12 @@ msgstr "Muhasebeci tarafından incelenecek."
 #: model:ir.model,name:purchase.model_purchase_config_settings
 msgid "purchase.config.settings"
 msgstr "purchase.config.settings"
+
+#. module: purchase
+#: field:purchase.order,company_id:0 field:purchase.order.line,company_id:0
+#: view:purchase.report:0 field:purchase.report,company_id:0
+msgid "Company"
+msgstr "Şirket"
 
 #. module: purchase
 #: model:process.node,note:purchase.process_node_approvepurchaseorder0
@@ -1406,22 +1242,11 @@ msgid ""
 "              </p><p>\n"
 "                There can be more than one version of a pricelist, each of\n"
 "                these must be valid during a certain period of time. Some\n"
-"                examples of versions: Main Prices, 2010, 2011, Summer "
-"Sales,\n"
+"                examples of versions: Main Prices, 2010, 2011, Summer Sales,\n"
 "                etc.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Bir fiyat listesi sürümü eklemek için tıklayın.\n"
-"              </p><p>\n"
-"                Bir fiyat listesinin birden çok sürümü olabilir, bunların\n"
-"                her biri geçerli bir zaman dönemi içinde geçerli olmalı. "
-"Bazı\n"
-"                sürüm örnekleri: Ana Fiyatlar, 2010, 2011, Yaz Satışları,\n"
-"                vb.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Bir fiyat listesi sürümü eklemek için tıklayın.\n              </p><p>\n                Bir fiyat listesinin birden çok sürümü olabilir, bunların\n                her biri geçerli bir zaman dönemi içinde geçerli olmalı. Bazı\n                sürüm örnekleri: Ana Fiyatlar, 2010, 2011, Yaz Satışları,\n                vb.\n              </p>\n            "
 
 #. module: purchase
 #: model:ir.actions.act_window,name:purchase.action_view_purchase_line_invoice
@@ -1434,7 +1259,7 @@ msgid "Purchase Order Line Make Invoice"
 msgstr "Satınalma Siparişi Kalemi Faturalandırma"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:1167
+#: code:addons/purchase/purchase.py:1225
 #, python-format
 msgid "PO: %s"
 msgstr "SS: %s"
@@ -1445,7 +1270,7 @@ msgid "Outgoing products to invoice"
 msgstr "Faturalandırılacak giden ürünler"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:517
+#: code:addons/purchase/purchase.py:536
 #, python-format
 msgid "Define purchase journal for this company: \"%s\" (id:%d)."
 msgstr "Bu firma için satınlama yevmiyesi tanımla: \"%s\" (id:%d)."
@@ -1492,8 +1317,7 @@ msgstr "KDV:"
 msgid ""
 "This is the list of incoming shipments that have been generated for this "
 "purchase order."
-msgstr ""
-"Bu satınalma siparişi için oluşturulmuş gelen sevkiyatlar listesidir."
+msgstr "Bu satınalma siparişi için oluşturulmuş gelen sevkiyatlar listesidir."
 
 #. module: purchase
 #: field:purchase.config.settings,module_purchase_double_validation:0
@@ -1512,19 +1336,18 @@ msgstr "Satınalma siparişinin onaylandığı tarih"
 
 #. module: purchase
 #: model:process.node,name:purchase.process_node_approvepurchaseorder0
-#: view:purchase.order:0
-#: selection:purchase.report,state:0
+#: view:purchase.order:0 selection:purchase.report,state:0
 msgid "Approved"
 msgstr "Onaylandı"
 
 #. module: purchase
-#: selection:purchase.order,state:0
-#: selection:purchase.order.line,state:0
+#: selection:purchase.order,state:0 selection:purchase.order.line,state:0
 #: selection:purchase.report,state:0
 msgid "Done"
 msgstr "Biten"
 
 #. module: purchase
+#: model:ir.model,name:purchase.model_account_invoice
 #: model:process.transition,name:purchase.process_transition_invoicefrompackinglist0
 #: model:process.transition,name:purchase.process_transition_invoicefrompurchase0
 msgid "Invoice"
@@ -1546,30 +1369,15 @@ msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to create a request for quotation.\n"
 "              </p><p>\n"
-"                The quotation contains the history of the "
-"discussion/negociation\n"
+"                The quotation contains the history of the discussion/negociation\n"
 "                you had with your supplier. Once confirmed, a request for\n"
 "                quotation is converted into a purchase order.\n"
 "              </p><p>\n"
-"                Most propositions of purchase orders are created "
-"automatically\n"
+"                Most propositions of purchase orders are created automatically\n"
 "                by OpenERP based on inventory needs.\n"
 "              </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Bir teklif isteği oluşturmak için tıklayın.\n"
-"              </p><p>\n"
-"                Teklif, tedarikçinizle yapmış olduğunuz görüşme/pazarlık\n"
-"                geçmişini içermelidir. Onaylandığında, bir teklif isteği\n"
-"                bir satınalma siparişine dönüştürülür.\n"
-"              </p><p>\n"
-"                Satınalma siparilerinin çoğu stok gereksinimlerine göre "
-"OpenERP\n"
-"                tarafından kendiliğinden satınalma siparişlerine "
-"dönüştürülür.\n"
-"              </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                Bir teklif isteği oluşturmak için tıklayın.\n              </p><p>\n                Teklif, tedarikçinizle yapmış olduğunuz görüşme/pazarlık\n                geçmişini içermelidir. Onaylandığında, bir teklif isteği\n                bir satınalma siparişine dönüştürülür.\n              </p><p>\n                Satınalma siparilerinin çoğu stok gereksinimlerine göre OpenERP\n                tarafından kendiliğinden satınalma siparişlerine dönüştürülür.\n              </p>\n            "
 
 #. module: purchase
 #: model:process.transition,note:purchase.process_transition_approvingpurchaseorder0
@@ -1580,9 +1388,7 @@ msgstr "Tedarikçi Satınalma Siparişini onaylar."
 #: code:addons/purchase/wizard/purchase_order_group.py:80
 #: model:ir.actions.act_window,name:purchase.purchase_form_action
 #: model:ir.ui.menu,name:purchase.menu_purchase_form_action
-#: view:purchase.order:0
-#: view:purchase.report:0
-#: view:res.partner:0
+#: view:purchase.order:0 view:purchase.report:0 view:res.partner:0
 #, python-format
 msgid "Purchase Orders"
 msgstr "Satınalma Siparişleri"
@@ -1609,8 +1415,7 @@ msgid "Purchase"
 msgstr "Satınalma"
 
 #. module: purchase
-#: field:purchase.order,create_uid:0
-#: view:purchase.report:0
+#: field:purchase.order,create_uid:0 view:purchase.report:0
 #: field:purchase.report,user_id:0
 msgid "Responsible"
 msgstr "Sorumlu"
@@ -1626,8 +1431,8 @@ msgid "Compute product cost price based on average cost"
 msgstr "Maliyet fiyatını ortalama fiyata göre hesaplama"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:352
-#: code:addons/purchase/wizard/purchase_line_invoice.py:137
+#: code:addons/purchase/purchase.py:349
+#: code:addons/purchase/wizard/purchase_line_invoice.py:115
 #: model:ir.actions.act_window,name:purchase.act_res_partner_2_supplier_invoices
 #: view:res.partner:0
 #, python-format
@@ -1635,10 +1440,8 @@ msgid "Supplier Invoices"
 msgstr "Tedarikçi Faturaları"
 
 #. module: purchase
-#: field:purchase.order,product_id:0
-#: view:purchase.order.line:0
-#: field:purchase.order.line,product_id:0
-#: view:purchase.report:0
+#: field:purchase.order,product_id:0 view:purchase.order.line:0
+#: field:purchase.order.line,product_id:0 view:purchase.report:0
 #: field:purchase.report,product_id:0
 msgid "Product"
 msgstr "Ürün"
@@ -1662,24 +1465,11 @@ msgstr "Ürün Kategorileri"
 #. module: purchase
 #: help:purchase.order.line,state:0
 msgid ""
-" * The 'Draft' status is set automatically when purchase order in draft "
-"status.                                        \n"
-"* The 'Confirmed' status is set automatically as confirm when purchase order "
-"in confirm status.                                        \n"
-"* The 'Done' status is set automatically when purchase order is set as done. "
-"                                       \n"
-"* The 'Cancelled' status is set automatically when user cancel purchase "
-"order."
-msgstr ""
-" * Satınalma siparişi taslak durumunda olursa 'Taslak' durumu kendiliğinden "
-"taslak olarak ayarlanır.                                        \n"
-"* Satınalma siparişi onaylı durumundaysa 'Onaylı' durumu kendiliğinden "
-"onaylı olarak ayarlanır.                                        \n"
-"* Satınalma siparişi yapıldı olarak ayarlanırsa 'Yapıldı' durumu "
-"kendiliğinden yapıldı olarak ayarlanır.                                      "
-"  \n"
-"* Bir kullanıcı satınalma siparişini iptal ettiğinde 'İptal edildi' durumu "
-"kendiliğinden ayarlanır."
+" * The 'Draft' status is set automatically when purchase order in draft status.                                        \n"
+"* The 'Confirmed' status is set automatically as confirm when purchase order in confirm status.                                        \n"
+"* The 'Done' status is set automatically when purchase order is set as done.                                        \n"
+"* The 'Cancelled' status is set automatically when user cancel purchase order."
+msgstr " * Satınalma siparişi taslak durumunda olursa 'Taslak' durumu kendiliğinden taslak olarak ayarlanır.                                        \n* Satınalma siparişi onaylı durumundaysa 'Onaylı' durumu kendiliğinden onaylı olarak ayarlanır.                                        \n* Satınalma siparişi yapıldı olarak ayarlanırsa 'Yapıldı' durumu kendiliğinden yapıldı olarak ayarlanır.                                        \n* Bir kullanıcı satınalma siparişini iptal ettiğinde 'İptal edildi' durumu kendiliğinden ayarlanır."
 
 #. module: purchase
 #: field:purchase.order,invoiced:0
@@ -1725,18 +1515,12 @@ msgstr "Toplam"
 #: help:account.config.settings,module_purchase_analytic_plans:0
 #: help:purchase.config.settings,module_purchase_analytic_plans:0
 msgid ""
-"Allows the user to maintain several analysis plans. These let you split "
-"lines on a purchase order between several accounts and analytic plans.\n"
+"Allows the user to maintain several analysis plans. These let you split lines on a purchase order between several accounts and analytic plans.\n"
 "                This installs the module purchase_analytic_plans."
-msgstr ""
-"Kullanıcının birçok analitik planı yürütmesini sağlar. Birçok hesap ve "
-"analitik plan arasındaki bir satınalma siparişinde kalemleri bölmenizi "
-"sağlar.\n"
-"                Bu, purchase_analytic_plans modülünü kurar."
+msgstr "Kullanıcının birçok analitik planı yürütmesini sağlar. Birçok hesap ve analitik plan arasındaki bir satınalma siparişinde kalemleri bölmenizi sağlar.\n                Bu, purchase_analytic_plans modülünü kurar."
 
 #. module: purchase
-#: field:purchase.order,location_id:0
-#: view:purchase.report:0
+#: field:purchase.order,location_id:0 view:purchase.report:0
 #: field:purchase.report,location_id:0
 msgid "Destination"
 msgstr "Hedef Konum"
@@ -1752,22 +1536,79 @@ msgid "Open Purchase Menu"
 msgstr "Satınalma Menüsünü Aç"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:1054
+#: code:addons/purchase/purchase.py:1078
 #, python-format
 msgid "No address defined for the supplier"
 msgstr "Tedarikçi için belirlenen adres yok"
 
 #. module: purchase
-#: field:purchase.order,company_id:0
-#: field:purchase.order.line,company_id:0
-#: view:purchase.report:0
-#: field:purchase.report,company_id:0
-msgid "Company"
-msgstr "Şirket"
+#: model:email.template,body_html:purchase.email_template_edi_purchase
+msgid ""
+"\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello ${object.partner_id.name},</p>\n"
+"    \n"
+"    <p>Here is a ${object.state in ('draft', 'sent') and 'request for quotation' or 'purchase order confirmation'} from ${object.company_id.name}: </p>\n"
+"    \n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br />\n"
+"       &nbsp;&nbsp;Order number: <strong>${object.name}</strong><br />\n"
+"       &nbsp;&nbsp;Order total: <strong>${object.amount_total} ${object.currency_id.name}</strong><br />\n"
+"       &nbsp;&nbsp;Order date: ${object.date_order}<br />\n"
+"       % if object.origin:\n"
+"       &nbsp;&nbsp;Order reference: ${object.origin}<br />\n"
+"       % endif\n"
+"       % if object.partner_ref:\n"
+"       &nbsp;&nbsp;Your reference: ${object.partner_ref}<br />\n"
+"       % endif\n"
+"       % if object.validator:\n"
+"       &nbsp;&nbsp;Your contact: <a href=\"mailto:${object.validator.email or ''}?subject=Order%20${object.name}\">${object.validator.name}</a>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br/>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you!</p>\n"
+"    <br/>\n"
+"    <br/>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"        % if object.company_id.street:\n"
+"            ${object.company_id.street}<br/>\n"
+"        % endif\n"
+"        % if object.company_id.street2:\n"
+"            ${object.company_id.street2}<br/>\n"
+"        % endif\n"
+"        % if object.company_id.city or object.company_id.zip:\n"
+"            ${object.company_id.zip} ${object.company_id.city}<br/>\n"
+"        % endif\n"
+"        % if object.company_id.country_id:\n"
+"            ${object.company_id.state_id and ('%s, ' % object.company_id.state_id.name) or ''} ${object.company_id.country_id.name or ''}<br/>\n"
+"        % endif\n"
+"        </span>\n"
+"        % if object.company_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr "\n<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n\n    <p>Hello ${object.partner_id.name},</p>\n    \n    <p>Burada ${object.state in ('draft', 'sent') and 'request for teklif' veya 'sipariş teyidi'} from ${object.company_id.name}: </p>\n    \n    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n       &nbsp;&nbsp;<strong>REFERENCES</strong><br />\n       &nbsp;&nbsp;Sipariş Numarası: <strong>${object.name}</strong><br />\n       &nbsp;&nbsp;Sipariş Toplamı: <strong>${object.amount_total} ${object.currency_id.name}</strong><br />\n       &nbsp;&nbsp;Sipariş Tarihi: ${object.date_order}<br />\n       % if object.origin:\n       &nbsp;&nbsp;Sipariş Referansı: ${object.origin}<br />\n       % endif\n       % if object.partner_ref:\n       &nbsp;&nbsp;Sizin Referansınız: ${object.partner_ref}<br />\n       % endif\n       % if object.validator:\n       &nbsp;&nbsp;Kontak: <a href=\"mailto:${object.validator.email or ''}?subject=Order%20${object.name}\">${object.validator.name}</a>\n       % endif\n    </p>\n\n    <br/>\n    <p>If you have any question, do not hesitate to contact us.</p>\n    <p>Thank you!</p>\n    <br/>\n    <br/>\n    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n            <strong style=\"text-transform:uppercase;\">${object.company_id.name}</strong></h3>\n    </div>\n    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n        % if object.company_id.street:\n            ${object.company_id.street}<br/>\n        % endif\n        % if object.company_id.street2:\n            ${object.company_id.street2}<br/>\n        % endif\n        % if object.company_id.city or object.company_id.zip:\n            ${object.company_id.zip} ${object.company_id.city}<br/>\n        % endif\n        % if object.company_id.country_id:\n            ${object.company_id.state_id and ('%s, ' % object.company_id.state_id.name) or ''} ${object.company_id.country_id.name or ''}<br/>\n        % endif\n        </span>\n        % if object.company_id.phone:\n            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n                Telefon:&nbsp; ${object.company_id.phone}\n            </div>\n        % endif\n        % if object.company_id.website:\n            <div>\n                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n            </div>\n        %endif\n        <p></p>\n    </div>\n</div>\n            "
 
 #. module: purchase
-#: selection:purchase.order,state:0
-#: selection:purchase.report,state:0
+#: selection:purchase.order,state:0 selection:purchase.report,state:0
 msgid "Invoice Exception"
 msgstr "Fatura İstisnası"
 
@@ -1776,9 +1617,7 @@ msgstr "Fatura İstisnası"
 msgid ""
 "This pricelist will be used, instead of the default one, for purchases from "
 "the current partner"
-msgstr ""
-"Bu fiyat listesi, geçerli iş ortağından yapılan alışlar için varsayılanın "
-"yerine kullanılacaktır"
+msgstr "Bu fiyat listesi, geçerli iş ortağından yapılan alışlar için varsayılanın yerine kullanılacaktır"
 
 #. module: purchase
 #: report:purchase.order:0
@@ -1815,23 +1654,17 @@ msgstr "Mesajlar"
 #: model:ir.actions.report.xml,name:purchase.report_purchase_order
 #: model:ir.model,name:purchase.model_purchase_order
 #: model:process.node,name:purchase.process_node_purchaseorder0
-#: field:procurement.order,purchase_id:0
-#: view:purchase.config.settings:0
-#: view:purchase.order:0
-#: selection:purchase.order,state:0
+#: field:procurement.order,purchase_id:0 view:purchase.config.settings:0
+#: view:purchase.order:0 selection:purchase.order,state:0
 #: field:res.partner,purchase_order_ids:0
 #: model:res.request.link,name:purchase.req_link_purchase_order
-#: field:stock.picking,purchase_id:0
-#: field:stock.picking.in,purchase_id:0
+#: field:stock.picking,purchase_id:0 field:stock.picking.in,purchase_id:0
 msgid "Purchase Order"
 msgstr "Satınalma Siparişi"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:322
-#: code:addons/purchase/purchase.py:458
-#: code:addons/purchase/purchase.py:516
-#: code:addons/purchase/purchase.py:527
-#: code:addons/purchase/wizard/purchase_line_invoice.py:105
+#: code:addons/purchase/purchase.py:319 code:addons/purchase/purchase.py:455
+#: code:addons/purchase/purchase.py:473 code:addons/purchase/purchase.py:535
 #, python-format
 msgid "Error!"
 msgstr "Hata!"
@@ -1850,17 +1683,10 @@ msgid ""
 "the order to change the status to 'Approved'. When the purchase order is "
 "paid and received, the status becomes 'Done'. If a cancel action occurs in "
 "the invoice or in the reception of goods, the status becomes in exception."
-msgstr ""
-"Satınalma siparişi veya teklif isteği durumu. Teklif 'Taslak' durumunda olan "
-"bir satınalma siparişidir. Sonra siparişin kullanıcı tarafından onaylanması "
-"gerekir ve durum 'Onaylı' değişir. Sonra tedarikçisi durumu 'Onaylandı' "
-"olarak değiştirmek için siparişi onaylamalıdır. Satınalma siparişi ödeme "
-"yapılıp ve alındığında ise durumu 'Yapıldı' olur. Fatura ya da malların "
-"kabulünde bir iptal eylemi gerçekleşirse , durum 'İstisna' olur."
+msgstr "Satınalma siparişi veya teklif isteği durumu. Teklif 'Taslak' durumunda olan bir satınalma siparişidir. Sonra siparişin kullanıcı tarafından onaylanması gerekir ve durum 'Onaylı' değişir. Sonra tedarikçisi durumu 'Onaylandı' olarak değiştirmek için siparişi onaylamalıdır. Satınalma siparişi ödeme yapılıp ve alındığında ise durumu 'Yapıldı' olur. Fatura ya da malların kabulünde bir iptal eylemi gerçekleşirse , durum 'İstisna' olur."
 
 #. module: purchase
-#: selection:purchase.order,state:0
-#: selection:purchase.order.line,state:0
+#: selection:purchase.order,state:0 selection:purchase.order.line,state:0
 #: selection:purchase.report,state:0
 msgid "Cancelled"
 msgstr "İptal Edildi"
@@ -1891,10 +1717,10 @@ msgid "Net Price"
 msgstr "Net Fiyat"
 
 #. module: purchase
-#: model:process.node,name:purchase.process_node_confirmpurchaseorder0
-#: selection:purchase.order.line,state:0
-msgid "Confirmed"
-msgstr "Onaylandı"
+#: model:ir.model,name:purchase.model_purchase_order_line
+#: view:purchase.order.line:0 field:stock.move,purchase_line_id:0
+msgid "Purchase Order Line"
+msgstr "Satınalma Sipariş Satırı"
 
 #. module: purchase
 #: model:process.transition.action,name:purchase.process_transition_action_confirmpurchaseorder0
@@ -1915,13 +1741,10 @@ msgstr "Tedarikçi Referansı"
 #. module: purchase
 #: model:process.transition,note:purchase.process_transition_productrecept0
 msgid ""
-"A Pick list generates a supplier invoice. Depending on the Invoicing control "
-"of the purchase order, the invoice is based on received or on ordered "
+"A Pick list generates a supplier invoice. Depending on the Invoicing control"
+" of the purchase order, the invoice is based on received or on ordered "
 "quantities."
-msgstr ""
-"Toplama listesi bir tedarikçi faturası oluşturur. Satınalma siparişi "
-"faturalama denetimine bağlı olarak, fatura alınanlara ya da sipariş edilen "
-"miktarlara dayanır."
+msgstr "Toplama listesi bir tedarikçi faturası oluşturur. Satınalma siparişi faturalama denetimine bağlı olarak, fatura alınanlara ya da sipariş edilen miktarlara dayanır."
 
 #. module: purchase
 #: field:purchase.order,message_follower_ids:0
@@ -1931,19 +1754,10 @@ msgstr "İzleyiciler"
 #. module: purchase
 #: help:purchase.config.settings,module_purchase_requisition:0
 msgid ""
-"Purchase Requisitions are used when you want to request quotations from "
-"several suppliers for a given set of products.\n"
-"            You can configure per product if you directly do a Request for "
-"Quotation\n"
-"            to one supplier or if you want a purchase requisition to "
-"negotiate with several suppliers."
-msgstr ""
-"Teklif İsteği, belirlenmiş bir ürün seti için birçok tedarikçiden teklif "
-"almak isteyeceğinizde kullanılır.\n"
-"            Bir tane tedarikçiden doğrudan Teklif İsteği yaparsanız ya da "
-"birçok tedarikçi ile görüşmeler \n"
-"            yapmak üzere teklif isteği yapacaksanız her ürünü "
-"yapılandırabilirsiniz."
+"Purchase Requisitions are used when you want to request quotations from several suppliers for a given set of products.\n"
+"            You can configure per product if you directly do a Request for Quotation\n"
+"            to one supplier or if you want a purchase requisition to negotiate with several suppliers."
+msgstr "Teklif İsteği, belirlenmiş bir ürün seti için birçok tedarikçiden teklif almak isteyeceğinizde kullanılır.\n            Bir tane tedarikçiden doğrudan Teklif İsteği yaparsanız ya da birçok tedarikçi ile görüşmeler \n            yapmak üzere teklif isteği yapacaksanız her ürünü yapılandırabilirsiniz."
 
 #. module: purchase
 #: field:purchase.order.line,invoice_lines:0
@@ -1956,10 +1770,7 @@ msgid ""
 "Purchase Analysis allows you to easily check and analyse your company "
 "purchase history and performance. From this menu you can track your "
 "negotiation performance, the delivery performance of your suppliers, etc."
-msgstr ""
-"Satınalma İncelemesi şirketinizin satınalma geçmişi ve performansını kolayca "
-"denetlemenizi ve incelemenizi sağlar. Bu menüden ciro performansınızı, "
-"tedarikçilerinizin teslimat performansını vb. takip edebilirsiniz."
+msgstr "Satınalma İncelemesi şirketinizin satınalma geçmişi ve performansını kolayca denetlemenizi ve incelemenizi sağlar. Bu menüden ciro performansınızı, tedarikçilerinizin teslimat performansını vb. takip edebilirsiniz."
 
 #. module: purchase
 #: model:email.template,report_name:purchase.email_template_edi_purchase
@@ -1967,7 +1778,7 @@ msgid "RFQ_${(object.name or '').replace('/','_')}"
 msgstr "RFQ_${(object.name or '').replace('/','_')}"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:982
+#: code:addons/purchase/purchase.py:1016
 #, python-format
 msgid "The selected supplier only sells this product by %s"
 msgstr "Seçilen tedarikçi bu ürünü sadece %s olarak satar"
@@ -1983,6 +1794,11 @@ msgid "Reservation Destination"
 msgstr "Rezervasyon Hedefi"
 
 #. module: purchase
+#: model:email.template,subject:purchase.email_template_edi_purchase
+msgid "${object.company_id.name|safe} Order (Ref ${object.name or 'n/a' })"
+msgstr "${object.company_id.name|safe} Sipariş (Ref ${object.name or 'n/a' })"
+
+#. module: purchase
 #: model:ir.ui.menu,name:purchase.menu_purchase_config_purchase
 msgid "Configuration"
 msgstr "Yapılandırma"
@@ -1990,12 +1806,9 @@ msgstr "Yapılandırma"
 #. module: purchase
 #: help:purchase.config.settings,module_purchase_double_validation:0
 msgid ""
-"Provide a double validation mechanism for purchases exceeding minimum "
-"amount.\n"
+"Provide a double validation mechanism for purchases exceeding minimum amount.\n"
 "                This installs the module purchase_double_validation."
-msgstr ""
-"Enaz tutarı aşan satınalmalar için bir ikili doğrulama düzeneği sağlayın.\n"
-"                purchase_double_validation Modülünü kurar."
+msgstr "Enaz tutarı aşan satınalmalar için bir ikili doğrulama düzeneği sağlayın.\n                purchase_double_validation Modülünü kurar."
 
 #. module: purchase
 #: code:addons/purchase/edi/purchase_order.py:132
@@ -2004,20 +1817,17 @@ msgid "EDI Pricelist (%s)"
 msgstr "EDI Fiyat Listesi (%s)"
 
 #. module: purchase
-#: view:purchase.report:0
 #: field:purchase.report,product_uom:0
 msgid "Reference Unit of Measure"
 msgstr "Referans Ölçü Birimi"
 
 #. module: purchase
-#: report:purchase.order:0
-#: field:purchase.report,validator:0
+#: report:purchase.order:0 field:purchase.report,validator:0
 msgid "Validated By"
 msgstr "Onaylayan"
 
 #. module: purchase
-#: view:purchase.report:0
-#: field:purchase.report,delay_pass:0
+#: view:purchase.report:0 field:purchase.report,delay_pass:0
 msgid "Days to Deliver"
 msgstr "Teslimat Günleri"
 
@@ -2027,8 +1837,7 @@ msgid "April"
 msgstr "Nisan"
 
 #. module: purchase
-#: view:purchase.order:0
-#: field:purchase.order,invoice_ids:0
+#: view:purchase.order:0 field:purchase.order,invoice_ids:0
 msgid "Invoices"
 msgstr "Faturalar"
 
@@ -2068,17 +1877,15 @@ msgid "The total amount"
 msgstr "Toplam tutar"
 
 #. module: purchase
-#: field:purchase.order,invoiced_rate:0
-#: field:purchase.order.line,invoiced:0
+#: field:purchase.order,invoiced_rate:0 field:purchase.order.line,invoiced:0
 msgid "Invoiced"
 msgstr "Faturalandı"
 
 #. module: purchase
-#: model:ir.model,name:purchase.model_purchase_order_line
-#: view:purchase.order.line:0
-#: field:stock.move,purchase_line_id:0
-msgid "Purchase Order Line"
-msgstr "Satınalma Sipariş Satırı"
+#: model:process.node,name:purchase.process_node_confirmpurchaseorder0
+#: selection:purchase.order.line,state:0
+msgid "Confirmed"
+msgstr "Onaylandı"
 
 #. module: purchase
 #: selection:purchase.order.line,state:0
@@ -2123,18 +1930,10 @@ msgstr "Ocak"
 #. module: purchase
 #: help:purchase.order,invoice_method:0
 msgid ""
-"Based on Purchase Order lines: place individual lines in 'Invoice Control > "
-"Based on P.O. lines' from where you can selectively create an invoice.\n"
+"Based on Purchase Order lines: place individual lines in 'Invoice Control > Based on P.O. lines' from where you can selectively create an invoice.\n"
 "Based on generated invoice: create a draft invoice you can validate later.\n"
-"Bases on incoming shipments: let you create an invoice when receptions are "
-"validated."
-msgstr ""
-"Satınalma Sipariş kalemlerine göre: seçerek fatura oluşturabileceğiniz "
-"'Fatura Denetimi > S.S. kalemlerine göre' satırları tek olarak yerleştirin.\n"
-"Oluşturulan faturaya göre: taslak bir fatura oluşturun, daha sonra "
-"doğrulayabilirsiniz.\n"
-"Gelen gönderilere göre: kabuller doğrulandığında bir fatura "
-"oluşturabilirsiniz."
+"Bases on incoming shipments: let you create an invoice when receptions are validated."
+msgstr "Satınalma Sipariş kalemlerine göre: seçerek fatura oluşturabileceğiniz 'Fatura Denetimi > S.S. kalemlerine göre' satırları tek olarak yerleştirin.\nOluşturulan faturaya göre: taslak bir fatura oluşturun, daha sonra doğrulayabilirsiniz.\nGelen gönderilere göre: kabuller doğrulandığında bir fatura oluşturabilirsiniz."
 
 #. module: purchase
 #: model:ir.ui.menu,name:purchase.menu_partner_categories_in_form
@@ -2167,30 +1966,26 @@ msgid "Based on incoming shipments"
 msgstr "Gelen gönderilere göre"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:1044
+#: code:addons/purchase/purchase.py:1076
 #, python-format
 msgid "No default supplier defined for this product"
 msgstr "Bu ürün için varsayılan tedarikçi yok"
 
 #. module: purchase
-#: view:purchase.report:0
-#: field:purchase.report,warehouse_id:0
+#: view:purchase.report:0 field:purchase.report,warehouse_id:0
 msgid "Warehouse"
 msgstr "Depo"
 
 #. module: purchase
-#: code:addons/purchase/purchase.py:986
+#: code:addons/purchase/purchase.py:1020
 #, python-format
 msgid ""
 "The selected supplier has a minimal quantity set to %s %s, you should not "
 "purchase less."
-msgstr ""
-"Seçilen tedarikçi için en az sipariş miktarı %s %s olarak ayarlanmış, daha "
-"azını satın alamazsınız."
+msgstr "Seçilen tedarikçi için en az sipariş miktarı %s %s olarak ayarlanmış, daha azını satın alamazsınız."
 
 #. module: purchase
-#: report:purchase.order:0
-#: field:purchase.order.line,name:0
+#: report:purchase.order:0 field:purchase.order.line,name:0
 #: report:purchase.quotation:0
 msgid "Description"
 msgstr "Açıklama"
@@ -2199,162 +1994,6 @@ msgstr "Açıklama"
 #: report:purchase.quotation:0
 msgid "Expected Delivery address:"
 msgstr "Beklenen Teslimat Adresi"
-
-#. module: purchase
-#: model:email.template,body_html:purchase.email_template_edi_purchase
-msgid ""
-"\n"
-"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-"
-"serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"\n"
-"    <p>Hello ${object.partner_id.name},</p>\n"
-"    \n"
-"    <p>Here is a ${object.state in ('draft', 'sent') and 'request for "
-"quotation' or 'purchase order confirmation'} from ${object.company_id.name}: "
-"</p>\n"
-"    \n"
-"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
-"       &nbsp;&nbsp;<strong>REFERENCES</strong><br />\n"
-"       &nbsp;&nbsp;Order number: <strong>${object.name}</strong><br />\n"
-"       &nbsp;&nbsp;Order total: <strong>${object.amount_total} "
-"${object.pricelist_id.currency_id.name}</strong><br />\n"
-"       &nbsp;&nbsp;Order date: ${object.date_order}<br />\n"
-"       % if object.origin:\n"
-"       &nbsp;&nbsp;Order reference: ${object.origin}<br />\n"
-"       % endif\n"
-"       % if object.partner_ref:\n"
-"       &nbsp;&nbsp;Your reference: ${object.partner_ref}<br />\n"
-"       % endif\n"
-"       % if object.validator:\n"
-"       &nbsp;&nbsp;Your contact: <a href=\"mailto:${object.validator.email "
-"or ''}?subject=Order%20${object.name}\">${object.validator.name}</a>\n"
-"       % endif\n"
-"    </p>\n"
-"\n"
-"    <br/>\n"
-"    <p>If you have any question, do not hesitate to contact us.</p>\n"
-"    <p>Thank you!</p>\n"
-"    <br/>\n"
-"    <br/>\n"
-"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: "
-"#8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; "
-"background-repeat: repeat no-repeat;\">\n"
-"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: "
-"#DDD;\">\n"
-"            <strong style=\"text-"
-"transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
-"    </div>\n"
-"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: "
-"16px; background-color: #F2F2F2;\">\n"
-"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
-"        % if object.company_id.street:\n"
-"            ${object.company_id.street}<br/>\n"
-"        % endif\n"
-"        % if object.company_id.street2:\n"
-"            ${object.company_id.street2}<br/>\n"
-"        % endif\n"
-"        % if object.company_id.city or object.company_id.zip:\n"
-"            ${object.company_id.zip} ${object.company_id.city}<br/>\n"
-"        % endif\n"
-"        % if object.company_id.country_id:\n"
-"            ${object.company_id.state_id and ('%s, ' % "
-"object.company_id.state_id.name) or ''} ${object.company_id.country_id.name "
-"or ''}<br/>\n"
-"        % endif\n"
-"        </span>\n"
-"        % if object.company_id.phone:\n"
-"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: "
-"0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: "
-"0px; padding-left: 0px; \">\n"
-"                Phone:&nbsp; ${object.company_id.phone}\n"
-"            </div>\n"
-"        % endif\n"
-"        % if object.company_id.website:\n"
-"            <div>\n"
-"                Web :&nbsp;<a "
-"href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
-"            </div>\n"
-"        %endif\n"
-"        <p></p>\n"
-"    </div>\n"
-"</div>\n"
-"            "
-msgstr ""
-"\n"
-"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-"
-"serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"\n"
-"    <p>Sayın ${object.partner_id.name},</p>\n"
-"    \n"
-"    <p>Here is a ${object.state in ('draft', 'sent') ve 'teklif isteği'     "
-"veya 'satınalama sipariş teyyidi'} from ${object.company_id.name}: </p>\n"
-"    \n"
-"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
-"       &nbsp;&nbsp;<strong>REFERENCES</strong><br />\n"
-"       &nbsp;&nbsp;Sipariş Numarası: <strong>${object.name}</strong><br />\n"
-"       &nbsp;&nbsp;Sipariş Toplamı: <strong>${object.amount_total} "
-"${object.pricelist_id.currency_id.name}</strong><br />\n"
-"       &nbsp;&nbsp;Sipariş Tarihi: ${object.date_order}<br />\n"
-"       % if object.origin:\n"
-"       &nbsp;&nbsp;Sipariş Referansı: ${object.origin}<br />\n"
-"       % endif\n"
-"       % if object.partner_ref:\n"
-"       &nbsp;&nbsp;sizin referansınız: ${object.partner_ref}<br />\n"
-"       % endif\n"
-"       % if object.validator:\n"
-"       &nbsp;&nbsp;Kontağınız: <a href=\"mailto:${object.validator.email or "
-"''}?subject=Order%20${object.name}\">${object.validator.name}</a>\n"
-"       % endif\n"
-"    </p>\n"
-"\n"
-"    <br/>\n"
-"    <p>Herhangi bir sorunuz varsa, bizimle temas kurmaktan çekinmeyin.</p>\n"
-"    <p>teşekkürler!</p>\n"
-"    <br/>\n"
-"    <br/>\n"
-"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: "
-"#8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; "
-"background-repeat: repeat no-repeat;\">\n"
-"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: "
-"#DDD;\">\n"
-"            <strong style=\"text-"
-"transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
-"    </div>\n"
-"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: "
-"16px; background-color: #F2F2F2;\">\n"
-"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
-"        % if object.company_id.street:\n"
-"            ${object.company_id.street}<br/>\n"
-"        % endif\n"
-"        % if object.company_id.street2:\n"
-"            ${object.company_id.street2}<br/>\n"
-"        % endif\n"
-"        % if object.company_id.city or object.company_id.zip:\n"
-"            ${object.company_id.zip} ${object.company_id.city}<br/>\n"
-"        % endif\n"
-"        % if object.company_id.country_id:\n"
-"            ${object.company_id.state_id and ('%s, ' % "
-"object.company_id.state_id.name) or ''} ${object.company_id.country_id.name "
-"or ''}<br/>\n"
-"        % endif\n"
-"        </span>\n"
-"        % if object.company_id.phone:\n"
-"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: "
-"0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: "
-"0px; padding-left: 0px; \">\n"
-"                Telefon:&nbsp; ${object.company_id.phone}\n"
-"            </div>\n"
-"        % endif\n"
-"        % if object.company_id.website:\n"
-"            <div>\n"
-"                Web :&nbsp;<a "
-"href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
-"            </div>\n"
-"        %endif\n"
-"        <p></p>\n"
-"    </div>\n"
-"</div>\n"
-"            "
 
 #. module: purchase
 #: selection:purchase.report,month:0
@@ -2404,22 +2043,9 @@ msgid ""
 " * Purchase Orders are have same stock location, same pricelist \n"
 " \n"
 " Lines will only be merged if: \n"
-" * Order lines are exactly the same except for the product,quantity and unit "
-"\n"
+" * Order lines are exactly the same except for the product,quantity and unit \n"
 " "
-msgstr ""
-" Lütfen şunlara dikkat edin: \n"
-" \n"
-" Siparişler sadece şu durumlarda birleştirilecektir: \n"
-" * Satınalma Siparişleri taslak halindeyken \n"
-" * Satınalma Siparişleri aynı tedarikçiye ait olduğunda \n"
-" * Satınalma Siparişleri aynı stok lokasyonu ve aynı fiyat listesine sahip "
-"olduğunda \n"
-" \n"
-" Kalemler sadece şu durumlarda birleştirilebilir: \n"
-" * Sipariş kalemleri, ürün, miktar ve birim haricinde tamamen aynı olduğunda "
-"\n"
-" "
+msgstr " Lütfen şunlara dikkat edin: \n \n Siparişler sadece şu durumlarda birleştirilecektir: \n * Satınalma Siparişleri taslak halindeyken \n * Satınalma Siparişleri aynı tedarikçiye ait olduğunda \n * Satınalma Siparişleri aynı stok lokasyonu ve aynı fiyat listesine sahip olduğunda \n \n Kalemler sadece şu durumlarda birleştirilebilir: \n * Sipariş kalemleri, ürün, miktar ve birim haricinde tamamen aynı olduğunda \n "
 
 #. module: purchase
 #: field:purchase.order,message_summary:0
@@ -2438,13 +2064,17 @@ msgid "Payment Term"
 msgstr "Ödeme Koşulu"
 
 #. module: purchase
+#: help:purchase.order,invoiced:0
+msgid "It indicates that an invoice has been validated"
+msgstr "Bir faturanın doğrulanmış olduğunu gösterir"
+
+#. module: purchase
 #: view:purchase.order:0
 msgid "Purchase orders which are in draft state"
 msgstr "Taslak durumundaki satınalma siparişleri"
 
 #. module: purchase
-#: view:purchase.report:0
-#: field:purchase.report,name:0
+#: view:purchase.report:0 field:purchase.report,name:0
 msgid "Year"
 msgstr "Yıl"
 
@@ -2457,212 +2087,16 @@ msgstr "Satınalma sipariş satırlarına istinaden"
 #: model:ir.actions.act_window,help:purchase.act_res_partner_2_purchase_order
 msgid ""
 "<p class=\"oe_view_nocontent_create\">\n"
-"                    This supplier has no purchase order. Click to create a "
-"new RfQ.\n"
+"                    This supplier has no purchase order. Click to create a new RfQ.\n"
 "                </p><p>\n"
-"                    The request for quotation is the first step of the "
-"purchases flow. Once\n"
-"                    converted into a purchase order, you will be able to "
-"control the reception\n"
+"                    The request for quotation is the first step of the purchases flow. Once\n"
+"                    converted into a purchase order, you will be able to control the reception\n"
 "                    of the products and the supplier invoice.\n"
 "                </p>\n"
 "            "
-msgstr ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                    Bu tedarikçide hiç satınalma sipariş yok. Yeni bir Tİ "
-"oluşturmak için tıklayın.\n"
-"                </p><p>\n"
-"                    Satınalma isteği isteği satınalma akışı için ilk "
-"adımdır. Bir\n"
-"                    satınalma siparişine dönüştürüldüğünde, ürünlerin "
-"kabulünü\n"
-"                    ve tedarikçi faturalarının denetimini yapabilirsiniz.\n"
-"                </p>\n"
-"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n                    Bu tedarikçide hiç satınalma sipariş yok. Yeni bir Tİ oluşturmak için tıklayın.\n                </p><p>\n                    Satınalma isteği isteği satınalma akışı için ilk adımdır. Bir\n                    satınalma siparişine dönüştürüldüğünde, ürünlerin kabulünü\n                    ve tedarikçi faturalarının denetimini yapabilirsiniz.\n                </p>\n            "
 
 #. module: purchase
 #: view:purchase.report:0
 msgid "Orders"
 msgstr "Siparişler"
-
-#~ msgid "This is the leads/security time for each purchase order."
-#~ msgstr "Bu, her bir satınalma siparişi için tedarik/emniyet süresidir."
-
-#~ msgid ""
-#~ "<p>\n"
-#~ "                Here you can track all the product receptions of purchase\n"
-#~ "                orders where the invoicing is \"Based on Incoming "
-#~ "Shipments\",\n"
-#~ "                and for which you have not received a supplier invoice yet.\n"
-#~ "                You can generate a supplier invoice based on those "
-#~ "receptions.\n"
-#~ "              </p>\n"
-#~ "            "
-#~ msgstr ""
-#~ "<p>\n"
-#~ "                Burada, faturalamanın \"Gelen Gönderilere Göre\" olduğu\n"
-#~ "                satınalma siparişlerine ait mal kabullerini ve henüz "
-#~ "tedarikçi\n"
-#~ "                faturası almadığınız malları izleyebilirsiniz.\n"
-#~ "                Bu kabullere göre tedarikçi faturaları oluşturabilirsiniz\n"
-#~ "              </p>\n"
-#~ "            "
-
-#~ msgid "Send by EMail"
-#~ msgstr "Epostayla Gönder"
-
-#~ msgid ""
-#~ "\n"
-#~ "<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-"
-#~ "serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-#~ "\n"
-#~ "    <p>Hello$ ${object.partner_id.name},</p>\n"
-#~ "    \n"
-#~ "    <p>Here is a ${object.state in ('draft', 'sent') and 'request for "
-#~ "quotation' or 'purchase order confirmation'} from ${object.company_id.name}: "
-#~ "</p>\n"
-#~ "    \n"
-#~ "    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
-#~ "       &nbsp;&nbsp;<strong>REFERENCES</strong><br />\n"
-#~ "       &nbsp;&nbsp;Order number: <strong>${object.name}</strong><br />\n"
-#~ "       &nbsp;&nbsp;Order total: <strong>${object.amount_total} "
-#~ "${object.pricelist_id.currency_id.name}</strong><br />\n"
-#~ "       &nbsp;&nbsp;Order date: ${object.date_order}<br />\n"
-#~ "       % if object.origin:\n"
-#~ "       &nbsp;&nbsp;Order reference: ${object.origin}<br />\n"
-#~ "       % endif\n"
-#~ "       % if object.partner_ref:\n"
-#~ "       &nbsp;&nbsp;Your reference: ${object.partner_ref}<br />\n"
-#~ "       % endif\n"
-#~ "       % if object.validator:\n"
-#~ "       &nbsp;&nbsp;Your contact: <a href=\"mailto:${object.validator.email "
-#~ "or ''}?subject=Order%20${object.name}\">${object.validator.name}</a>\n"
-#~ "       % endif\n"
-#~ "    </p>\n"
-#~ "\n"
-#~ "    <br/>\n"
-#~ "    <p>If you have any question, do not hesitate to contact us.</p>\n"
-#~ "    <p>Thank you!</p>\n"
-#~ "    <br/>\n"
-#~ "    <br/>\n"
-#~ "    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: "
-#~ "#8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; "
-#~ "background-repeat: repeat no-repeat;\">\n"
-#~ "        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: "
-#~ "#DDD;\">\n"
-#~ "            <strong style=\"text-"
-#~ "transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
-#~ "    </div>\n"
-#~ "    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: "
-#~ "16px; background-color: #F2F2F2;\">\n"
-#~ "        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
-#~ "        % if object.company_id.street:\n"
-#~ "            ${object.company_id.street}<br/>\n"
-#~ "        % endif\n"
-#~ "        % if object.company_id.street2:\n"
-#~ "            ${object.company_id.street2}<br/>\n"
-#~ "        % endif\n"
-#~ "        % if object.company_id.city or object.company_id.zip:\n"
-#~ "            ${object.company_id.zip} ${object.company_id.city}<br/>\n"
-#~ "        % endif\n"
-#~ "        % if object.company_id.country_id:\n"
-#~ "            ${object.company_id.state_id and ('%s, ' % "
-#~ "object.company_id.state_id.name) or ''} ${object.company_id.country_id.name "
-#~ "or ''}<br/>\n"
-#~ "        % endif\n"
-#~ "        </span>\n"
-#~ "        % if object.company_id.phone:\n"
-#~ "            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: "
-#~ "0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: "
-#~ "0px; padding-left: 0px; \">\n"
-#~ "                Phone:&nbsp; ${object.company_id.phone}\n"
-#~ "            </div>\n"
-#~ "        % endif\n"
-#~ "        % if object.company_id.website:\n"
-#~ "            <div>\n"
-#~ "                Web :&nbsp;<a "
-#~ "href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
-#~ "            </div>\n"
-#~ "        %endif\n"
-#~ "        <p></p>\n"
-#~ "    </div>\n"
-#~ "</div>\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-"
-#~ "serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-#~ "\n"
-#~ "    <p>Sayın ${object.partner_id.name},</p>\n"
-#~ "    \n"
-#~ "    <p>Burada ${object.company_id.name} tarafından yapılan bir "
-#~ "${object.state in ('draft', 'sent') and 'teklif isteği' or 'satınalma "
-#~ "siparişi onayı'} bulunmaktadır: </p>\n"
-#~ "    \n"
-#~ "    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
-#~ "       &nbsp;&nbsp;<strong>REFERANSLAR</strong><br />\n"
-#~ "       &nbsp;&nbsp;Sipariş numarası: <strong>${object.name}</strong><br />\n"
-#~ "       &nbsp;&nbsp;Sipariş toplamı: <strong>${object.amount_total} "
-#~ "${object.pricelist_id.currency_id.name}</strong><br />\n"
-#~ "       &nbsp;&nbsp;Sipariş tarihi: ${object.date_order}<br />\n"
-#~ "       % if object.origin:\n"
-#~ "       &nbsp;&nbsp;Sipariş referansı: ${object.origin}<br />\n"
-#~ "       % endif\n"
-#~ "       % if object.partner_ref:\n"
-#~ "       &nbsp;&nbsp;Referansınız: ${object.partner_ref}<br />\n"
-#~ "       % endif\n"
-#~ "       % if object.validator:\n"
-#~ "       &nbsp;&nbsp;Yetkiliniz: <a href=\"mailto:${object.validator.email or "
-#~ "''}?subject=Order%20${object.name}\">${object.validator.name}</a>\n"
-#~ "       % endif\n"
-#~ "    </p>\n"
-#~ "\n"
-#~ "    <br/>\n"
-#~ "    <p>Eğer sormak istediğiniz bir konu olursa bize danışmakta tereddüt "
-#~ "etmeyin.</p>\n"
-#~ "    <p>Teşekkür ederiz!</p>\n"
-#~ "    <br/>\n"
-#~ "    <br/>\n"
-#~ "    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: "
-#~ "#8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; "
-#~ "background-repeat: repeat no-repeat;\">\n"
-#~ "        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: "
-#~ "#DDD;\">\n"
-#~ "            <strong style=\"text-"
-#~ "transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
-#~ "    </div>\n"
-#~ "    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: "
-#~ "16px; background-color: #F2F2F2;\">\n"
-#~ "        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
-#~ "        % if object.company_id.street:\n"
-#~ "            ${object.company_id.street}<br/>\n"
-#~ "        % endif\n"
-#~ "        % if object.company_id.street2:\n"
-#~ "            ${object.company_id.street2}<br/>\n"
-#~ "        % endif\n"
-#~ "        % if object.company_id.city or object.company_id.zip:\n"
-#~ "            ${object.company_id.zip} ${object.company_id.city}<br/>\n"
-#~ "        % endif\n"
-#~ "        % if object.company_id.country_id:\n"
-#~ "            ${object.company_id.state_id and ('%s, ' % "
-#~ "object.company_id.state_id.name) or ''} ${object.company_id.country_id.name "
-#~ "or ''}<br/>\n"
-#~ "        % endif\n"
-#~ "        </span>\n"
-#~ "        % if object.company_id.phone:\n"
-#~ "            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: "
-#~ "0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: "
-#~ "0px; padding-left: 0px; \">\n"
-#~ "                Phone:&nbsp; ${object.company_id.phone}\n"
-#~ "            </div>\n"
-#~ "        % endif\n"
-#~ "        % if object.company_id.website:\n"
-#~ "            <div>\n"
-#~ "                Web :&nbsp;<a "
-#~ "href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
-#~ "            </div>\n"
-#~ "        %endif\n"
-#~ "        <p></p>\n"
-#~ "    </div>\n"
-#~ "</div>\n"
-#~ "            "

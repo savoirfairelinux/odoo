@@ -56,7 +56,7 @@ _LOCALE2WIN32 = {
     'ar_SA': 'Arabic_Saudi Arabia',
     'eu_ES': 'Basque_Spain',
     'be_BY': 'Belarusian_Belarus',
-    'bs_BA': 'Serbian (Latin)',
+    'bs_BA': 'Bosnian_Bosnia and Herzegovina',
     'bg_BG': 'Bulgarian_Bulgaria',
     'ca_ES': 'Catalan_Spain',
     'hr_HR': 'Croatian_Croatia',
@@ -313,6 +313,10 @@ class TinyPoFile(object):
                     if not line.startswith('module:'):
                         comments.append(line)
                 elif line.startswith('#:'):
+                    # Process the `reference` comments. Each line can specify
+                    # multiple targets (e.g. model, view, code, selection,
+                    # ...). For each target, we will return an additional
+                    # entry.
                     for lpart in line[2:].strip().split(' '):
                         trans_info = lpart.strip().split(':',2)
                         if trans_info and len(trans_info) == 2:
@@ -325,6 +329,8 @@ class TinyPoFile(object):
                 elif line.startswith('#,') and (line[2:].strip() == 'fuzzy'):
                     fuzzy = True
                 line = self.lines.pop(0).strip()
+            if not self.lines:
+                raise StopIteration()
             while not line:
                 # allow empty lines between comments and msgid
                 line = self.lines.pop(0).strip()
@@ -341,6 +347,7 @@ class TinyPoFile(object):
             source = unquote(line[6:])
             line = self.lines.pop(0).strip()
             if not source and self.first:
+                self.first = False
                 # if the source is "" and it's the first msgid, it's the special
                 # msgstr with the informations about the traduction and the
                 # traductor; we skip it
@@ -362,12 +369,13 @@ class TinyPoFile(object):
                 line = self.lines.pop(0).strip()
 
             if targets and not fuzzy:
+                # Use the first target for the current entry (returned at the
+                # end of this next() call), and keep the others to generate
+                # additional entries (returned the next next() calls).
                 trans_type, name, res_id = targets.pop(0)
                 for t, n, r in targets:
                     if t == trans_type == 'code': continue
                     self.extra_lines.append((t, n, r, source, trad, comments))
-
-        self.first = False
 
         if name is None:
             if not fuzzy:
@@ -820,18 +828,20 @@ def trans_generate(lang, modules, cr):
         if model_obj._sql_constraints:
             push_local_constraints(module, model_obj, 'sql_constraints')
 
-    def get_module_from_path(path, mod_paths=None):
-        if not mod_paths:
-            # First, construct a list of possible paths
-            def_path = os.path.abspath(os.path.join(config.config['root_path'], 'addons'))     # default addons path (base)
-            ad_paths= map(lambda m: os.path.abspath(m.strip()),config.config['addons_path'].split(','))
-            mod_paths=[def_path]
-            for adp in ad_paths:
-                mod_paths.append(adp)
-                if not os.path.isabs(adp):
-                    mod_paths.append(adp)
-                elif adp.startswith(def_path):
-                    mod_paths.append(adp[len(def_path)+1:])
+    def get_module_paths():
+        # default addons path (base)
+        def_path = os.path.abspath(os.path.join(config.config['root_path'], 'addons'))
+        mod_paths = set([ def_path ])
+        ad_paths = map(lambda m: os.path.abspath(m.strip()),config.config['addons_path'].split(','))
+        for adp in ad_paths:
+            mod_paths.add(adp)
+            if not os.path.isabs(adp):
+                mod_paths.add(adp)
+            elif adp != def_path and adp.startswith(def_path):
+                mod_paths.add(adp[len(def_path)+1:])
+        return list(mod_paths)
+
+    def get_module_from_path(path, mod_paths):
         for mp in mod_paths:
             if path.startswith(mp) and (os.path.dirname(path) != mp):
                 path = path[len(mp)+1:]
@@ -854,9 +864,9 @@ def trans_generate(lang, modules, cr):
     for bin_path in ['osv', 'report' ]:
         path_list.append(os.path.join(config.config['root_path'], bin_path))
 
-    _logger.debug("Scanning modules at paths: ", path_list)
+    _logger.debug("Scanning modules at paths: %s", path_list)
 
-    mod_paths = []
+    mod_paths = get_module_paths()
 
     def verified_module_filepaths(fname, path, root):
         fabsolutepath = join(root, fname)
@@ -864,6 +874,8 @@ def trans_generate(lang, modules, cr):
         display_path = "addons%s" % frelativepath
         module = get_module_from_path(fabsolutepath, mod_paths=mod_paths)
         if ('all' in modules or module in modules) and module in installed_modules:
+            if os.path.sep != '/':
+                display_path = display_path.replace(os.path.sep, '/')
             return module, fabsolutepath, frelativepath, display_path
         return None, None, None, None
 
@@ -945,6 +957,10 @@ def trans_load_data(cr, fileobj, fileformat, lang, lang_name=None, verbose=True,
             # lets create the language with locale information
             lang_obj.load_lang(cr, SUPERUSER_ID, lang=lang, lang_name=lang_name)
 
+        # Parse also the POT: it will possibly provide additional targets.
+        # (Because the POT comments are correct on Launchpad but not the
+        # PO comments due to a Launchpad limitation. See LP bug 933496.)
+        pot_reader = []
 
         # now, the serious things: we read the language file
         fileobj.seek(0)
@@ -957,19 +973,45 @@ def trans_load_data(cr, fileobj, fileformat, lang, lang_name=None, verbose=True,
         elif fileformat == 'po':
             reader = TinyPoFile(fileobj)
             f = ['type', 'name', 'res_id', 'src', 'value', 'comments']
+
+            # Make a reader for the POT file and be somewhat defensive for the
+            # stable branch.
+            if fileobj.name.endswith('.po'):
+                try:
+                    # Normally the path looks like /path/to/xxx/i18n/lang.po
+                    # and we try to find the corresponding
+                    # /path/to/xxx/i18n/xxx.pot file.
+                    # (Sometimes we have 'i18n_extra' instead of just 'i18n')
+                    head, _ = os.path.split(fileobj.name)
+                    head2, i18n_dir = os.path.split(head)
+                    head3, module_dir = os.path.split(head2)
+                    pot_path = os.path.join(
+                        head3, module_dir, i18n_dir, module_dir + '.pot')
+                    pot_handle = misc.file_open(pot_path)
+                    pot_reader = TinyPoFile(pot_handle)
+                except:
+                    pass
+
         else:
             _logger.error('Bad file format: %s', fileformat)
             raise Exception(_('Bad file format'))
 
+        # Read the POT `reference` comments, and keep them indexed by source
+        # string.
+        pot_targets = {}
+        for type, name, res_id, src, _, comments in pot_reader:
+            if type is not None:
+                pot_targets.setdefault(src, {'value': None, 'targets': []})
+                pot_targets[src]['targets'].append((type, name, res_id))
+
         # read the rest of the file
-        line = 1
         irt_cursor = trans_obj._get_import_cursor(cr, SUPERUSER_ID, context=context)
 
-        for row in reader:
-            line += 1
+        def process_row(row):
+            """Process a single PO (or POT) entry."""
             # skip empty rows and rows where the translation field (=last fiefd) is empty
             #if (not row) or (not row[-1]):
-            #    continue
+            #    return
 
             # dictionary which holds values for this line of the csv file
             # {'lang': ..., 'type': ..., 'name': ..., 'res_id': ...,
@@ -979,9 +1021,17 @@ def trans_load_data(cr, fileobj, fileformat, lang, lang_name=None, verbose=True,
             for i, field in enumerate(f):
                 dic[field] = row[i]
 
+            # Get the `reference` comments from the POT.
+            src = row[3]
+            if pot_reader and src in pot_targets:
+                pot_targets[src]['targets'] = filter(lambda x: x != row[:3], pot_targets[src]['targets'])
+                pot_targets[src]['value'] = row[4]
+                if not pot_targets[src]['targets']:
+                    del pot_targets[src]
+
             # This would skip terms that fail to specify a res_id
             if not dic.get('res_id'):
-                continue
+                return
 
             res_id = dic.pop('res_id')
             if res_id and isinstance(res_id, (int, long)) \
@@ -1001,6 +1051,21 @@ def trans_load_data(cr, fileobj, fileformat, lang, lang_name=None, verbose=True,
                 dic['res_id'] = None
 
             irt_cursor.push(dic)
+
+        # First process the entries from the PO file (doing so also fills/removes
+        # the entries from the POT file).
+        for row in reader:
+            process_row(row)
+
+        # Then process the entries implied by the POT file (which is more
+        # correct w.r.t. the targets) if some of them remain.
+        pot_rows = []
+        for src in pot_targets:
+            value = pot_targets[src]['value']
+            for type, name, res_id in pot_targets[src]['targets']:
+                pot_rows.append((type, name, res_id, src, value, comments))
+        for row in pot_rows:
+            process_row(row)
 
         irt_cursor.finish()
         trans_obj.clear_caches()
