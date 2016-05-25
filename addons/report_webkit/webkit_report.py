@@ -205,6 +205,7 @@ class WebKitParser(report_sxw):
         stderr_fd, stderr_path = tempfile.mkstemp(text=True)
         file_to_del.append(stderr_path)
         try:
+            print command
             status = subprocess.call(command, stderr=stderr_fd)
             os.close(stderr_fd) # ensure flush before reading
             stderr_fd = None # avoid closing again in finally block
