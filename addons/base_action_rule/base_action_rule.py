@@ -236,6 +236,8 @@ class base_action_rule(osv.osv):
 
             return write
 
+        return
+
         updated = False
         if ids is None:
             ids = self.search(cr, SUPERUSER_ID, [])
