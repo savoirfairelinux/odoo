@@ -64,3 +64,8 @@ def migrate(cr, version):
 
     cr.execute(
         "UPDATE hr_applicant SET response_id = NULL WHERE response_id = 0")
+
+    # Fix reference to categ_meet_interview
+    cr.execute(
+        "UPDATE ir_model_data SET model = 'calendar.event.type' "
+        "WHERE module = 'hr_recruitment' AND name = 'categ_meet_interview'")
