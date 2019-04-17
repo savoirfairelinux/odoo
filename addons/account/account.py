@@ -1166,13 +1166,15 @@ class account_move(osv.osv):
     _order = 'id desc'
 
     def account_assert_balanced(self, cr, uid, context=None):
+        obj_precision = self.pool['decimal.precision']
+        prec = obj_precision.precision_get(cr, uid, 'Account Move')
         cr.execute("""\
             SELECT      move_id
             FROM        account_move_line
             WHERE       state = 'valid'
             GROUP BY    move_id
-            HAVING      abs(sum(debit) - sum(credit)) > 0.00001
-            """)
+            HAVING      abs(sum(debit) - sum(credit)) >= %s
+            """, (10**(-prec),))
         assert len(cr.fetchall()) == 0, \
             "For all Journal Items, the state is valid implies that the sum " \
             "of credits equals the sum of debits"

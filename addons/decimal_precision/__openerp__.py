@@ -34,6 +34,7 @@ The decimal precision is configured per company.
     'data': [
         'decimal_precision_view.xml',
         'security/ir.model.access.csv',
+        'data/decimal_precision_data.xml',
     ],
     'demo': [],
     'installable': True,
