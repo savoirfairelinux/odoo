@@ -1,4 +1,10 @@
 -
+   Create a partner as 'Manager user partner'
+-
+  !record {model: 'res.partner', id: res_partner_res_users_stock_manager}:
+    name: Stock manager partner
+    lastname: Partner
+-
    Create a user as 'Stock Manager'
 -
   !record {model: res.users, id: res_users_stock_manager}:
@@ -7,12 +13,29 @@
     login: sam
     password: sam
     email: stockmanager@yourcompany.com
+    partner_id: res_partner_res_users_stock_manager
+-
+  I added employee for Stock Manager.
+-
+  !record {model: hr.employee, id: stock_manager_employee}:
+    name: employee_stock_manager
+    user_id: res_users_stock_manager
+    department_id: hr.dep_one_user_1
+    job_id: hr.job_one_user_1
+    employee_job_ids:
+      - job_id: hr.job_one_user_1
 -
   I added groups for Stock Manager.
 -
   !record {model: res.users, id: res_users_stock_manager}:
     groups_id:
       - stock.group_stock_manager
+-
+   Create a partner as 'Stock user partner'
+-
+  !record {model: 'res.partner', id: res_partner_res_users_stock_user}:
+    name: Stock user partner
+    lastname: Partner
 -
    Create a user as 'Stock User'
 -
@@ -22,9 +45,50 @@
     login: sau
     password: sau
     email: stockuser@yourcompany.com
+    partner_id: res_partner_res_users_stock_user
+-
+  I added employee for Stock User.
+-
+  !record {model: hr.employee, id: stock_user_employee}:
+    name: employee_stock_user
+    user_id: res_users_stock_user
+    department_id: hr.dep_one_user_1
+    job_id: hr.job_one_user_1
+    employee_job_ids:
+      - job_id: hr.job_one_user_1
 -
   I added groups for Stock User.
 -
   !record {model: res.users, id: res_users_stock_user}:
     groups_id:
       - stock.group_stock_user
+-
+   Create a site partner as 'Stock user partner'
+-
+  !record {model: 'partner.site', id: partner_site_stock_user}:
+    partner_id: res_partner_res_users_stock_user
+    site_id: hr_site.demo_site_10
+-
+   Create a site partner as 'Stock manager partner'
+-
+  !record {model: 'partner.site', id: partner_site_stock_manager}:
+    partner_id: res_partner_res_users_stock_manager
+    site_id: hr_site.demo_site_10
+-
+   Create a site partner as 'main partner'
+-
+  !record {model: 'partner.site', id: partner_site_main_partner}:
+    partner_id: base.main_partner
+    site_id: hr_site.demo_site_10
+-
+   Create a site partner as 'res_partner_address_9'
+-
+  !record {model: 'partner.site', id: partner_site_res_partner_address_9}:
+    partner_id: base.res_partner_address_9
+    site_id: hr_site.demo_site_10
+-
+   Create a site partner as 'res_partner_4'
+-
+  !record {model: 'partner.site', id: partner_site_res_partner_4}:
+    partner_id: base.res_partner_4
+    site_id: hr_site.demo_site_10
