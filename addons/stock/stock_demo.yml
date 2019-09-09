@@ -31,6 +31,17 @@
     lot_stock_id: location_monitor
     lot_output_id: stock_location_output
 -
+ !record {model: account.journal, id: account_journal_0}:
+    name: JournalP
+    code: codeJ
+    type: purchase
+    site_id: hr_site.demo_site_10
+    company_id: base.main_company
+    currency: base.CAD
+-
+ !record {model: product.category, id: product.product_category_8}:
+    property_stock_journal: account_journal_0
+-
  !record {model: product.product, id: product_product_6}:
     default_code: LCD15
     name: 15” LCD Monitor

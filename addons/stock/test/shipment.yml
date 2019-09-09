@@ -144,6 +144,14 @@
     shipment = self.pool.get('stock.picking').browse(cr, uid, ref("incomming_shipment"))
     context.update({'active_model': 'stock.picking', 'active_id': shipment.backorder_id.id, 'active_ids': [shipment.backorder_id.id]})
 -
+ !record {model: account.journal, id: account_journal_1}:
+    name: Journal
+    code: code
+    type: sale
+    site_id: hr_site.demo_site_10
+    company_id: base.main_company
+    currency: base.CAD
+-
   !record {model: stock.invoice.onshipping, id: invoice_incoming}:
     group: False
 -
