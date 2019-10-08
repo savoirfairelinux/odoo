@@ -68,27 +68,32 @@
   !record {model: 'partner.site', id: partner_site_stock_user}:
     partner_id: res_partner_res_users_stock_user
     site_id: hr_site.demo_site_10
+    date_start_availability: !eval time.strftime('%Y-%m-%d')
 -
    Create a site partner as 'Stock manager partner'
 -
   !record {model: 'partner.site', id: partner_site_stock_manager}:
     partner_id: res_partner_res_users_stock_manager
     site_id: hr_site.demo_site_10
+    date_start_availability: !eval time.strftime('%Y-%m-%d')
 -
    Create a site partner as 'main partner'
 -
   !record {model: 'partner.site', id: partner_site_main_partner}:
     partner_id: base.main_partner
     site_id: hr_site.demo_site_10
+    date_start_availability: !eval time.strftime('%Y-%m-%d')
 -
    Create a site partner as 'res_partner_address_9'
 -
   !record {model: 'partner.site', id: partner_site_res_partner_address_9}:
     partner_id: base.res_partner_address_9
     site_id: hr_site.demo_site_10
+    date_start_availability: !eval time.strftime('%Y-%m-%d')
 -
    Create a site partner as 'res_partner_4'
 -
   !record {model: 'partner.site', id: partner_site_res_partner_4}:
     partner_id: base.res_partner_4
     site_id: hr_site.demo_site_10
+    date_start_availability: !eval time.strftime('%Y-%m-%d')
