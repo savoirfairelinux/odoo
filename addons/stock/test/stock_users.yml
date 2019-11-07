@@ -24,6 +24,7 @@
     job_id: hr.job_one_user_1
     employee_job_ids:
       - job_id: hr.job_one_user_1
+        date_start_allocation: !eval time.strftime('%Y-%m-%d')
 -
   I added groups for Stock Manager.
 -
@@ -56,6 +57,7 @@
     job_id: hr.job_one_user_1
     employee_job_ids:
       - job_id: hr.job_one_user_1
+        date_start_allocation: !eval time.strftime('%Y-%m-%d')
 -
   I added groups for Stock User.
 -
